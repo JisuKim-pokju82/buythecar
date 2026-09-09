@@ -399,13 +399,68 @@
       <!-- ============================================== -->
       <section id="dashboardScreen" class="screen-view space-y-4 pb-20">
         
-        <!-- 차량 히어로 카드 -->
+        <!-- 차량 히어로 카드 (GV70 전용 완벽 내장형 벡터 그래픽) -->
         <div class="glass-panel overflow-hidden border border-white/10 relative">
           <!-- 차량 이미지 & 오버레이 -->
-          <div class="relative h-44 w-full bg-gradient-to-t from-[#0D111A] via-transparent to-black/40 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80" 
-                 alt="제네시스 GV70" 
-                 class="w-full h-full object-cover object-center opacity-85 hover:scale-105 transition-transform duration-700">
+          <div class="relative h-48 w-full bg-gradient-to-t from-[#0D111A] via-slate-900 to-[#1A1F2C] overflow-hidden flex items-center justify-center">
+            
+            <!-- GV70 프리미엄 화이트 스포츠 SVG 일러스트레이션 (인라인 내장형 - 짤림/깨짐 0%) -->
+            <svg class="w-full h-full p-2 max-w-sm" viewBox="0 0 380 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="50%">
+                  <stop offset="0%" stop-color="#FFFFFF"/>
+                  <stop offset="60%" stop-color="#E2E8F0"/>
+                  <stop offset="100%" stop-color="#CBD5E1"/>
+                </linearGradient>
+                <linearGradient id="glassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#0F172A"/>
+                  <stop offset="100%" stop-color="#1E293B"/>
+                </linearGradient>
+                <radialGradient id="wheelGrad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#334155"/>
+                  <stop offset="70%" stop-color="#0F172A"/>
+                  <stop offset="100%" stop-color="#475569"/>
+                </radialGradient>
+              </defs>
+
+              <!-- 도로 및 반사 그림자 -->
+              <ellipse cx="190" cy="142" rx="170" ry="12" fill="black" fill-opacity="0.6"/>
+              
+              <!-- GV70 유려한 쿠페형 루프 라인 바디 -->
+              <path d="M45 110 L65 85 L120 48 L250 48 L325 80 L355 105 L350 125 L40 125 Z" fill="url(#bodyGrad)" stroke="#94A3B8" stroke-width="1.5"/>
+              
+              <!-- 윈도우 글래스 DLO 라인 & B/C필러 크롬 -->
+              <path d="M125 53 L245 53 L315 82 L135 82 Z" fill="url(#glassGrad)" stroke="#E2E8F0" stroke-width="1"/>
+              <line x1="195" y1="53" x2="195" y2="82" stroke="#475569" stroke-width="2"/>
+              
+              <!-- 쿼드램프 (제네시스 두 줄 헤드램프 & 테일램프) -->
+              <rect x="42" y="94" width="28" height="3.5" rx="1.5" fill="#38BDF8" filter="drop-shadow(0 0 4px #0284C7)"/>
+              <rect x="45" y="101" width="25" height="3.5" rx="1.5" fill="#38BDF8" filter="drop-shadow(0 0 4px #0284C7)"/>
+              
+              <rect x="345" y="93" width="16" height="3.5" rx="1.5" fill="#EF4444" filter="drop-shadow(0 0 4px #DC2626)"/>
+              <rect x="342" y="99" width="19" height="3.5" rx="1.5" fill="#EF4444" filter="drop-shadow(0 0 4px #DC2626)"/>
+
+              <!-- 제네시스 크레스트 그릴 메쉬 패턴 -->
+              <path d="M38 102 L48 123 L62 123 L55 102 Z" fill="#1E293B" stroke="#94A3B8" stroke-width="0.8"/>
+              
+              <!-- 21인치 다크 스퍼터링 스포츠 휠 (앞/뒤) -->
+              <g>
+                <circle cx="95" cy="125" r="24" fill="url(#wheelGrad)" stroke="#64748B" stroke-width="2"/>
+                <circle cx="95" cy="125" r="14" fill="#0F172A" stroke="#E2E8F0" stroke-width="1.5"/>
+                <!-- 레드 스포츠 브레이크 캘리퍼 -->
+                <rect x="85" y="115" width="6" height="12" rx="2" fill="#DC2626"/>
+              </g>
+
+              <g>
+                <circle cx="295" cy="125" r="24" fill="url(#wheelGrad)" stroke="#64748B" stroke-width="2"/>
+                <circle cx="295" cy="125" r="14" fill="#0F172A" stroke="#E2E8F0" stroke-width="1.5"/>
+                <rect x="285" y="115" width="6" height="12" rx="2" fill="#DC2626"/>
+              </g>
+
+              <!-- 캐릭터 라인 및 사이드 스커트 -->
+              <path d="M85 86 Q190 92 320 86" stroke="#CBD5E1" stroke-width="1.5" fill="none"/>
+              <path d="M125 124 L265 124" stroke="#DC2626" stroke-width="2"/>
+            </svg>
             
             <div class="scan-beam"></div>
 
@@ -467,225 +522,134 @@
         </div>
 
         <!-- ============================================== -->
-        <!-- TAB 1: AI 진단 사전정보 (고질병 / 점검포인트 / 장점) -->
+        <!-- TAB 1: AI 진단 사전정보 (가시성 대폭 향상 & 핵심 비주얼 카드) -->
         <!-- ============================================== -->
-        <div id="tabContent1" class="space-y-4">
+        <div id="tabContent1" class="space-y-3.5">
           
-          <!-- AI 핵심 진단 브리핑 -->
-          <div class="glass-panel-glow p-4 space-y-3">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <div class="w-6 h-6 rounded-md bg-red-600/30 border border-red-500/40 flex items-center justify-center">
-                  <i data-lucide="bot" class="w-4 h-4 text-red-400"></i>
-                </div>
-                <span class="font-black text-sm text-white">케이카 AI 매입진단 브리핑</span>
-              </div>
-              <span class="text-[10px] text-red-300 bg-red-950/70 border border-red-700/50 px-2 py-0.5 rounded-full font-bold">
-                GV70 2.5T 특화
+          <!-- AI 핵심 브리핑 (직관적 뱃지형) -->
+          <div class="glass-panel-glow p-3.5">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-black text-xs text-white flex items-center gap-1.5">
+                <i data-lucide="bot" class="w-4 h-4 text-red-400"></i>
+                AI 매입평가 핵심 브리핑
               </span>
+              <span class="text-[10px] text-red-300 bg-red-950 px-2 py-0.5 rounded font-bold border border-red-800/50">GV70 2.5T 전용</span>
             </div>
-            <p class="text-xs text-gray-300 leading-relaxed">
-              "2021년식 GV70 2.5T 가솔린 스포츠 AWD 모델은 선호도가 매우 높은 인기 차량이나, <strong class="text-red-400">전자식 트랜스퍼케이스/디퍼런셜 미세 누유</strong> 및 <strong class="text-amber-300">21인치 스포츠 휠 스크래치</strong> 발생 빈도가 높으므로 리프트 진단 시 하부 집중 확인이 필수적입니다."
-            </p>
-          </div>
-
-          <!-- 1. 고질병 및 취약 부위 (마이너스 점검) -->
-          <div class="glass-panel p-4 space-y-3.5 border-l-4 border-l-red-500">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-1.5 text-xs font-bold text-red-400">
-                <i data-lucide="alert-triangle" class="w-4 h-4 text-red-500"></i>
-                <span>이 차의 고질병 & 취약 부위 (감가 요인)</span>
+            <div class="grid grid-cols-2 gap-2 text-[11px]">
+              <div class="bg-black/40 p-2 rounded-lg border border-red-500/20 flex items-center gap-2">
+                <i data-lucide="alert-circle" class="w-4 h-4 text-red-400 shrink-0"></i>
+                <span class="text-gray-200"><strong>하부 디퍼런셜 오일 누유</strong> 및 휠 스크래치 집중 진단</span>
               </div>
-              <span class="text-[10px] text-gray-400 font-mono">중점 진단 4항목</span>
-            </div>
-
-            <!-- 고질병 시각 이미지 그리드 (SVG 벡터 및 고화질 인라인 지원) -->
-            <div class="grid grid-cols-2 gap-2">
-              <div class="relative rounded-xl overflow-hidden border border-red-500/30 h-28 bg-slate-900 flex flex-col justify-between p-2.5">
-                <svg class="w-full h-14" viewBox="0 0 160 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="160" height="60" rx="8" fill="#181B26"/>
-                  <circle cx="45" cy="30" r="18" fill="#252A3D" stroke="#EF4444" stroke-width="1.5"/>
-                  <path d="M45 18 V42 M33 30 H57" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round"/>
-                  <rect x="75" y="20" width="70" height="8" rx="4" fill="#374151"/>
-                  <rect x="75" y="32" width="45" height="6" rx="3" fill="#EF4444" fill-opacity="0.6"/>
-                  <circle cx="45" cy="30" r="8" fill="#EF4444" fill-opacity="0.3">
-                    <animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite"/>
-                  </circle>
-                </svg>
-                <div class="flex items-center justify-between">
-                  <span class="text-[10px] font-bold text-red-400 flex items-center gap-1">
-                    <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> AWD 디퍼런셜 하부
-                  </span>
-                  <span class="text-[9px] text-gray-400">누유 흔적 검수</span>
-                </div>
-              </div>
-
-              <div class="relative rounded-xl overflow-hidden border border-amber-500/30 h-28 bg-slate-900 flex flex-col justify-between p-2.5">
-                <svg class="w-full h-14" viewBox="0 0 160 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="160" height="60" rx="8" fill="#181B26"/>
-                  <circle cx="45" cy="30" r="18" fill="#1F2937" stroke="#F59E0B" stroke-width="2"/>
-                  <circle cx="45" cy="30" r="8" fill="#374151" stroke="#F59E0B" stroke-width="1"/>
-                  <path d="M45 12 V18 M45 42 V48 M27 30 H33 M57 30 H63" stroke="#F59E0B" stroke-width="1.5"/>
-                  <rect x="75" y="20" width="70" height="8" rx="4" fill="#374151"/>
-                  <rect x="75" y="32" width="55" height="6" rx="3" fill="#F59E0B" fill-opacity="0.6"/>
-                  <circle cx="60" cy="20" r="4" fill="#EF4444">
-                    <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite"/>
-                  </circle>
-                </svg>
-                <div class="flex items-center justify-between">
-                  <span class="text-[10px] font-bold text-amber-400 flex items-center gap-1">
-                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> 21인치 스포츠 휠
-                  </span>
-                  <span class="text-[9px] text-gray-400">림 흠집 굴절 체크</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="space-y-2.5 text-xs">
-              <!-- 항목 1 -->
-              <div class="bg-[#121624] p-2.5 rounded-xl border border-red-500/20 space-y-1">
-                <div class="flex items-center justify-between">
-                  <span class="font-bold text-gray-200 flex items-center gap-1.5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
-                    AWD 전자식 트랜스퍼케이스 & 디퍼런셜 누유
-                  </span>
-                  <span class="text-[10px] font-bold text-red-400 bg-red-950 px-1.5 py-0.5 rounded">수리비 ~45만원</span>
-                </div>
-                <p class="text-[11px] text-gray-400 leading-normal pl-3">
-                  • 핸들 끝까지 꺾고 저속 선회 시 '뚝뚝' 이음 및 하부 오일 실링 미세 누유 흔적 필수 확인
-                </p>
-              </div>
-
-              <!-- 항목 2 -->
-              <div class="bg-[#121624] p-2.5 rounded-xl border border-red-500/20 space-y-1">
-                <div class="flex items-center justify-between">
-                  <span class="font-bold text-gray-200 flex items-center gap-1.5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
-                    21인치 스포츠 전용 휠 림 굴절 & 연석 스크래치
-                  </span>
-                  <span class="text-[10px] font-bold text-red-400 bg-red-950 px-1.5 py-0.5 rounded">복원 개당 15만원</span>
-                </div>
-                <p class="text-[11px] text-gray-400 leading-normal pl-3">
-                  • 255/40R21 편평비가 낮아 림 테두리 흠집이 흔함. 4개 휠 표면 다이아몬드 커팅 상태 확인
-                </p>
-              </div>
-
-              <!-- 항목 3 -->
-              <div class="bg-[#121624] p-2.5 rounded-xl border border-red-500/20 space-y-1">
-                <div class="flex items-center justify-between">
-                  <span class="font-bold text-gray-200 flex items-center gap-1.5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
-                    ISG 배터리 방전 및 인터쿨러 호스 체결부
-                  </span>
-                  <span class="text-[10px] font-bold text-amber-400 bg-amber-950 px-1.5 py-0.5 rounded">교체비 ~25만원</span>
-                </div>
-                <p class="text-[11px] text-gray-400 leading-normal pl-3">
-                  • 2.5T 엔진룸 내 인터쿨러 에어덕트 클램프 유격 및 AGM 배터리 수명 체크
-                </p>
-              </div>
-
-              <!-- 항목 4 -->
-              <div class="bg-[#121624] p-2.5 rounded-xl border border-red-500/20 space-y-1">
-                <div class="flex items-center justify-between">
-                  <span class="font-bold text-gray-200 flex items-center gap-1.5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
-                    파노라마 선루프 레일 틸팅 잡소리
-                  </span>
-                  <span class="text-[10px] font-bold text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded">구리스/정비</span>
-                </div>
-                <p class="text-[11px] text-gray-400 leading-normal pl-3">
-                  • 열고 닫을 때 윈드 디플렉터 유격 및 고무 몰딩 경화 여부 작동 테스트
-                </p>
+              <div class="bg-black/40 p-2 rounded-lg border border-emerald-500/20 flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <span class="text-gray-200"><strong>화이트+레드시트</strong> 조합으로 소매 회전 1위 매물</span>
               </div>
             </div>
           </div>
 
-          <!-- 2. 매입사원 필수 점검 부위 가이드 (완벽 지원 그래픽) -->
-          <div class="glass-panel p-4 space-y-3.5 border-l-4 border-l-cyan-500">
+          <!-- 1. 고질병 & 감가 취약 포인트 (가시성 극대화) -->
+          <div class="glass-panel p-3.5 space-y-2.5 border-l-4 border-l-red-500">
             <div class="flex items-center justify-between">
-              <div class="flex items-center gap-1.5 text-xs font-bold text-cyan-400">
-                <i data-lucide="eye" class="w-4 h-4 text-cyan-400"></i>
-                <span>매입사원 필수 확인 체크리스트</span>
-              </div>
-              <span class="text-[10px] text-cyan-300 font-bold">현장 5분 진단법</span>
+              <span class="text-xs font-black text-red-400 flex items-center gap-1.5">
+                <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+                차종 고질병 & 필수 확인 부위
+              </span>
+              <span class="text-[10px] text-gray-400">현장 집중 4개소</span>
             </div>
 
+            <!-- 2열 비주얼 진단 카드 -->
             <div class="grid grid-cols-2 gap-2 text-xs">
-              <!-- 점검 1: 전면 범퍼 -->
-              <div class="p-2.5 bg-[#121624] rounded-xl border border-cyan-500/20 space-y-1.5">
-                <div class="h-16 rounded-lg bg-slate-900 flex items-center justify-center border border-white/5 relative">
-                  <i data-lucide="shield-alert" class="w-8 h-8 text-cyan-400/70"></i>
-                  <span class="absolute bottom-1 left-1 text-[9px] bg-black/80 px-1.5 py-0.5 rounded text-cyan-300 font-bold">1. 전면 그릴</span>
+              
+              <!-- 카드 1: 디퍼런셜 누유 -->
+              <div class="p-2.5 bg-[#121624] rounded-xl border border-red-500/30 space-y-1.5">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-gray-200 text-[11px] flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-red-500"></span> 하부 디퍼런셜
+                  </span>
+                  <span class="text-[10px] text-red-400 font-bold bg-red-950 px-1.5 py-0.2 rounded">-45만</span>
                 </div>
-                <p class="text-[10px] text-gray-300 font-medium">다크 크롬 메쉬 그릴 스톤칩 및 하단 립 파손</p>
+                <div class="h-14 bg-slate-900 rounded-lg flex items-center justify-center border border-white/5">
+                  <i data-lucide="droplet" class="w-6 h-6 text-red-400 animate-bounce"></i>
+                </div>
+                <p class="text-[10px] text-gray-400 leading-tight">핸들 선회 시 소음 및 오일 실링 미세 누유 흔적</p>
               </div>
 
-              <!-- 점검 2: 전자제어 서스펜션 -->
-              <div class="p-2.5 bg-[#121624] rounded-xl border border-cyan-500/20 space-y-1.5">
-                <div class="h-16 rounded-lg bg-slate-900 flex items-center justify-center border border-white/5 relative">
-                  <i data-lucide="gauge" class="w-8 h-8 text-cyan-400/70"></i>
-                  <span class="absolute bottom-1 left-1 text-[9px] bg-black/80 px-1.5 py-0.5 rounded text-cyan-300 font-bold">2. 전자제어 댐퍼</span>
+              <!-- 카드 2: 21인치 휠 스크래치 -->
+              <div class="p-2.5 bg-[#121624] rounded-xl border border-amber-500/30 space-y-1.5">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-gray-200 text-[11px] flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-amber-400"></span> 21인치 휠 림
+                  </span>
+                  <span class="text-[10px] text-amber-400 font-bold bg-amber-950 px-1.5 py-0.2 rounded">-15만</span>
                 </div>
-                <p class="text-[10px] text-gray-300 font-medium">프리뷰 전자제어 댐퍼 오일 비침 및 커넥터 체결</p>
+                <div class="h-14 bg-slate-900 rounded-lg flex items-center justify-center border border-white/5">
+                  <i data-lucide="disc" class="w-6 h-6 text-amber-400"></i>
+                </div>
+                <p class="text-[10px] text-gray-400 leading-tight">다이아몬드 커팅 림 테두리 연석 스크래치</p>
               </div>
 
-              <!-- 점검 3: 클러스터 디스플레이 -->
-              <div class="p-2.5 bg-[#121624] rounded-xl border border-cyan-500/20 space-y-1.5">
-                <div class="h-16 rounded-lg bg-slate-900 flex items-center justify-center border border-white/5 relative">
-                  <i data-lucide="tv" class="w-8 h-8 text-cyan-400/70"></i>
-                  <span class="absolute bottom-1 left-1 text-[9px] bg-black/80 px-1.5 py-0.5 rounded text-cyan-300 font-bold">3. 14.5인치 화면</span>
+              <!-- 카드 3: 인터쿨러/ISG 배터리 -->
+              <div class="p-2.5 bg-[#121624] rounded-xl border border-white/5 space-y-1.5">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-gray-200 text-[11px] flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-slate-400"></span> 인터쿨러/배터리
+                  </span>
+                  <span class="text-[10px] text-gray-300 font-bold bg-gray-800 px-1.5 py-0.2 rounded">-25만</span>
                 </div>
-                <p class="text-[10px] text-gray-300 font-medium">3D 입체 계기판 잔상 및 서라운드뷰 카메라 왜곡</p>
+                <div class="h-14 bg-slate-900 rounded-lg flex items-center justify-center border border-white/5">
+                  <i data-lucide="battery-charging" class="w-6 h-6 text-cyan-400"></i>
+                </div>
+                <p class="text-[10px] text-gray-400 leading-tight">에어호스 클램프 유격 및 AGM 배터리 방전</p>
               </div>
 
-              <!-- 점검 4: 가죽 시트 -->
-              <div class="p-2.5 bg-[#121624] rounded-xl border border-cyan-500/20 space-y-1.5">
-                <div class="h-16 rounded-lg bg-slate-900 flex items-center justify-center border border-white/5 relative">
-                  <i data-lucide="armchair" class="w-8 h-8 text-cyan-400/70"></i>
-                  <span class="absolute bottom-1 left-1 text-[9px] bg-black/80 px-1.5 py-0.5 rounded text-cyan-300 font-bold">4. 나파가죽 시트</span>
+              <!-- 카드 4: 선루프 레일 틸팅 -->
+              <div class="p-2.5 bg-[#121624] rounded-xl border border-white/5 space-y-1.5">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-gray-200 text-[11px] flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-slate-400"></span> 파노라마 선루프
+                  </span>
+                  <span class="text-[10px] text-gray-300 font-bold bg-gray-800 px-1.5 py-0.2 rounded">구리스</span>
                 </div>
-                <p class="text-[10px] text-gray-300 font-medium">운전석 사이드 볼스터 가죽 주름 & 레드 스티치</p>
+                <div class="h-14 bg-slate-900 rounded-lg flex items-center justify-center border border-white/5">
+                  <i data-lucide="sun" class="w-6 h-6 text-amber-300"></i>
+                </div>
+                <p class="text-[10px] text-gray-400 leading-tight">선루프 개폐 시 고무 몰딩 잡소리 여부</p>
               </div>
+
             </div>
           </div>
 
-          <!-- 3. 차량 장점 및 셀링 포인트 (플러스 가산 요인) -->
-          <div class="glass-panel p-4 space-y-3.5 border-l-4 border-l-emerald-500">
+          <!-- 2. 셀링 포인트 & 가산 장점 (가시성 강화) -->
+          <div class="glass-panel p-3.5 space-y-2.5 border-l-4 border-l-emerald-500">
             <div class="flex items-center justify-between">
-              <div class="flex items-center gap-1.5 text-xs font-bold text-emerald-400">
-                <i data-lucide="star" class="w-4 h-4 text-emerald-400"></i>
-                <span>이 차의 장점 & 프리미엄 셀링 포인트</span>
-              </div>
-              <span class="text-[10px] text-emerald-300 bg-emerald-950 px-2 py-0.5 rounded-full font-bold">감가 방어율 1위</span>
-            </div>
-
-            <!-- 인기 컬러/옵션 비주얼 배너 -->
-            <div class="relative rounded-xl overflow-hidden border border-emerald-500/30 p-3 bg-gradient-to-r from-emerald-950/80 via-slate-900 to-slate-900 flex items-center justify-between">
-              <div class="space-y-1">
-                <span class="text-[10px] text-emerald-300 font-bold bg-emerald-900/80 px-2 py-0.5 rounded border border-emerald-500/40 inline-block">선호도 1위 조합</span>
-                <div class="text-xs font-extrabold text-white">우유니 화이트 + 스포츠 세비야 레드 패키지</div>
-                <p class="text-[10px] text-gray-300">평균 10일 이내 초고속 계약되는 케이카 직영몰 최고 인기 사양</p>
-              </div>
-              <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center shrink-0">
-                <i data-lucide="sparkles" class="w-6 h-6 text-emerald-400"></i>
-              </div>
+              <span class="text-xs font-black text-emerald-400 flex items-center gap-1.5">
+                <i data-lucide="star" class="w-4 h-4"></i>
+                차량 장점 & 소매 회전 프리미엄
+              </span>
+              <span class="text-[10px] text-emerald-300 bg-emerald-950 px-2 py-0.5 rounded font-bold">감가방어 최상</span>
             </div>
 
             <div class="space-y-2 text-xs">
-              <div class="p-2.5 bg-[#121624] rounded-xl border border-emerald-500/20 flex items-start gap-2">
-                <i data-lucide="package-check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                <div>
-                  <div class="font-bold text-white text-[11px]">파퓰러 패키지 II + 렉시콘 사운드 + 파노라마 선루프 장착</div>
-                  <p class="text-[10px] text-gray-400">HUD, 드라이빙 어시스턴스2, 지능형 헤드램프 등 700만원 상당 핵심 옵션 완비</p>
+              <div class="p-2.5 bg-[#121624] rounded-xl border border-emerald-500/20 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                  <div>
+                    <div class="font-bold text-white text-[11px]">우유니 화이트 + 세비야 레드 투톤</div>
+                    <span class="text-[10px] text-gray-400">엔카/케이카 검색 클릭률 상위 3% 이내</span>
+                  </div>
                 </div>
+                <span class="text-[11px] font-black text-emerald-400">+50만</span>
               </div>
 
-              <div class="p-2.5 bg-[#121624] rounded-xl border border-emerald-500/20 flex items-start gap-2">
-                <i data-lucide="shield" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                <div>
-                  <div class="font-bold text-white text-[11px]">제조사 동력계통 보증 잔존 (5년 / 10만km)</div>
-                  <p class="text-[10px] text-gray-400">2026년 6월까지 엔진/미션 보증 유효하여 구매 고객 안심 구매 유도 용이</p>
+              <div class="p-2.5 bg-[#121624] rounded-xl border border-emerald-500/20 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                  <div>
+                    <div class="font-bold text-white text-[11px]">파퓰러 II + 렉시콘 + 스포츠 패키지</div>
+                    <span class="text-[10px] text-gray-400">HUD, 서라운드뷰, 나파가죽 풀탑재</span>
+                  </div>
                 </div>
+                <span class="text-[11px] font-black text-emerald-400">+50만</span>
               </div>
             </div>
           </div>
@@ -693,7 +657,7 @@
         </div>
 
         <!-- ============================================== -->
-        <!-- TAB 2: 시세 & 판매동향 (엔카닷컴 / 케이카 실시간 비교) -->
+        <!-- TAB 2: 시세 & 판매동향 (동급매물 실시간 판매가 완벽 표시) -->
         <!-- ============================================== -->
         <div id="tabContent2" class="space-y-4" style="display: none;">
           
@@ -735,6 +699,64 @@
               <div class="text-[10px] text-gray-400 pt-1 border-t border-white/5 flex justify-between">
                 <span>시세 범위</span>
                 <span class="text-gray-200 font-bold">4,320 ~ 4,450만</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 🌟 엔카/케이카 실시간 등록 동급 매물 판매가 리스트 (추가 완료) -->
+          <div class="glass-panel p-4 space-y-3">
+            <div class="flex items-center justify-between pb-2 border-b border-white/10">
+              <span class="text-xs font-bold text-white flex items-center gap-1.5">
+                <i data-lucide="layers" class="w-4 h-4 text-cyan-400"></i>
+                동일 스펙 실시간 판매중 매물 (encar.com / K Car)
+              </span>
+              <span class="text-[10px] text-cyan-300 font-bold">실거래 호가 비교</span>
+            </div>
+
+            <div class="space-y-2 text-xs">
+              <!-- 매물 1 -->
+              <div class="p-2.5 bg-[#121624] rounded-xl border border-white/5 flex items-center justify-between">
+                <div>
+                  <div class="flex items-center gap-1.5">
+                    <span class="px-1.5 py-0.2 bg-red-950 text-red-400 border border-red-800 text-[9px] font-bold rounded">엔카실매물</span>
+                    <strong class="text-white text-[11px]">21년 05월 / 3.8만km / 무사고 / 파퓰러2</strong>
+                  </div>
+                  <span class="text-[10px] text-gray-400">화이트 바디 • 브라운 시트 • 썬루프 포함</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-sm font-black text-red-400">4,450 만원</span>
+                  <span class="block text-[9px] text-gray-400">등록 4일차</span>
+                </div>
+              </div>
+
+              <!-- 매물 2 -->
+              <div class="p-2.5 bg-[#121624] rounded-xl border border-white/5 flex items-center justify-between">
+                <div>
+                  <div class="flex items-center gap-1.5">
+                    <span class="px-1.5 py-0.2 bg-cyan-950 text-cyan-400 border border-cyan-800 text-[9px] font-bold rounded">케이카직영</span>
+                    <strong class="text-white text-[11px]">21년 07월 / 4.5만km / 무사고 / 스포츠</strong>
+                  </div>
+                  <span class="text-[10px] text-gray-400">우유니 화이트 • 세비야 레드 • KW보증</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-sm font-black text-cyan-400">4,390 만원</span>
+                  <span class="block text-[9px] text-emerald-400">예약중 (인기)</span>
+                </div>
+              </div>
+
+              <!-- 매물 3 -->
+              <div class="p-2.5 bg-[#121624] rounded-xl border border-white/5 flex items-center justify-between">
+                <div>
+                  <div class="flex items-center gap-1.5">
+                    <span class="px-1.5 py-0.2 bg-red-950 text-red-400 border border-red-800 text-[9px] font-bold rounded">엔카실매물</span>
+                    <strong class="text-white text-[11px]">21년 04월 / 5.2만km / 단순교환1 / 기본</strong>
+                  </div>
+                  <span class="text-[10px] text-gray-400">카본 메탈 • 2WD • 19인치 휠</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-sm font-black text-gray-300">4,280 만원</span>
+                  <span class="block text-[9px] text-gray-400">등록 18일차</span>
+                </div>
               </div>
             </div>
           </div>
@@ -791,7 +813,7 @@
         </div>
 
         <!-- ============================================== -->
-        <!-- TAB 3: 실시간 인터랙티브 매입가격 산정기 -->
+        <!-- TAB 3: 실시간 인터랙티브 매입가격 산정기 (공제마진 제외) -->
         <!-- ============================================== -->
         <div id="tabContent3" class="space-y-4" style="display: none;">
 
@@ -918,25 +940,8 @@
             </div>
           </div>
 
-          <!-- 3. 케이카 직영 마진 설정 -->
-          <div class="glass-panel p-4 space-y-2.5 border-l-4 border-l-purple-500">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-bold text-purple-300 flex items-center gap-1.5">
-                <i data-lucide="briefcase" class="w-4 h-4 text-purple-400"></i>
-                케이카 직영 표준 마진 (고정 기본값)
-              </span>
-              <span class="text-xs font-black text-purple-400 font-mono">- <span id="marginDisplay">120</span> 만원</span>
-            </div>
-            <input type="range" id="marginSlider" min="90" max="180" step="10" value="120" oninput="calculatePrice()">
-            <div class="flex justify-between text-[10px] text-gray-400">
-              <span>최소 90만</span>
-              <span class="text-purple-300 font-bold">표준 120만원</span>
-              <span>수익중시 180만</span>
-            </div>
-          </div>
-
           <!-- ============================================== -->
-          <!-- 4. 최종 실시간 매입가 산정 결과 카드 -->
+          <!-- 3. 최종 실시간 매입가 산정 결과 카드 (공제 마진 제외) -->
           <!-- ============================================== -->
           <div class="glass-panel-glow p-5 space-y-4">
             
@@ -945,14 +950,14 @@
                 AI 산정 최종 추천 매입가
               </span>
               <div class="text-3xl font-black text-white tracking-tight pt-1">
-                <span id="finalOfferPrice" class="neon-text-red font-mono">4,354</span> <span class="text-lg text-white">만원</span>
+                <span id="finalOfferPrice" class="neon-text-red font-mono">4,474</span> <span class="text-lg text-white">만원</span>
               </div>
               <p class="text-[11px] text-gray-300">
-                추천 매입 협상 범위 : <strong class="text-amber-300 font-mono" id="priceRangeDisplay">4,280 ~ 4,420 만원</strong>
+                추천 매입 협상 범위 : <strong class="text-amber-300 font-mono" id="priceRangeDisplay">4,410 ~ 4,530 만원</strong>
               </p>
             </div>
 
-            <!-- 계산 내역 요약표 -->
+            <!-- 계산 내역 요약표 (공제마진 제외) -->
             <div class="bg-[#0B0F19]/90 rounded-xl p-3 text-xs space-y-1.5 border border-white/10 font-mono">
               <div class="flex justify-between text-gray-400">
                 <span>기준 예상판매가</span>
@@ -962,17 +967,13 @@
                 <span>진단 감가/수리비</span>
                 <span id="calcMinus">- 36 만원</span>
               </div>
-              <div class="flex justify-between text-emerald-400">
+              <div class="flex justify-between text-emerald-400 border-b border-white/10 pb-1.5">
                 <span>인기스펙/옵션 가산</span>
                 <span id="calcPlus">+ 130 만원</span>
               </div>
-              <div class="flex justify-between text-purple-400 border-b border-white/10 pb-1.5">
-                <span>케이카 표준마진</span>
-                <span id="calcMargin">- 120 만원</span>
-              </div>
               <div class="flex justify-between font-bold text-sm text-white pt-0.5">
                 <span class="font-sans">최종 매입 결정액</span>
-                <span id="calcTotal" class="text-red-400 font-extrabold">4,354 만원</span>
+                <span id="calcTotal" class="text-red-400 font-extrabold">4,474 만원</span>
               </div>
             </div>
 
@@ -990,7 +991,7 @@
     </main>
 
     <!-- ============================================== -->
-    <!-- [모달] 고객 제안용 최종 매입 견적서 모달 -->
+    <!-- [모달] 고객 제안용 최종 매입 견적서 모달 (공제마진 제외) -->
     <!-- ============================================== -->
     <div id="quoteModal" style="display: none;" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md items-end sm:items-center justify-center p-0 sm:p-4">
       <div class="w-full max-w-md bg-[#101420] border border-white/15 rounded-t-3xl sm:rounded-3xl p-6 space-y-5 max-h-[90vh] overflow-y-auto no-scrollbar shadow-2xl">
@@ -1347,10 +1348,7 @@
       if (document.getElementById('optOwner')?.checked) totalPlus += 30;
       document.getElementById('totalPlusDisplay').innerText = `+ ${totalPlus} 만원`;
 
-      const margin = parseInt(document.getElementById('marginSlider')?.value || 120, 10);
-      document.getElementById('marginDisplay').innerText = margin;
-
-      const finalPrice = basePrice - totalMinus + totalPlus - margin;
+      const finalPrice = basePrice - totalMinus + totalPlus;
       const minRange = finalPrice - 60;
       const maxRange = finalPrice + 50;
 
@@ -1360,14 +1358,12 @@
       document.getElementById('calcBase').innerText = `+ ${basePrice.toLocaleString()} 만원`;
       document.getElementById('calcMinus').innerText = `- ${totalMinus.toLocaleString()} 만원`;
       document.getElementById('calcPlus').innerText = `+ ${totalPlus.toLocaleString()} 만원`;
-      document.getElementById('calcMargin').innerText = `- ${margin.toLocaleString()} 만원`;
       document.getElementById('calcTotal').innerText = `${finalPrice.toLocaleString()} 만원`;
 
       document.getElementById('modalFinalPrice').innerText = finalPrice.toLocaleString();
       document.getElementById('modalBasePrice').innerText = `${basePrice.toLocaleString()} 만원`;
       document.getElementById('modalMinusPrice').innerText = `- ${totalMinus.toLocaleString()} 만원`;
       document.getElementById('modalPlusPrice').innerText = `+ ${totalPlus.toLocaleString()} 만원`;
-      document.getElementById('modalMarginPrice').innerText = `- ${margin.toLocaleString()} 만원`;
     }
 
     function openQuoteModal() {
