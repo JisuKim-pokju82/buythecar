@@ -1,0 +1,217 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+:root {
+  --kcar-red: #E60024;
+  --kcar-red-glow: rgba(230, 0, 36, 0.35);
+  --kcar-red-dark: #B3001C;
+  --accent-cyan: #00F0FF;
+  --accent-purple: #8A2BE2;
+  --bg-dark: #0B0E14;
+  --card-bg: rgba(23, 27, 38, 0.85);
+  --card-border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #06080D;
+  color: #F3F4F6;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background-image: 
+    radial-gradient(circle at 20% 15%, rgba(230, 0, 36, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(0, 240, 255, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(138, 43, 226, 0.06) 0%, transparent 60%);
+  background-attachment: fixed;
+}
+
+/* 모바일 전용 컨테이너 */
+.mobile-wrapper {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  background-color: #0D111A;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.07);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 글래스모피즘 카드 */
+.glass-panel {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+}
+
+.glass-panel-glow {
+  background: linear-gradient(135deg, rgba(230, 0, 36, 0.15), rgba(23, 27, 38, 0.95));
+  border: 1px solid rgba(230, 0, 36, 0.35);
+  box-shadow: 0 8px 32px rgba(230, 0, 36, 0.2);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+}
+
+.glass-panel-cyan {
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(23, 27, 38, 0.95));
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 240, 255, 0.15);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+}
+
+.glass-panel-emerald {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(23, 27, 38, 0.95));
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.15);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+}
+
+/* 케이카 레드 그라디언트 버튼 */
+.btn-kcar {
+  background: linear-gradient(135deg, #FF1E40 0%, #D60020 100%);
+  box-shadow: 0 6px 20px rgba(230, 0, 36, 0.45);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-kcar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(230, 0, 36, 0.65);
+}
+
+.btn-kcar:active {
+  transform: translateY(1px);
+}
+
+/* 네온 텍스트 효과 */
+.neon-text-red {
+  color: #FF4D66;
+  text-shadow: 0 0 12px rgba(255, 30, 64, 0.6);
+}
+
+.neon-text-cyan {
+  color: #38EFFF;
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
+}
+
+.neon-text-amber {
+  color: #FBBF24;
+  text-shadow: 0 0 12px rgba(245, 158, 11, 0.6);
+}
+
+/* 차량 번호판 스타일 */
+.license-plate {
+  background: linear-gradient(180deg, #FFFFFF 0%, #E8EDF5 100%);
+  color: #111827;
+  font-weight: 800;
+  letter-spacing: 3px;
+  border: 2.5px solid #1E293B;
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.9), 0 8px 25px rgba(0,0,0,0.6);
+  border-radius: 12px;
+  position: relative;
+}
+
+.license-plate::before {
+  content: 'KOR';
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 9px;
+  font-weight: 900;
+  color: #1D4ED8;
+  letter-spacing: 0px;
+  background: #E0E7FF;
+  padding: 2px 4px;
+  border-radius: 4px;
+  border: 1px solid #93C5FD;
+}
+
+/* 스캔 레이더 애니메이션 */
+@keyframes scanline {
+  0% {
+    top: 0%;
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 96%;
+    opacity: 0.8;
+  }
+}
+
+.scan-beam {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00F0FF, #FF1E40, transparent);
+  box-shadow: 0 0 15px #00F0FF, 0 0 30px #FF1E40;
+  animation: scanline 2s ease-in-out infinite alternate;
+}
+
+/* 커스텀 슬라이더 */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #1F2937;
+  border-radius: 6px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #FF1E40;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(255, 30, 64, 0.8);
+  border: 2px solid #FFFFFF;
+  transition: transform 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+/* 펄스 뱃지 */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.75; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+
+.pulse-badge {
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+/* 스크롤바 숨기기 (모바일 뷰 최적화) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 배지 태그 */
+.badge-tag {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+}
