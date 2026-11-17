@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>내차팔기 AI매입시스템 | K Car(케이카)</title>
-  <!-- Tailwind CSS CDN (Utility Support) -->
+  <title>K Car 매입시스템 | 케이카 차량평가사 전용</title>
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -13,9 +13,7 @@
 
   <style>
     /* ==========================================================================
-       K Car (marketm.kcar.com & m.kcar.com) 1:1 Production Design System
-       Exact @font-face, computed px sizes, weights (400/500/700), letter-spacing,
-       colors, radii, and official K Car SVG/PNG assets from "직거래크롤링".
+       K Car (케이카) 공식 디자인 시스템 (Spoqa Han Sans Neo + K Car Color/UI Tokens)
        ========================================================================== */
     @font-face {
       font-family: 'Spoqa Han Sans Neo';
@@ -49,12 +47,9 @@
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
     :root {
-      /* Exact K Car CSS Variables from marketm.kcar.com */
       --brandColor: #b70f28;
       --primary2: #9d0a22;
-      --primary3: #b70f28;
       --primary4: #f01d29;
-      --primary5: #f53a44;
       --primary8: #ffd7da;
       --primary9: #fdeeef;
       --primary10: #fff9f9;
@@ -79,15 +74,8 @@
       --gray11: #f6f8fa;
       --white: #ffffff;
 
-      /* External Platform Brand Accents */
       --daangn-solid: #ff6f0f;
-      --daangn-tintBg: #ffebd6;
-      --daangn-tintTxt: #fa6400;
       --encar-solid: #22252e;
-      --encar-red: #e60012;
-      --kb-solid: #ffbc00;
-      --kb-txt: #3b3020;
-
       --font-kcar: 'Spoqa Han Sans Neo', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', Roboto, sans-serif;
     }
 
@@ -100,16 +88,15 @@
     }
 
     html, body {
-      height: 100%;
+      min-height: 100%;
       font-family: var(--font-kcar);
       font-weight: 400;
       color: var(--gray2);
       background-color: #eaedf2;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Screen Switching Control */
+    /* 화면 전환 제어 */
     .screen-view {
       display: none !important;
     }
@@ -120,10 +107,10 @@
       display: block !important;
     }
 
-    /* Pure Mobile Web Viewport (marketm.kcar.com 430px Shell) */
+    /* 모바일 앱 컨테이너 */
     .kcar-mobile-app {
       width: 100%;
-      max-width: 440px;
+      max-width: 450px;
       min-height: 100dvh;
       margin: 0 auto;
       background: #ffffff;
@@ -139,10 +126,10 @@
       .kcar-mobile-app { max-width: none; box-shadow: none; }
     }
 
-    /* 1. K Car Common Header (.header-wrap, height: 56px, padding: 0 20px) */
+    /* K Car 공통 헤더 */
     .header-wrap {
-      height: 56px;
-      padding: 0 20px;
+      height: 54px;
+      padding: 0 18px;
       background-color: #fff;
       border-bottom: 1px solid var(--gray8);
       display: flex;
@@ -162,16 +149,15 @@
     .btn-back {
       width: 24px;
       height: 24px;
-      margin-left: -7px;
+      margin-left: -6px;
       margin-right: 4px;
       background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%2316171d' d='M14.515 4.2a.686.686 0 1 1 .97.97L8.655 12l6.83 6.83a.686.686 0 1 1-.97.97l-7.314-7.315a.686.686 0 0 1 0-.97z'/%3E%3C/svg%3E") no-repeat 50% / 24px 24px;
       cursor: pointer;
     }
 
-    /* Official K Car Vector Wordmark & Quarter-Circle Symbol */
     .kcar-logo {
       display: inline-block;
-      width: 70px;
+      width: 68px;
       height: 18px;
       background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='31' fill='none' viewBox='0 0 120 31'%3E%3Cpath fill='%23da2631' d='M51.694 14.822 61.851 3.087h-6.636L46.873 13.09V3.087h-5.646v24.847h5.647V17.052l6.445 8.378a6.4 6.4 0 0 0 5.065 2.504h3.852l-10.548-13.12zM107.073 24.086v-7.272c0-5.24-2.356-7.682-7.414-7.682-2.058 0-4.062.573-5.951 1.712l-.21.13.027.382c.04.655.392 1.248.94 1.603a1.97 1.97 0 0 0 1.802.178 7.9 7.9 0 0 1 2.884-.574c2.675 0 3.799 1.058 3.9 3.753-1.063-.048-1.902-.048-3.013-.048-3.162 0-8.51 1.303-8.51 6.194 0 3.739 2.477 5.888 6.797 5.888 2.675 0 4.34-1.269 5.221-2.217a2.67 2.67 0 0 0 2.518 1.808h1.212l-.061-.457c-.088-.676-.135-1.788-.135-3.391m-4.029-4.544v1.153c0 2.6-1.706 4.216-4.455 4.216-1.15 0-2.85-.777-2.85-2.456 0-2.585 3.54-2.974 5.653-2.974.339 0 .671.02 1.009.034.217.014.427.02.643.027M119.604 9.364c-.65-.13-1.164-.232-2.132-.232-1.659 0-3.352.982-4.401 2.483a3.11 3.11 0 0 0-2.919-2.067h-.711v18.393h4.022v-8.405c0-4.107 1.707-6.768 4.354-6.768.63 0 1.178.096 1.625.28l.555.232V9.446zM89.828 22.367l-.339.164s-.514.245-.697.327c-1.327.594-3.345 1.044-4.692 1.044-4.632 0-7.997-3.527-7.997-8.391s3.359-8.392 8.159-8.392c.711 0 1.415.082 2.085.246a2.98 2.98 0 0 0 2.458-.484 3 3 0 0 0 1.233-2.204l.06-.73-.487-.218c-1.625-.717-3.426-1.071-5.518-1.071-7.658 0-13.007 5.24-13.007 12.737s5.092 12.941 12.973 12.941c2.282 0 4.15-.3 5.566-.893l.487-.205-.298-4.885zM29.336.004C22.173.59 16.458 6.342 15.883 13.559c-.055.662.494 1.215 1.15 1.215H29.39a1.15 1.15 0 0 0 1.151-1.16V1.164c0-.662-.548-1.215-1.205-1.16'/%3E%3Cpath fill='%23b2b1b3' d='M15.883 17.441c.582 7.218 6.29 12.976 13.453 13.556.657.055 1.206-.498 1.206-1.16v-12.45a1.15 1.15 0 0 0-1.152-1.16H17.035c-.657 0-1.206.553-1.151 1.214'/%3E%3Cpath fill='%23da2631' d='M13.284.229H1.158C.518.229 0 .751 0 1.396v12.218c0 .644.518 1.167 1.158 1.167h12.126c.64 0 1.158-.523 1.158-1.167V1.396c0-.645-.518-1.167-1.158-1.167'/%3E%3Cpath fill='%23b2b1b3' d='M13.284 16.234H1.158C.518 16.234 0 16.756 0 17.4V29.62c0 .644.518 1.167 1.158 1.167h12.126c.64 0 1.158-.523 1.158-1.167V17.401c0-.645-.518-1.167-1.158-1.167'/%3E%3C/svg%3E") no-repeat 50% 50% / 100%;
       cursor: pointer;
@@ -179,41 +165,33 @@
 
     .header-title {
       color: var(--gray2);
-      font-size: 16px;
-      font-weight: 500;
+      font-size: 15px;
+      font-weight: 700;
       letter-spacing: -0.4px;
-      line-height: 30px;
       margin-left: 6px;
       cursor: pointer;
     }
 
-    .header-right-group {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    /* 2. K Car Official Badge & Label System (.badge-cert, .badge-plat, .badge-nego, .label-gray) */
+    /* K Car 공식 배지 & 라벨 */
     .badge-cert {
       display: inline-flex;
       align-items: center;
       gap: 3px;
-      height: 24px;
+      height: 23px;
       padding: 0 7px;
       border-radius: 2px;
       background-color: var(--primary4);
       color: #fff;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 500;
       line-height: 14px;
       letter-spacing: -0.5px;
     }
-
     .badge-cert::before {
       content: '';
       display: block;
-      width: 15px;
-      height: 15px;
+      width: 14px;
+      height: 14px;
       flex-shrink: 0;
       background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' viewBox='0 0 20 20'%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M8.606 2.486a2.22 2.22 0 0 1 3.165 0l.891.905c.148.15.35.234.561.233l1.27-.01a2.22 2.22 0 0 1 2.238 2.238l-.01 1.27a.78.78 0 0 0 .233.561l.905.892c.883.87.883 2.294 0 3.164l-.905.892a.78.78 0 0 0-.232.56l.01 1.271a2.22 2.22 0 0 1-2.238 2.238l-1.271-.01a.78.78 0 0 0-.56.233l-.892.905a2.22 2.22 0 0 1-3.165 0l-.892-.905a.78.78 0 0 0-.56-.232l-1.271.01a2.22 2.22 0 0 1-2.238-2.238l.01-1.271a.78.78 0 0 0-.232-.561l-.906-.892a2.22 2.22 0 0 1 0-3.164l.906-.892a.78.78 0 0 0 .232-.56l-.01-1.271a2.22 2.22 0 0 1 2.238-2.238l1.27.01a.78.78 0 0 0 .561-.233z' clip-rule='evenodd'/%3E%3Cpath fill='%23f01d29' d='M13.732 6.252a3.734 3.734 0 0 0-3.417 3.416.29.29 0 0 0 .293.306h3.137a.29.29 0 0 0 .293-.292V6.544a.29.29 0 0 0-.306-.292M10.315 10.646a3.734 3.734 0 0 0 3.417 3.416.29.29 0 0 0 .306-.292v-3.137a.29.29 0 0 0-.293-.293h-3.137a.29.29 0 0 0-.293.306M9.655 6.309H6.576a.294.294 0 0 0-.294.293v3.08c0 .162.132.294.294.294h3.08a.294.294 0 0 0 .293-.294v-3.08a.294.294 0 0 0-.294-.293M9.655 10.342H6.576a.294.294 0 0 0-.294.294v3.08c0 .162.132.293.294.293h3.08a.294.294 0 0 0 .293-.294v-3.08a.294.294 0 0 0-.294-.293'/%3E%3C/svg%3E") no-repeat 50% / 100%;
     }
@@ -222,43 +200,16 @@
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      height: 22px;
+      height: 21px;
       padding: 0 6px;
       border-radius: 2px;
       font-size: 11px;
       font-weight: 500;
-      line-height: 14px;
       letter-spacing: -0.5px;
     }
     .badge-plat--kcar { background-color: var(--brandColor); color: #fff; }
     .badge-plat--daangn { background-color: var(--daangn-solid); color: #fff; }
     .badge-plat--encar { background-color: var(--encar-solid); color: #fff; }
-    .badge-plat--kb { background-color: var(--kb-solid); color: var(--kb-txt); font-weight: 700; }
-
-    .badge-nego {
-      display: inline-flex;
-      align-items: center;
-      gap: 3px;
-      color: var(--negoGreen);
-      font-size: 11.5px;
-      font-weight: 500;
-      line-height: 14px;
-      letter-spacing: -0.5px;
-    }
-    .badge-nego::before {
-      content: '';
-      display: block;
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
-      background: url('./assets/kcar/ico-filter-price.svg') no-repeat 50% / 100%;
-    }
-
-    .kcar-opt-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-    }
 
     .label-gray {
       display: inline-flex;
@@ -268,29 +219,13 @@
       border-radius: 2px;
       background-color: var(--gray8);
       color: var(--gray3);
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 500;
-      line-height: 16px;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.4px;
     }
-
-    .label-tint-red {
-      background-color: var(--primary9);
-      color: var(--brandColor);
-      font-weight: 700;
-    }
-
-    .label-tint-blue {
-      background-color: #e5eefc;
-      color: #0073fd;
-      font-weight: 700;
-    }
-
-    .label-tint-green {
-      background-color: var(--green10);
-      color: var(--green4);
-      font-weight: 700;
-    }
+    .label-tint-red { background-color: var(--primary9); color: var(--brandColor); font-weight: 700; }
+    .label-tint-blue { background-color: #e5eefc; color: #0073fd; font-weight: 700; }
+    .label-tint-green { background-color: var(--green10); color: var(--green4); font-weight: 700; }
 
     .gray-divider {
       height: 8px;
@@ -298,123 +233,7 @@
       width: 100%;
     }
 
-    /* Official K Car Verification Ribbon (.cert-ribbon-box) */
-    .cert-ribbon-box {
-      margin: 0 20px 14px;
-      padding: 10px 14px;
-      border-radius: 8px;
-      background-color: #f4f5ff;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12.5px;
-      font-weight: 500;
-      line-height: 17px;
-      letter-spacing: -0.5px;
-      color: #1f4ed8;
-    }
-    .cert-ribbon-box img {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-    }
-
-    /* Exact K Car Top 2-Tab Bar (.ccCarListBtnWrap) */
-    .ccCarListBtnWrap {
-      position: relative;
-      display: flex;
-      margin: 0 20px;
-      border-bottom: 1px solid var(--gray8);
-    }
-    .ccCarListBtnWrap .tabBtn {
-      flex: 1;
-      height: 42px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 14px;
-      line-height: 20px;
-      color: var(--gray3);
-      font-weight: 500;
-      letter-spacing: -0.5px;
-      position: relative;
-    }
-    .ccCarListBtnWrap .tabBtn.isActive {
-      color: var(--brandColor);
-      font-weight: 700;
-    }
-    .ccCarListBtnWrap .tabBtn.isActive::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -1px;
-      height: 2px;
-      background-color: var(--brandColor);
-    }
-
-    /* Exact K Car Quick Menu (.list-ad) */
-    .list-ad-wrap {
-      padding: 16px 20px 10px;
-    }
-    .list-ad {
-      display: flex;
-      justify-content: space-around;
-      align-items: flex-start;
-      list-style: none;
-    }
-    .list-ad li { width: 76px; }
-    .list-ad .link {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 7px;
-      position: relative;
-    }
-    .list-ad .ico {
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      background-color: var(--gray10);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-    .list-ad .ico img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .quick-new-tag {
-      position: absolute;
-      top: -4px;
-      right: 2px;
-      z-index: 2;
-      height: 16px;
-      padding: 0 5px;
-      border-radius: 100px;
-      background: var(--brandColor);
-      color: #fff;
-      font-size: 9px;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-    }
-    .list-ad .txt {
-      color: var(--gray2);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: -0.5px;
-      line-height: 14px;
-      text-align: center;
-      word-break: keep-all;
-    }
-
-    /* K Car Primary Button */
+    /* K Car 버튼 */
     .btn-kcar {
       background-color: var(--brandColor);
       color: #ffffff;
@@ -423,15 +242,10 @@
       letter-spacing: -0.5px;
       transition: background-color 0.15s ease, transform 0.1s ease;
     }
-    .btn-kcar:hover {
-      background-color: var(--primary2);
-    }
-    .btn-kcar:active {
-      background-color: var(--primary2);
-      transform: translateY(1px);
-    }
+    .btn-kcar:hover { background-color: var(--primary2); }
+    .btn-kcar:active { transform: translateY(1px); }
 
-    /* Korean License Plate UI */
+    /* 번호판 스타일 */
     .license-plate {
       background: linear-gradient(180deg, #FFFFFF 0%, #F4F6FA 100%);
       color: #16171d;
@@ -445,7 +259,7 @@
     .license-plate::before {
       content: 'KOR';
       position: absolute;
-      left: 10px;
+      left: 12px;
       top: 50%;
       transform: translateY(-50%);
       font-size: 9px;
@@ -457,7 +271,61 @@
       border-radius: 3px;
     }
 
-    /* Detail Gallery (.dtl-gallery) */
+    /* 2단계 스텝 바 (STEP 1 / STEP 2) */
+    .step-progress-bar {
+      display: flex;
+      background: #fff;
+      border-bottom: 1px solid var(--gray8);
+      position: sticky;
+      top: 54px;
+      z-index: 35;
+    }
+    .step-tab-btn {
+      flex: 1;
+      padding: 11px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray4);
+      letter-spacing: -0.5px;
+      position: relative;
+      cursor: pointer;
+      background: #fff;
+    }
+    .step-tab-btn .step-num {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--gray8);
+      color: var(--gray4);
+      font-size: 11px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-tab-btn.is-active {
+      color: var(--brandColor);
+      font-weight: 700;
+    }
+    .step-tab-btn.is-active .step-num {
+      background: var(--brandColor);
+      color: #fff;
+    }
+    .step-tab-btn.is-active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 2.5px;
+      background: var(--brandColor);
+    }
+
+    /* 차량 실사 갤러리 */
     .dtl-gallery {
       position: relative;
       width: 100%;
@@ -479,7 +347,6 @@
       width: 100%;
       height: 100%;
       scroll-snap-align: center;
-      position: relative;
     }
     .dtl-gallery-slide img {
       width: 100%;
@@ -489,324 +356,25 @@
     }
     .dtl-photo-counter {
       position: absolute;
-      right: 14px;
-      bottom: 12px;
-      height: 26px;
-      padding: 0 10px;
+      right: 12px;
+      bottom: 10px;
+      height: 25px;
+      padding: 0 9px;
       border-radius: 4px;
       background: rgba(22, 23, 29, 0.75);
       color: #fff;
-      font-size: 11.5px;
-      font-weight: 500;
-      letter-spacing: -0.3px;
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      z-index: 5;
-    }
-    .dtl-photo-counter .sep {
-      width: 1px;
-      height: 10px;
-      background: rgba(255, 255, 255, 0.35);
-    }
-
-    /* Product Detail Header Card (.product-detail-header-card) */
-    .product-detail-header-card {
-      padding: 16px 20px 20px;
-      background: #fff;
-    }
-    .product-detail-header-card .dtl-badge-row {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 8px;
-    }
-    .product-detail-header-card .title {
-      color: var(--gray2);
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 24px;
-      letter-spacing: -0.5px;
-      margin-bottom: 4px;
-    }
-    .product-detail-header-card .sub-info {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-    .product-detail-header-card .sub-info span {
-      color: var(--gray4);
-      font-size: 13px;
-      font-weight: 400;
-      line-height: 18px;
-      letter-spacing: -0.5px;
-    }
-    .product-detail-header-card .sub-info span + span::before {
-      content: '';
-      display: inline-block;
-      width: 2px;
-      height: 2px;
-      border-radius: 50%;
-      background: var(--gray6);
-      vertical-align: middle;
-      margin: 0 5px;
-    }
-    .product-detail-header-card .price-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 6px;
-    }
-    .product-detail-header-card .price {
-      color: var(--brandColor);
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 32px;
-      letter-spacing: -0.5px;
-    }
-    .product-detail-header-card .btn-safe {
-      display: inline-flex;
-      align-items: center;
-      color: var(--gray3);
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 16px;
-      letter-spacing: -0.5px;
-      cursor: pointer;
-    }
-    .product-detail-header-card .btn-safe::before {
-      content: '';
-      width: 18px;
-      height: 18px;
-      margin-right: 3px;
-      background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3E%3Cpath fill='%234396fb' d='M8.001 13.917a.5.5 0 0 1-.195-.043 2 2 0 0 1-.269-.145A111 111 0 0 1 5.36 12.32q-.88-.59-1.406-1.123a3.3 3.3 0 0 1-.756-1.166q-.23-.632-.232-1.535v-4.19q0-.195.049-.293t.206-.159q.337-.141.787-.311.449-.172.95-.36.502-.189 1.005-.37.5-.184.95-.354.45-.171.787-.312.09-.038.164-.055A1 1 0 0 1 8 2.078a.7.7 0 0 1 .299.07q.338.14.786.316.449.177.949.367a165 165 0 0 0 2.752 1.027q.15.055.2.156a.7.7 0 0 1 .048.297v4.19q0 .906-.23 1.536-.228.632-.755 1.161-.528.532-1.408 1.123-.88.594-2.178 1.412a2 2 0 0 1-.269.145.5.5 0 0 1-.194.044z'/%3E%3Cpath fill='%23fff' d='M6.485 5.333c.141 0 .26.107.276.247l.39 3.467.325-3.46a.28.28 0 0 1 .257-.253h.6c.134.01.245.116.257.252l.325 3.461.39-3.467a.28.28 0 0 1 .278-.247h.772c.166 0 .295.145.276.31l-.199 1.77h.623c.154 0 .279.125.279.279v.61a.28.28 0 0 1-.279.278h-.754l-.207 1.84a.28.28 0 0 1-.276.246H8.614a.28.28 0 0 1-.277-.245l-.312-2.626-.328 2.628a.28.28 0 0 1-.277.243H6.25a.28.28 0 0 1-.277-.247L5.765 8.58h-.82a.28.28 0 0 1-.279-.278v-.61c0-.154.125-.279.279-.279h.69l-.2-1.77a.28.28 0 0 1 .276-.31z'/%3E%3C/svg%3E") no-repeat 50% / 100%;
-    }
-
-    /* Exact K Car 4-Column Flat 2-Tone Illustrations (.benefit-list) */
-    .benefit-list {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-top: 16px;
-      padding: 12px 6px;
-      background: var(--gray11);
-      border-radius: 8px;
-      border: 1px solid var(--gray8);
-      list-style: none;
-    }
-    .benefit-item {
-      flex: 1 1 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 3px;
-      text-align: center;
-      color: var(--gray2);
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 16px;
-      letter-spacing: -0.5px;
-      white-space: nowrap;
-    }
-    .benefit-item small {
-      font-size: 10.5px;
-      color: var(--gray4);
-      font-weight: 400;
-    }
-    .benefit-ico {
-      width: 36px;
-      height: 36px;
-      background-repeat: no-repeat;
-      background-position: 50%;
-      background-size: 100%;
-    }
-    .ico-kw-owner {
-      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' fill='none' viewBox='0 0 40 40'%3E%3Cpath fill='%23e1e6eb' d='M3.333 7.5c0-.92.746-1.667 1.667-1.667h26.666c.92 0 1.667.746 1.667 1.667v18.333c0 .92-.746 1.667-1.667 1.667H5c-.92 0-1.667-.747-1.667-1.667z'/%3E%3Cpath fill='%238f959e' d='M20 11.666c0-.46.373-.833.833-.833h8.333a.833.833 0 0 1 0 1.667h-8.333a.833.833 0 0 1-.833-.834M20 15c0-.46.373-.834.833-.834h8.333a.833.833 0 0 1 0 1.667h-8.333A.833.833 0 0 1 20 15M20 18.333c0-.46.373-.833.833-.833h8.333a.833.833 0 0 1 0 1.666h-8.333a.833.833 0 0 1-.833-.833M12.513 9.167a4.082 4.082 0 0 1 1.92 7.683q.315.086.617.201a6.8 6.8 0 0 1 2.163 1.317 6.1 6.1 0 0 1 1.445 1.971c.335.737.508 1.528.508 2.326v1.5H5.833v-1.5c0-.798.173-1.589.508-2.326a6.1 6.1 0 0 1 1.445-1.97 6.7 6.7 0 0 1 2.162-1.318q.311-.118.633-.206a4.08 4.08 0 0 1 1.932-7.678'/%3E%3Cpath fill='%234396fb' d='M36.666 25.833a8.333 8.333 0 1 1-16.666 0 8.333 8.333 0 0 1 16.666 0'/%3E%3Cpath fill='%23fff' d='M31.827 22.593a1 1 0 0 1 1.345 1.48l-5.39 4.9c-.44.4-1.11.404-1.555.011l-2.723-2.4a1.002 1.002 0 0 1 1.325-1.501l2.16 1.907z'/%3E%3C/svg%3E");
-    }
-    .ico-kw-one {
-      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%23fc5' d='M11.138 2.292a1 1 0 0 1 1.267-.12 1 1 0 0 1 .595.912v14.917a1 1 0 0 1-2 0V5.256l-.879.879a1 1 0 1 1-1.414-1.414l2.13-2.13z'/%3E%3Cpath fill='%2360474f' d='M5.86 18.836A1 1 0 0 1 6.848 18h10.306a1 1 0 0 1 .986.836L18.5 22h-13z'/%3E%3Cpath fill='%23f7b73b' d='M7.703 15.83a1 1 0 0 1 .985-.83h6.624a1 1 0 0 1 .985.83L16.5 18h-9z'/%3E%3Cpath fill='%23ffea80' d='M4 9h2v.5H4z'/%3E%3Cpath fill='%23ffc34d' d='M20 9h-2v.5h2z'/%3E%3C/svg%3E");
-    }
-    .ico-kw-nosmoke {
-      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%23f96666' d='M20.2 12a8.2 8.2 0 1 0-8.2 8.2V22l-.258-.003c-5.318-.135-9.604-4.421-9.738-9.739L2 12C2 6.477 6.477 2 12 2l.258.004C17.662 2.14 22 6.564 22 12l-.003.258C21.86 17.662 17.437 22 12 22v-1.8a8.2 8.2 0 0 0 8.2-8.2'/%3E%3Cpath fill='%23e1e6eb' d='M18 11H8v3h10z'/%3E%3Cpath fill='%23ffc84d' d='M9 11H6.5a1.5 1.5 0 0 0 0 3H9z'/%3E%3Cpath fill='%23f96666' d='m19.35 6.085-13 13-1.698-1.697 13-13z'/%3E%3C/svg%3E");
-    }
-    .ico-kw-shield {
-      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%234396fb' d='M12 2.5c2.2.7 4.4 1.5 6.6 2.3.3.1.5.3.7.6.1 0 .5 1.4.5 4.5.1 3-.3 4-.3 4-.2.7-.6 1.4-1.2 2.1-.6.8-1.5 1.6-2.6 2.4-1.7 1.3-3.4 2.1-3.5 2.1h-.4c-.1 0-1.7-.8-3.5-2.1-1-.8-1.9-1.6-2.6-2.4-.6-.7-1-1.4-1.2-2.1 0 0-.4-.9-.3-4 .1-3 .5-4.4.5-4.5.2-.3.4-.5.7-.6 2.2-.8 4.4-1.6 6.6-2.3z'/%3E%3Cpath fill='%23fff' d='M15.4 8.5a.75.75 0 0 1 1.06 1.06l-5.2 5.2a.9.9 0 0 1-1.3 0l-2.3-2.3a.75.75 0 0 1 1.06-1.06l1.88 1.88z'/%3E%3C/svg%3E");
-    }
-
-    /* Exact K Car .ownersMsg & .dtl-owners-card */
-    .ownersMsg {
-      width: 100%;
-      padding: 12px 16px;
-      background-color: var(--primary10);
-      border: 1px solid var(--primary8);
-      border-radius: 8px;
-    }
-    .ownersMsg .titleTxt {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 12px;
-      line-height: 16px;
-      color: #dd1540;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-    .ownersMsg .titleTxt::before {
-      content: '';
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-      background: url('./assets/kcar/ico-megaphone.svg') no-repeat 50% / 100%;
-    }
-    .ownersMsg p {
-      font-size: 13px;
-      line-height: 19px;
-      color: var(--gray2);
-      font-weight: 400;
-      letter-spacing: -0.5px;
-      margin-top: 5px;
-    }
-
-    /* Full-Bleed Red Assurance Bar + Sticky Anchor Tabs */
-    .dtl-assurance-bar {
-      height: 38px;
-      padding: 0 16px;
-      background: var(--brandColor);
-      color: #fff;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: -0.5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    .dtl-anchor-tabs {
-      display: flex;
-      border-bottom: 1px solid var(--gray8);
-      background: #fff;
-      position: sticky;
-      top: 56px;
-      z-index: 30;
-    }
-    .dtl-anchor-tab {
-      flex: 1;
-      height: 46px;
-      font-size: 13.5px;
-      font-weight: 500;
-      color: var(--gray3);
-      letter-spacing: -0.5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      position: relative;
-      cursor: pointer;
-      background: #fff;
-    }
-    .dtl-anchor-tab.is-active {
-      color: var(--brandColor);
-      font-weight: 700;
-    }
-    .dtl-anchor-tab.is-active::after {
-      content: '';
-      position: absolute;
-      left: 10px;
-      right: 10px;
-      bottom: -1px;
-      height: 2.5px;
-      background: var(--brandColor);
-    }
-
-    /* Dark K Car Report Card (.dtl-dark-report) */
-    .dtl-dark-report {
-      padding: 20px;
-      background: linear-gradient(180deg, #23252c 0%, #343741 100%);
-      color: #fff;
-    }
-
-    /* Exact K Car 2-Column Vertical Card Grid (.vert-grid-2col & .car-item-vert) */
-    .vert-grid-2col {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px 10px;
-    }
-    .car-item-vert {
-      display: flex;
-      flex-direction: column;
-      background: #fff;
-    }
-    .car-item-vert .thumb {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      border: 1px solid var(--gray7);
-      border-radius: 4px;
-      overflow: hidden;
-      position: relative;
-      margin-bottom: 8px;
-      background: var(--gray10);
-    }
-    .car-item-vert .thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .car-item-vert .badge-area {
-      position: absolute;
-      top: 5px;
-      left: 5px;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .car-item-vert .car-name {
-      color: var(--gray2);
-      font-size: 13px;
-      font-weight: 500;
-      line-height: 18px;
-      letter-spacing: -0.5px;
-      margin-bottom: 2px;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .car-item-vert .sub-info {
-      line-height: 14px;
-      margin-bottom: 6px;
-    }
-    .car-item-vert .sub-info span {
-      color: var(--gray4);
       font-size: 11px;
-      letter-spacing: -0.5px;
-    }
-    .car-item-vert .sub-info span + span::before {
-      content: '';
-      display: inline-block;
-      width: 2px;
-      height: 2px;
-      border-radius: 50%;
-      background-color: var(--gray6);
-      vertical-align: middle;
-      margin: 0 4px;
-    }
-    .car-item-vert .price {
-      color: var(--gray2);
-      font-size: 17px;
-      font-weight: 700;
-      line-height: 22px;
-      letter-spacing: -0.5px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    /* Exact K Car .list-base-split (기본 정보 2-Column Table) */
+    /* K Car 2열 제원 테이블 (.list-base-split) */
     .list-base-split {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 9px;
       list-style: none;
     }
     .list-base-split li {
@@ -823,18 +391,18 @@
     }
     .list-base-split .lbl {
       color: var(--gray4);
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 400;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.4px;
     }
     .list-base-split .aside {
       display: flex;
       align-items: center;
       gap: 5px;
       color: var(--gray2);
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 500;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.4px;
       text-align: right;
     }
     .color-chip {
@@ -845,25 +413,97 @@
       display: inline-block;
     }
 
-    /* Radar Scan Beam Animation */
-    @keyframes scanline {
-      0% { top: 0%; opacity: 0.85; }
-      50% { opacity: 1; }
-      100% { top: 96%; opacity: 0.85; }
-    }
-    .scan-beam {
-      position: absolute;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, #ffffff, #f01d29, transparent);
-      box-shadow: 0 0 12px #f01d29, 0 0 24px #b70f28;
-      animation: scanline 2.2s ease-in-out infinite alternate;
-      z-index: 4;
-      pointer-events: none;
+    /* K Car 다크 리포트 카드 & 메가폰 박스 */
+    .dtl-dark-report {
+      padding: 18px 20px;
+      background: linear-gradient(180deg, #23252c 0%, #343741 100%);
+      color: #fff;
     }
 
-    /* Range Slider Styling (K Car Brand Red) */
+    .ownersMsg {
+      width: 100%;
+      padding: 12px 15px;
+      background-color: var(--primary10);
+      border: 1px solid var(--primary8);
+      border-radius: 8px;
+    }
+    .ownersMsg .titleTxt {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      color: #dd1540;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .ownersMsg .titleTxt::before {
+      content: '';
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      background: url('./assets/kcar/ico-megaphone.svg') no-repeat 50% / 100%;
+    }
+    .ownersMsg p {
+      font-size: 12.5px;
+      line-height: 18px;
+      color: var(--gray2);
+      margin-top: 4px;
+      letter-spacing: -0.4px;
+    }
+
+    /* 사고부위 선택 버튼 */
+    .accident-part-btn {
+      padding: 10px 8px;
+      border-radius: 6px;
+      border: 1px solid var(--gray7);
+      background: #ffffff;
+      text-align: left;
+      transition: all 0.15s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 4px;
+    }
+    .accident-part-btn.is-selected {
+      background: var(--primary9);
+      border-color: var(--brandColor);
+      box-shadow: 0 0 0 1px var(--brandColor);
+    }
+
+    /* 동급 실매물 2열 카드 (.vert-grid-2col) */
+    .vert-grid-2col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 10px;
+    }
+    .car-item-vert {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid var(--gray8);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .car-item-vert .thumb {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      position: relative;
+      background: var(--gray10);
+    }
+    .car-item-vert .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .car-item-vert .badge-area {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+    }
+
+    /* 슬라이더 */
     input[type="range"] {
       -webkit-appearance: none;
       width: 100%;
@@ -875,81 +515,14 @@
     input[type="range"]::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       background: var(--brandColor);
       cursor: pointer;
-      box-shadow: 0 2px 8px rgba(183, 15, 40, 0.35);
-      border: 2.5px solid #FFFFFF;
-      transition: transform 0.15s ease;
+      box-shadow: 0 2px 6px rgba(183, 15, 40, 0.35);
+      border: 2px solid #FFFFFF;
     }
-    input[type="range"]::-webkit-slider-thumb:hover {
-      transform: scale(1.12);
-    }
-
-    /* Exact K Car Bottom Tabbar (.tabbar) */
-    .tabbar {
-      height: 62px;
-      background-color: #fff;
-      box-shadow: 0 -4px 10px rgba(22, 23, 29, 0.05);
-      border-top: 1px solid var(--gray9);
-      position: sticky;
-      bottom: 0;
-      z-index: 40;
-      flex-shrink: 0;
-    }
-    .tabbar ul {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly;
-      list-style: none;
-    }
-    .tabbar li {
-      width: 20%;
-      height: 100%;
-    }
-    .tabbar .tabbar-link {
-      width: 100%;
-      height: 62px;
-      padding: 38px 0 8px;
-      position: relative;
-      display: block;
-      text-align: center;
-      color: var(--gray3);
-      font-size: 10.5px;
-      font-weight: 500;
-      letter-spacing: -0.3px;
-      cursor: pointer;
-      background: transparent;
-      border: none;
-    }
-    .tabbar .tabbar-link.is-active {
-      color: var(--brandColor);
-      font-weight: 700;
-    }
-    .tabbar .ico-gnb {
-      position: absolute;
-      left: 0;
-      top: 9px;
-      width: 100%;
-      height: 24px;
-      display: block;
-      background-repeat: no-repeat;
-      background-position: 50%;
-    }
-    .tabbar .ico-gnb.home { background-image: url('./assets/kcar/ico-tabbar-home.svg'); }
-    .tabbar .ico-gnb.wish { background-image: url('./assets/kcar/ico-tabbar-favorite.svg'); }
-    .tabbar .ico-gnb.search {
-      background-image: url('./assets/kcar/ico-tabbar-search.svg');
-      background-position: center 0;
-      background-size: 42px 42px;
-      height: 42px;
-      top: -8px;
-    }
-    .tabbar .ico-gnb.chat { background-image: url('./assets/kcar/ico-tabbar-chat.svg'); }
-    .tabbar .ico-gnb.mypage { background-image: url('./assets/kcar/ico-tabbar-mypage.svg'); }
 
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -957,754 +530,382 @@
 </head>
 <body>
 
-  <!-- ====================================================================
-       1:1 K CAR MOBILE WEB APP SHELL
-       ==================================================================== -->
   <div class="kcar-mobile-app">
 
-    <!-- 1. K Car Common Header (.header-wrap) -->
-    <header class="header-wrap">
+    <!-- ============================================================== -->
+    <!-- 상단 공통 헤더 (로그인 화면에서는 숨김 처리하여 로그인만 깔끔하게 노출) -->
+    <!-- ============================================================== -->
+    <header id="appHeader" class="header-wrap" style="display: none;">
       <div class="header-left-group">
-        <button type="button" id="hdrBackBtn" onclick="handleHeaderBack()" style="display: none;" class="btn-back" aria-label="뒤로가기"></button>
-        <span class="kcar-logo" onclick="resetToHome()" role="button" tabindex="0" aria-label="K Car"></span>
-        <h1 class="header-title" onclick="resetToHome()">내차팔기 · AI매입</h1>
+        <button type="button" id="hdrBackBtn" onclick="handleBack()" class="btn-back" aria-label="뒤로가기"></button>
+        <span class="kcar-logo" onclick="goPlateScreen()" role="button" tabindex="0" aria-label="K Car"></span>
+        <h1 class="header-title" onclick="goPlateScreen()">AI 매입시스템</h1>
       </div>
 
-      <div class="header-right-group">
-        <div id="userBadge" style="display: none;" class="items-center gap-1.5 bg-[#fdeeef] border border-[#ffd7da] px-2.5 py-1 rounded-full text-xs">
-          <span class="w-2 h-2 rounded-full bg-[#b70f28] animate-pulse"></span>
-          <span class="text-[#b70f28] font-bold text-[11px] tracking-tight">김케이 평가사</span>
+      <div class=" flex items-center gap-2">
+        <div class="flex items-center gap-1.5 bg-[#fdeeef] border border-[#ffd7da] px-2.5 py-1 rounded-full">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#b70f28]"></span>
+          <span class="text-[#b70f28] font-bold text-[11px] tracking-tight" id="evaluatorNameTxt">김케이 평가사</span>
         </div>
-        <button id="resetAppBtn" onclick="resetToHome()" style="display: none;" class="text-[#54555a] hover:text-[#16171d] p-1.5 rounded-md border border-[#d8dee8] bg-white text-xs" title="처음으로">
-          <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+        <button type="button" onclick="resetToLogin()" class="text-[#54555a] hover:text-[#16171d] px-2 py-1 rounded border border-[#d8dee8] bg-white text-[11px] font-medium">
+          로그아웃
         </button>
       </div>
     </header>
 
-    <!-- 메인 컨텐츠 영역 -->
-    <main class="flex-1 overflow-y-auto no-scrollbar bg-white">
+    <!-- 메인 컨텐츠 뷰포트 -->
+    <main class="flex-1 overflow-y-auto no-scrollbar bg-white flex flex-col">
 
       <!-- ============================================================== -->
-      <!-- [화면 1] 내부 시스템 로그인 화면 (K Car 공식 포털 UI) -->
+      <!-- 1) [화면 1] 로그인 화면 (ID/PW 로그인 화면만 깔끔하게 노출) -->
       <!-- ============================================================== -->
-      <section id="loginScreen" class="screen-view active-flex flex-col pb-6">
+      <section id="screenLogin" class="screen-view active-flex flex-1 flex-col justify-center px-6 py-10 bg-white">
+        <div class="w-full space-y-7">
 
-        <!-- K Car Hero Banner (Official Studio Visual + Slot Counter Style) -->
-        <div class="px-5 pt-3">
-          <div class="relative rounded-xl overflow-hidden bg-[#10141d] h-56 shadow-sm border border-[#e8e8ee]">
-            <img src="./assets/cars/gv70-white-front.png"
-                 onerror="this.src='https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80'"
-                 alt="K Car AI 매입시스템"
-                 class="w-full h-full object-cover object-center opacity-90" />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#10141d] via-[#10141d]/40 to-transparent"></div>
-
-            <div class="absolute top-3.5 left-4 right-4 flex items-center justify-between">
-              <div class="badge-cert"><span>K Car 직영 · AI매입</span></div>
-              <span class="px-2.5 py-1 rounded-full bg-black/65 text-white text-[11px] font-medium tracking-tight border border-white/15">
-                실시간 시세 연동 40,715대
-              </span>
+          <!-- K Car 공식 로고 & 시스템 타이틀 -->
+          <div class="text-center space-y-2.5">
+            <div class="flex items-center justify-center gap-2">
+              <span class="kcar-logo" style="width: 88px; height: 23px;"></span>
+              <span class="badge-cert"><span>매입시스템</span></span>
             </div>
-
-            <div class="absolute bottom-4 left-4 right-4 text-white">
-              <p class="text-[12px] text-[#ffd7da] font-bold mb-0.5">내차팔기 홈서비스 · 차량평가사 전용</p>
-              <h2 class="text-[20px] font-bold leading-snug tracking-tight">
-                AI 고질병 사전진단부터<br />실시간 통합시세 산정까지 한 번에
-              </h2>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4-Column Quick Menu (.list-ad with official K Car 3D PNGs) -->
-        <div class="list-ad-wrap">
-          <ul class="list-ad">
-            <li>
-              <div class="link">
-                <span class="quick-new-tag">AI</span>
-                <i class="ico"><img src="./assets/kcar/ico-ad-all.jpg" alt="원부조회" /></i>
-                <span class="txt">등록원부<br />실시간조회</span>
-              </div>
-            </li>
-            <li>
-              <div class="link">
-                <i class="ico"><img src="./assets/kcar/ico-ad-04.png" alt="고질병진단" /></i>
-                <span class="txt">차종별 고질병<br />사전진단</span>
-              </div>
-            </li>
-            <li>
-              <div class="link">
-                <i class="ico"><img src="./assets/kcar/ico-ad-02.png" alt="통합시세" /></i>
-                <span class="txt">케이카·엔카<br />시세비교</span>
-              </div>
-            </li>
-            <li>
-              <div class="link">
-                <i class="ico"><img src="./assets/kcar/ico-ad-05.png" alt="매입산정" /></i>
-                <span class="txt">당일 매입견적<br />즉시발행</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <!-- 로그인 폼 카드 (K Car Clean Light Card) -->
-        <div class="px-5 pt-2">
-          <div class="p-5 rounded-xl bg-[#f6f8fa] border border-[#e8e8ee] space-y-4">
-            <div class="flex items-center justify-between pb-3 border-b border-[#e8e8ee]">
-              <div class="flex items-center gap-2">
-                <span class="w-2 h-4 rounded-sm bg-[#b70f28] inline-block"></span>
-                <span class="text-[15px] font-bold text-[#16171d] tracking-tight">차량평가사 통합 인증</span>
-              </div>
-              <span class="label-gray label-tint-red">직영 매입시스템</span>
-            </div>
-
-            <div class="space-y-3">
-              <div>
-                <label class="block text-[12px] font-medium text-[#54555a] mb-1.5">사원 번호 (ID)</label>
-                <div class="relative">
-                  <i data-lucide="user" class="w-4 h-4 text-[#82848b] absolute left-3.5 top-3"></i>
-                  <input type="text" id="loginId" value="1111" placeholder="사원번호 입력 (1111)"
-                    class="w-full h-[42px] bg-white border border-[#d8dee8] focus:border-[#16171d] rounded-[6px] pl-10 pr-3 text-[13px] font-medium text-[#16171d] placeholder-[#b0b2bd] outline-none transition-colors" />
-                </div>
-              </div>
-
-              <div>
-                <label class="block text-[12px] font-medium text-[#54555a] mb-1.5">비밀번호 (PW)</label>
-                <div class="relative">
-                  <i data-lucide="lock" class="w-4 h-4 text-[#82848b] absolute left-3.5 top-3"></i>
-                  <input type="password" id="loginPw" value="1111" placeholder="비밀번호 입력 (1111)"
-                    class="w-full h-[42px] bg-white border border-[#d8dee8] focus:border-[#16171d] rounded-[6px] pl-10 pr-3 text-[13px] font-medium text-[#16171d] placeholder-[#b0b2bd] outline-none transition-colors" />
-                </div>
-              </div>
-
-              <button type="button" onclick="handleLogin()" class="w-full h-[48px] btn-kcar text-[15px] flex items-center justify-center gap-2 mt-2 cursor-pointer shadow-sm">
-                <span>AI 매입시스템 로그인</span>
-                <i data-lucide="chevron-right" class="w-4 h-4"></i>
-              </button>
-            </div>
-
-            <div class="pt-1 flex items-center justify-between text-[12px] text-[#82848b]">
-              <button type="button" onclick="fillDemoLogin()" class="text-[#b70f28] hover:underline font-bold cursor-pointer">
-                ⚡ 데모 사원계정 자동입력 (1111)
-              </button>
-              <span>K Car Smart AI v3.0</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Official K Car Mid Safe Banner -->
-        <div class="mt-5">
-          <img src="./assets/kcar/mid-safe-banner.png" alt="큰 돈 거래는 안전하게, 명의이전은 빠르게!" class="w-full h-auto block" />
-        </div>
-      </section>
-
-      <!-- ============================================================== -->
-      <!-- [화면 2] 매입 차량번호 입력 화면 (m.kcar.com 내차팔기 스타일) -->
-      <!-- ============================================================== -->
-      <section id="searchScreen" class="screen-view pb-8">
-
-        <!-- Exact K Car Top 2-Tab Bar -->
-        <div class="ccCarListBtnWrap">
-          <button type="button" class="tabBtn isActive">내차팔기 AI매입</button>
-          <button type="button" class="tabBtn" onclick="startAiScan()">통합시세 · 실매물 비교</button>
-        </div>
-
-        <!-- Official K Car Verification Ribbon -->
-        <div class="cert-ribbon-box mt-3">
-          <img src="./assets/kcar/ico-check-cert.svg" alt="인증" />
-          <span>자동차등록원부 및 케이카·엔카·당근·KB(40,715대) 시세를 동시에 조회해요.</span>
-        </div>
-
-        <div class="px-5 space-y-5">
-          <div class="space-y-1">
-            <span class="label-gray label-tint-red">STEP 1 · 원부 및 AI 사전진단 조회</span>
-            <h2 class="text-[20px] font-bold text-[#16171d] tracking-tight pt-1">매입할 차량번호를 입력해 주세요</h2>
-            <p class="text-[13px] text-[#82848b]">차량번호만으로 세부 트림, 옵션, 고질병 체크리스트를 자동 구성합니다.</p>
-          </div>
-
-          <!-- 번호판 입력 박스 -->
-          <div class="p-5 rounded-xl bg-[#f6f8fa] border border-[#e8e8ee] space-y-4">
-            <div class="space-y-2">
-              <label class="block text-[12px] font-bold text-[#54555a] text-center">자동차 등록번호</label>
-              <div class="license-plate py-3.5 px-8 text-center flex items-center justify-center bg-white">
-                <input type="text" id="plateInput" value="11가1111" placeholder="예: 11가1111"
-                  class="bg-transparent border-none text-center font-extrabold text-[24px] text-[#16171d] tracking-wider w-full focus:outline-none uppercase" />
-              </div>
-            </div>
-
-            <!-- 빠른 조회 추천 번호판 칩 -->
-            <div class="flex items-center justify-center gap-1.5 flex-wrap">
-              <span class="text-[11px] text-[#82848b] mr-1">빠른 시연:</span>
-              <button type="button" onclick="setPlate('11가1111')" class="px-2.5 py-1 rounded-full bg-white border border-[#d8dee8] text-[11px] font-medium text-[#16171d] hover:border-[#b70f28] hover:text-[#b70f28]">
-                11가1111 (GV70 2.5T 스포츠)
-              </button>
-              <button type="button" onclick="setPlate('287가9643')" class="px-2.5 py-1 rounded-full bg-white border border-[#d8dee8] text-[11px] font-medium text-[#54555a] hover:border-[#b70f28] hover:text-[#b70f28]">
-                287가9643 (K Car 직영)
-              </button>
-              <button type="button" onclick="setPlate('332가4904')" class="px-2.5 py-1 rounded-full bg-white border border-[#d8dee8] text-[11px] font-medium text-[#54555a] hover:border-[#b70f28] hover:text-[#b70f28]">
-                332가4904 (GV70 화이트)
-              </button>
-            </div>
-
-            <button type="button" onclick="startAiScan()" class="w-full h-[48px] btn-kcar text-[15px] flex items-center justify-center gap-2 shadow-sm cursor-pointer">
-              <i data-lucide="search" class="w-4 h-4"></i>
-              <span>차량 진단 및 실시간 시세 조회</span>
-            </button>
-          </div>
-
-          <!-- K Car Official Visual Service Cards -->
-          <div class="grid grid-cols-2 gap-2.5">
-            <div class="rounded-xl overflow-hidden border border-[#e8e8ee] relative h-36 bg-[#16171d]">
-              <img src="./assets/kcar/hero-diag.png" alt="K Car 출장 진단" class="w-full h-full object-cover" />
-            </div>
-            <div class="rounded-xl overflow-hidden border border-[#e8e8ee] relative h-36 bg-[#f6f8fa]">
-              <img src="./assets/kcar/hero-reg.png" alt="내 차 견적 비교" class="w-full h-full object-cover" />
-            </div>
-          </div>
-
-          <!-- K Car Megaphone Notice Box (.ownersMsg) -->
-          <div class="ownersMsg">
-            <strong class="titleTxt">케이카 AI 매입시스템 안내</strong>
-            <p>
-              차량번호를 조회하면 <strong>차종별 고질병(누유·하부·휠) 실사 가이드</strong>와 <strong>케이카·엔카·당근 동급 실매물 판매가</strong>가 즉시 연동됩니다.
+            <h1 class="text-[22px] font-bold text-[#16171d] tracking-tight pt-1">
+              케이카 차량평가사 로그인
+            </h1>
+            <p class="text-[13px] text-[#82848b]">
+              원부/보증 자동연동 · AI 고질병 진단 · 매입가 산정 시스템
             </p>
           </div>
-        </div>
-      </section>
 
-      <!-- ============================================================== -->
-      <!-- [화면 3-A] AI 스캐닝 분석 로딩 화면 -->
-      <!-- ============================================================== -->
-      <section id="scanningScreen" class="screen-view py-8 px-5 flex-col items-center justify-center min-h-[76vh] space-y-5">
+          <!-- 깔끔한 ID/PW 로그인 카드 -->
+          <div class="p-6 rounded-xl bg-[#f6f8fa] border border-[#e8e8ee] space-y-4 shadow-xs">
+            <div class="space-y-3.5">
+              <div>
+                <label class="block text-[12px] font-bold text-[#54555a] mb-1.5">사원번호 (ID)</label>
+                <div class="relative">
+                  <i data-lucide="user" class="w-4 h-4 text-[#82848b] absolute left-3.5 top-3.5"></i>
+                  <input type="text" id="loginId" value="1111" placeholder="사원번호를 입력하세요"
+                    class="w-full h-[46px] bg-white border border-[#d8dee8] focus:border-[#16171d] rounded-[6px] pl-10 pr-3 text-[14px] font-medium text-[#16171d] placeholder-[#b0b2bd] outline-none transition-colors" />
+                </div>
+              </div>
 
-        <!-- 스캔 대상 차량 실사 프리뷰 박스 -->
-        <div class="w-full rounded-xl overflow-hidden border border-[#d8dee8] bg-[#16171d] relative h-48 shadow-md">
-          <img src="./assets/cars/gv70-white-front.png"
-               alt="제네시스 GV70 스캔중"
-               class="w-full h-full object-cover opacity-85" />
-          <div class="scan-beam"></div>
-          <div class="absolute top-3 left-3 flex items-center gap-1.5">
-            <span class="badge-cert"><span>K Car AI 스캐닝</span></span>
+              <div>
+                <label class="block text-[12px] font-bold text-[#54555a] mb-1.5">비밀번호 (PW)</label>
+                <div class="relative">
+                  <i data-lucide="lock" class="w-4 h-4 text-[#82848b] absolute left-3.5 top-3.5"></i>
+                  <input type="password" id="loginPw" value="1111" placeholder="비밀번호를 입력하세요"
+                    onkeydown="if(event.key==='Enter') handleLogin()"
+                    class="w-full h-[46px] bg-white border border-[#d8dee8] focus:border-[#16171d] rounded-[6px] pl-10 pr-3 text-[14px] font-medium text-[#16171d] placeholder-[#b0b2bd] outline-none transition-colors" />
+                </div>
+              </div>
+
+              <button type="button" onclick="handleLogin()" class="w-full h-[50px] btn-kcar text-[15px] flex items-center justify-center gap-2 mt-2 cursor-pointer shadow-sm">
+                <span>로그인</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <div class="pt-2 border-t border-[#e8e8ee] flex items-center justify-between text-[12px]">
+              <button type="button" onclick="fillDemoLogin()" class="text-[#b70f28] font-bold hover:underline cursor-pointer">
+                데모 사원계정 자동입력 (1111 / 1111)
+              </button>
+              <span class="text-[#999ea1]">내부망 보안인증</span>
+            </div>
           </div>
-          <div class="absolute bottom-3 left-3 right-3 bg-black/70 backdrop-blur-sm p-2.5 rounded-lg border border-white/15 text-white">
-            <div class="text-[11px] text-[#ffd7da] font-bold">국토교통부 원부 · 케이카 직영 DB 매칭 중</div>
-            <div class="text-[14px] font-bold">2021 제네시스 GV70 가솔린 2.5T AWD 스포츠</div>
-          </div>
-        </div>
 
-        <div class="text-center space-y-1.5">
-          <h3 class="text-[18px] font-bold text-[#16171d] flex items-center justify-center gap-1.5">
-            <span>차량 빅데이터 정밀 분석 중</span>
-            <span class="inline-block animate-bounce text-[#b70f28]">...</span>
-          </h3>
-          <p id="scanStatusText" class="text-[12px] text-[#b70f28] font-bold tracking-tight">
-            [1/4] 국토부 원부 조회 및 11가1111 옵션 디코딩 중...
+          <p class="text-center text-[11.5px] text-[#999ea1] leading-relaxed">
+            본 시스템은 케이카(K Car) 소속 차량평가사 전용 매입 솔루션입니다.<br />
+            계정 문의 : IT매입지원팀 (내선 4100)
           </p>
         </div>
-
-        <!-- 스캔 로그 티커 (K Car Dark Report Card Style) -->
-        <div class="w-full dtl-dark-report rounded-xl space-y-2.5 text-[12px]">
-          <div id="log1" class="flex items-center gap-2 text-gray-300">
-            <i data-lucide="check-circle-2" class="w-4 h-4 text-[#f01d29] shrink-0"></i>
-            <span>차량 식별: 2021 제네시스 GV70 2.5T AWD 스포츠</span>
-          </div>
-          <div id="log2" class="flex items-center gap-2 text-gray-400">
-            <i data-lucide="circle-dot" class="w-4 h-4 text-amber-400 shrink-0"></i>
-            <span>케이카 직영 · 엔카 · 당근 동급 매물 28대 실시간 시세 수집</span>
-          </div>
-          <div id="log3" class="flex items-center gap-2 text-gray-400">
-            <i data-lucide="circle-dot" class="w-4 h-4 text-emerald-400 shrink-0"></i>
-            <span>GV70 2.5T 특화 고질병/취약부위 실사 매트릭스 로드</span>
-          </div>
-        </div>
       </section>
 
       <!-- ============================================================== -->
-      <!-- [화면 3-B] AI 매입 & 진단 통합 대시보드 화면 (marketm.kcar.com 1:1) -->
+      <!-- 2) [화면 2] 차량번호 입력 화면 -->
       <!-- ============================================================== -->
-      <section id="dashboardScreen" class="screen-view pb-10">
+      <section id="screenPlate" class="screen-view flex-1 flex-col justify-between p-5 bg-white">
+        <div class="space-y-5 pt-2">
 
-        <!-- 1. 차량 실사 스와이프 갤러리 (.dtl-gallery - 6장 실제 GV70 실사) -->
-        <div class="dtl-gallery">
-          <div class="scan-beam"></div>
-          <div class="dtl-gallery-track" id="gv70GalleryTrack" onscroll="updateGalleryCounter(this)">
-            <!-- Slide 1: 우유니 화이트 정면 스튜디오 실사 -->
-            <div class="dtl-gallery-slide">
-              <img src="./assets/cars/gv70-white-front.png" alt="제네시스 GV70 우유니 화이트 전면" />
-            </div>
-            <!-- Slide 2: 우유니 화이트 후면 스포츠 듀얼머플러 실사 -->
-            <div class="dtl-gallery-slide">
-              <img src="./assets/cars/gv70-white-rear.png" alt="제네시스 GV70 우유니 화이트 후면" loading="lazy" />
-            </div>
-            <!-- Slide 3: 전면 크레스트 그릴 & 두 줄 헤드램프 실사 -->
-            <div class="dtl-gallery-slide">
-              <img src="./assets/cars/gv70-grille-closeup.jpg" alt="제네시스 GV70 전면 그릴 클로즈업" loading="lazy" />
-            </div>
-            <!-- Slide 4: 14.5인치 와이드 인포테인먼트 & 실내 실사 -->
-            <div class="dtl-gallery-slide">
-              <img src="./assets/cars/gv70-cockpit-145.jpg" alt="제네시스 GV70 14.5인치 실내" loading="lazy" />
-            </div>
-            <!-- Slide 5: 21인치 스포츠 휠 & 미쉐린 타이어 실사 -->
-            <div class="dtl-gallery-slide">
-              <img src="./assets/cars/gv70-sport-wheel.png" alt="제네시스 GV70 21인치 스포츠 휠" loading="lazy" />
-            </div>
-            <!-- Slide 6: 2.5T 가솔린 터보 엔진룸 실사 -->
-            <div class="dtl-gallery-slide">
-              <img src="./assets/cars/gv70-engine-25t.png" alt="제네시스 GV70 2.5T 엔진룸" loading="lazy" />
-            </div>
+          <div class="space-y-1.5">
+            <span class="label-gray label-tint-red">매입 대상 차량 조회</span>
+            <h2 class="text-[21px] font-bold text-[#16171d] tracking-tight">
+              매입할 차량번호를 입력해 주세요
+            </h2>
+            <p class="text-[13px] text-[#82848b]">
+              차량번호 입력 시 국토부 원부 데이터와 제조사 보증 데이터가 자동 로딩됩니다.
+            </p>
           </div>
 
-          <!-- 상단 오버레이 뱃지 -->
-          <div class="absolute top-3 left-3 flex items-center gap-1.5 z-10">
-            <span class="bg-[#b70f28] text-white font-bold text-[11px] px-2.5 py-1 rounded-[2px] shadow" id="heroPlateBadge">
-              11가1111
-            </span>
-            <span class="bg-black/75 text-white font-medium text-[11px] px-2 py-1 rounded-[2px] flex items-center gap-1">
-              <i data-lucide="flame" class="w-3 h-3 text-amber-400"></i> 회전속도 S급
-            </span>
-          </div>
-
-          <!-- 우측 하단 사진 카운터 (.dtl-photo-counter) -->
-          <div class="dtl-photo-counter">
-            <span id="galleryCounterTxt">1 / 6</span>
-            <span class="sep"></span>
-            <span>실사 갤러리</span>
-          </div>
-        </div>
-
-        <!-- 썸네일 퀵 셀렉터 바 (클릭 시 해당 실사 사진으로 즉시 이동) -->
-        <div class="px-5 py-2.5 bg-[#f6f8fa] border-b border-[#e8e8ee] flex items-center gap-2 overflow-x-auto no-scrollbar">
-          <button type="button" onclick="scrollToGallery(0)" class="shrink-0 w-14 h-10 rounded overflow-hidden border-2 border-[#b70f28] relative">
-            <img src="./assets/cars/gv70-white-front.png" alt="전면" class="w-full h-full object-cover" />
-          </button>
-          <button type="button" onclick="scrollToGallery(1)" class="shrink-0 w-14 h-10 rounded overflow-hidden border border-[#d8dee8] opacity-85 hover:opacity-100">
-            <img src="./assets/cars/gv70-white-rear.png" alt="후면" class="w-full h-full object-cover" />
-          </button>
-          <button type="button" onclick="scrollToGallery(2)" class="shrink-0 w-14 h-10 rounded overflow-hidden border border-[#d8dee8] opacity-85 hover:opacity-100">
-            <img src="./assets/cars/gv70-grille-closeup.jpg" alt="그릴" class="w-full h-full object-cover" />
-          </button>
-          <button type="button" onclick="scrollToGallery(3)" class="shrink-0 w-14 h-10 rounded overflow-hidden border border-[#d8dee8] opacity-85 hover:opacity-100">
-            <img src="./assets/cars/gv70-cockpit-145.jpg" alt="실내" class="w-full h-full object-cover" />
-          </button>
-          <button type="button" onclick="scrollToGallery(4)" class="shrink-0 w-14 h-10 rounded overflow-hidden border border-[#d8dee8] opacity-85 hover:opacity-100">
-            <img src="./assets/cars/gv70-sport-wheel.png" alt="휠" class="w-full h-full object-cover" />
-          </button>
-          <button type="button" onclick="scrollToGallery(5)" class="shrink-0 w-14 h-10 rounded overflow-hidden border border-[#d8dee8] opacity-85 hover:opacity-100">
-            <img src="./assets/cars/gv70-engine-25t.png" alt="엔진룸" class="w-full h-full object-cover" />
-          </button>
-        </div>
-
-        <!-- 2. 차량 상세 헤더 카드 (.product-detail-header-card) -->
-        <div class="product-detail-header-card">
-          <div class="dtl-badge-row">
-            <div class="badge-cert"><span>K Car AI 정밀진단</span></div>
-            <span class="label-gray label-tint-blue">파퓰러 패키지 II</span>
-            <span class="badge-nego">당일 즉시매입 가능</span>
-          </div>
-
-          <h2 class="title">제네시스 GV70 가솔린 2.5 터보 AWD 스포츠</h2>
-          <div class="sub-info">
-            <span>21년 06월(21년형)</span>
-            <span>42,300km</span>
-            <span>가솔린 2.5T</span>
-            <span>우유니 화이트</span>
-          </div>
-
-          <div class="price-row pt-1">
-            <div>
-              <span class="text-[11px] text-[#82848b] block">AI 산정 추천 매입가</span>
-              <strong class="price"><span id="headerQuickPrice">4,354</span>만원</strong>
+          <!-- 번호판 입력 카드 -->
+          <div class="p-5 rounded-xl bg-[#f6f8fa] border border-[#e8e8ee] space-y-4">
+            <label class="block text-[12px] font-bold text-[#54555a] text-center">자동차 등록번호</label>
+            <div class="license-plate py-4 px-8 text-center flex items-center justify-center bg-white">
+              <input type="text" id="plateInput" value="11가1111" placeholder="11가1111"
+                onkeydown="if(event.key==='Enter') startDataLoading()"
+                class="bg-transparent border-none text-center font-extrabold text-[26px] text-[#16171d] tracking-wider w-full focus:outline-none uppercase" />
             </div>
-            <button type="button" onclick="switchTab(3)" class="btn-safe bg-[#fdeeef] text-[#b70f28] px-3 py-1.5 rounded-full font-bold text-[12px]">
-              <span>매입가 산정기 이동 &gt;</span>
+
+            <!-- 예시 차량 빠른 선택 -->
+            <div class="flex items-center justify-center gap-1.5 flex-wrap">
+              <span class="text-[11px] text-[#82848b]">예시 차량:</span>
+              <button type="button" onclick="setPlate('11가1111')" class="px-2.5 py-1 rounded-full bg-white border border-[#b70f28] text-[11.5px] font-bold text-[#b70f28]">
+                11가1111 (제네시스 GV70 2.5T 스포츠)
+              </button>
+              <button type="button" onclick="setPlate('287가9643')" class="px-2.5 py-1 rounded-full bg-white border border-[#d8dee8] text-[11.5px] font-medium text-[#54555a] hover:border-[#16171d]">
+                287가9643 (GV70 화이트)
+              </button>
+            </div>
+
+            <button type="button" onclick="startDataLoading()" class="w-full h-[50px] btn-kcar text-[15px] flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+              <i data-lucide="search" class="w-4 h-4"></i>
+              <span>원부 및 보증 데이터 조회</span>
             </button>
           </div>
 
-          <!-- Official K Car 4-Column Flat Vector Icons (.benefit-list) -->
-          <ul class="benefit-list">
-            <li class="benefit-item">
-              <i class="benefit-ico ico-kw-shield"></i>
-              <span>완전무사고</span>
-              <small>교환/판금 0건</small>
-            </li>
-            <li class="benefit-item">
-              <i class="benefit-ico ico-kw-one"></i>
-              <span>1인 신조</span>
-              <small>소유자변경 0회</small>
-            </li>
-            <li class="benefit-item">
-              <i class="benefit-ico ico-kw-nosmoke"></i>
-              <span>비흡연 차량</span>
-              <small>실내상태 최상</small>
-            </li>
-            <li class="benefit-item">
-              <i class="benefit-ico ico-kw-owner"></i>
-              <span>보증 잔존</span>
-              <small>동력계통 유효</small>
-            </li>
-          </ul>
+          <!-- 조회 시 자동 연동되는 데이터 항목 안내 -->
+          <div class="p-4 rounded-xl border border-[#e8e8ee] bg-white space-y-3">
+            <div class="text-[13px] font-bold text-[#16171d] flex items-center gap-1.5">
+              <i data-lucide="database" class="w-4 h-4 text-[#b70f28]"></i>
+              <span>자동 로딩 데이터 항목</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2.5 text-[12px]">
+              <div class="p-3 rounded-lg bg-[#f6f8fa] space-y-1">
+                <strong class="text-[#16171d] block">1. 자동차등록원부 (갑/을)</strong>
+                <p class="text-[11px] text-[#54555a] leading-snug">최초등록일, 제원, 차대번호, 소유자 변경, 용도이력(렌트), 저당/압류</p>
+              </div>
+              <div class="p-3 rounded-lg bg-[#f6f8fa] space-y-1">
+                <strong class="text-[#16171d] block">2. 제조사 보증 &amp; 신차옵션</strong>
+                <p class="text-[11px] text-[#54555a] leading-snug">일반/동력계통 잔여 보증기간, 출고 선택옵션, AI 차종별 고질병 DB</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- 3) [화면 3] 원부데이터 로딩 + 보증데이터 로딩 화면 -->
+      <!-- ============================================================== -->
+      <section id="screenLoading" class="screen-view flex-1 flex-col justify-center p-5 space-y-6 bg-white">
+
+        <!-- 대상 차량 프리뷰 헤더 -->
+        <div class="rounded-xl overflow-hidden border border-[#d8dee8] bg-[#16171d] relative h-44">
+          <img src="./assets/cars/gv70-white-front.png" alt="제네시스 GV70" class="w-full h-full object-cover opacity-85" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex flex-col justify-end p-4 text-white">
+            <div class="flex items-center gap-1.5 mb-1">
+              <span class="badge-cert"><span id="loadingPlateTxt">11가1111</span></span>
+              <span class="text-[11px] bg-white/20 px-2 py-0.5 rounded font-medium">데이터 수신 중</span>
+            </div>
+            <h3 class="text-[16px] font-bold">제네시스 GV70 가솔린 2.5 터보 AWD 스포츠</h3>
+          </div>
         </div>
 
-        <!-- Full-Bleed K Car Red Assurance Bar -->
-        <div class="dtl-assurance-bar">
-          <i data-lucide="shield-check" class="w-4 h-4"></i>
-          <span>직영몰 판매 데이터 및 차종별 고질병 DB가 반영된 차량입니다.</span>
+        <!-- 프로그레스 바 -->
+        <div class="space-y-2">
+          <div class="flex items-center justify-between text-[13px] font-bold">
+            <span id="loadingStepTitle" class="text-[#16171d]">원부 데이터 및 보증 데이터 로딩 중...</span>
+            <span id="loadingPercentTxt" class="text-[#b70f28]">25%</span>
+          </div>
+          <div class="w-full h-2.5 bg-[#e8e8ee] rounded-full overflow-hidden">
+            <div id="loadingBarFill" class="h-full bg-[#b70f28] transition-all duration-300" style="width: 25%;"></div>
+          </div>
         </div>
 
-        <!-- 3. K Car Sticky 3-Tab Bar (.dtl-anchor-tabs) -->
-        <nav class="dtl-anchor-tabs">
-          <button type="button" id="tabBtn1" onclick="switchTab(1)" class="dtl-anchor-tab is-active">
-            <span>AI 진단사전정보</span>
+        <!-- 단계별 로딩 체크리스트 카드 -->
+        <div class="p-4 rounded-xl bg-[#f6f8fa] border border-[#e8e8ee] space-y-3 text-[12.5px]">
+          <div id="loadItem1" class="flex items-start gap-2.5 p-2.5 rounded-lg bg-white border border-[#e8e8ee]">
+            <i data-lucide="loader-2" class="w-4 h-4 text-[#b70f28] animate-spin shrink-0 mt-0.5"></i>
+            <div>
+              <div class="font-bold text-[#16171d]">1. 국토교통부 자동차등록원부 데이터 로딩</div>
+              <p class="text-[11.5px] text-[#54555a]">최초등록(2021.06.14), 제원(2,497cc/304ps), 1인신조, 압류/저당 0건 확인</p>
+            </div>
+          </div>
+
+          <div id="loadItem2" class="flex items-start gap-2.5 p-2.5 rounded-lg bg-white border border-[#e8e8ee] opacity-50">
+            <i data-lucide="circle-dot" class="w-4 h-4 text-[#82848b] shrink-0 mt-0.5"></i>
+            <div>
+              <div class="font-bold text-[#16171d]">2. 제조사 보증(Warranty) 및 출고옵션 데이터 로딩</div>
+              <p class="text-[11.5px] text-[#54555a]">제네시스 동력계통 보증 잔존(5년/10만km) 및 파퓰러II·스포츠 패키지 매칭</p>
+            </div>
+          </div>
+
+          <div id="loadItem3" class="flex items-start gap-2.5 p-2.5 rounded-lg bg-white border border-[#e8e8ee] opacity-50">
+            <i data-lucide="circle-dot" class="w-4 h-4 text-[#82848b] shrink-0 mt-0.5"></i>
+            <div>
+              <div class="font-bold text-[#16171d]">3. GV70 2.5T 고질병 진단포인트 &amp; 예상시세 연동</div>
+              <p class="text-[11.5px] text-[#54555a]">하부 누유·21인치 휠 수리비 DB 및 케이카·엔카 동급 시세 로드</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================== -->
+      <!-- 4) [매입 워크스페이스] 1단계 & 2단계 통합 컨테이너 -->
+      <!-- ============================================================== -->
+      <section id="screenWorkspace" class="screen-view flex-1 flex-col bg-[#f6f8fa]">
+
+        <!-- 상단 고정 2단계 스텝 네비게이션 바 -->
+        <nav class="step-progress-bar">
+          <button type="button" id="stepBtn1" onclick="switchStep(1)" class="step-tab-btn is-active">
+            <span class="step-num">1</span>
+            <span>1단계 : 제원·특징·진단사항</span>
           </button>
-          <button type="button" id="tabBtn2" onclick="switchTab(2)" class="dtl-anchor-tab">
-            <span>시세 &amp; 실매물</span>
-          </button>
-          <button type="button" id="tabBtn3" onclick="switchTab(3)" class="dtl-anchor-tab">
-            <span>매입가 산정</span>
+          <button type="button" id="stepBtn2" onclick="switchStep(2)" class="step-tab-btn">
+            <span class="step-num">2</span>
+            <span>2단계 : 감가/증액·시세·매입가</span>
           </button>
         </nav>
 
-        <!-- ============================================================== -->
-        <!-- TAB 1: AI 진단 사전정보 (가시성 요약 + 실사 이미지 완벽 내장) -->
-        <!-- ============================================================== -->
-        <div id="tabContent1" class="space-y-2 bg-[#f6f8fa]">
+        <!-- ============================================================ -->
+        <!-- [첫번째 단계 - STEP 1]
+             1. 차량 기본 제원 정보 확인 (원부+보증)
+             2. 이 차량의 주요 특징
+             3. 진단시 확인사항 : 고질병 주요 진단포인트 및 예상수리비 -->
+        <!-- ============================================================ -->
+        <div id="step1Container" class="space-y-2 pb-24">
 
-          <!-- AI 핵심 진단 브리핑 (K Car Dark Report + 핵심 키워드 칩으로 가시성 극대화) -->
-          <div class="dtl-dark-report space-y-3">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <span class="badge-cert"><span>AI 진단 브리핑</span></span>
-                <span class="text-[14px] font-bold text-white">GV70 2.5T AWD 스포츠 핵심 요약</span>
+          <!-- 상단 실제 제네시스 GV70 실사 갤러리 (6컷 스와이프 + 썸네일) -->
+          <div class="bg-white">
+            <div class="dtl-gallery">
+              <div class="dtl-gallery-track" id="gv70GalleryTrack" onscroll="updateGalleryCounter(this)">
+                <div class="dtl-gallery-slide">
+                  <img src="./assets/cars/gv70-white-front.png" alt="제네시스 GV70 우유니 화이트 정면" />
+                </div>
+                <div class="dtl-gallery-slide">
+                  <img src="./assets/cars/gv70-white-rear.png" alt="제네시스 GV70 우유니 화이트 후면" loading="lazy" />
+                </div>
+                <div class="dtl-gallery-slide">
+                  <img src="./assets/cars/gv70-grille-closeup.jpg" alt="제네시스 GV70 크레스트 그릴" loading="lazy" />
+                </div>
+                <div class="dtl-gallery-slide">
+                  <img src="./assets/cars/gv70-cockpit-145.jpg" alt="제네시스 GV70 14.5인치 실내" loading="lazy" />
+                </div>
+                <div class="dtl-gallery-slide">
+                  <img src="./assets/cars/gv70-sport-wheel.png" alt="제네시스 GV70 21인치 스포츠 휠" loading="lazy" />
+                </div>
+                <div class="dtl-gallery-slide">
+                  <img src="./assets/cars/gv70-engine-25t.png" alt="제네시스 GV70 2.5T 엔진룸" loading="lazy" />
+                </div>
               </div>
-              <span class="text-[11px] text-[#ffd7da] font-medium">현장 3분 요약</span>
+
+              <div class="absolute top-3 left-3 flex items-center gap-1.5">
+                <span class="bg-[#b70f28] text-white font-bold text-[11.5px] px-2.5 py-1 rounded-[2px] shadow" id="heroPlateBadge">11가1111</span>
+                <span class="bg-black/75 text-white text-[11px] font-medium px-2 py-1 rounded-[2px]">원부·보증 연동완료</span>
+              </div>
+
+              <div class="dtl-photo-counter">
+                <span id="galleryCounterTxt">1 / 6</span>
+                <span>·</span>
+                <span>GV70 실사</span>
+              </div>
             </div>
 
-            <!-- 한눈에 들어오는 3줄 핵심 요약 박스 -->
-            <div class="grid grid-cols-3 gap-2 pt-1">
-              <div class="bg-white/10 rounded-lg p-2.5 border border-white/10 text-center">
-                <span class="text-[10px] text-gray-300 block">필수 하부점검</span>
-                <strong class="text-[12px] text-[#ff6b78] font-bold">AWD 디퍼런셜 누유</strong>
-              </div>
-              <div class="bg-white/10 rounded-lg p-2.5 border border-white/10 text-center">
-                <span class="text-[10px] text-gray-300 block">외관 중점감가</span>
-                <strong class="text-[12px] text-amber-300 font-bold">21인치 휠 스크래치</strong>
-              </div>
-              <div class="bg-white/10 rounded-lg p-2.5 border border-white/10 text-center">
-                <span class="text-[10px] text-gray-300 block">직영몰 회전율</span>
-                <strong class="text-[12px] text-emerald-300 font-bold">평균 14.2일 (S급)</strong>
-              </div>
+            <!-- 썸네일 바 -->
+            <div class="px-4 py-2 bg-[#f6f8fa] border-b border-[#e8e8ee] flex items-center gap-2 overflow-x-auto no-scrollbar">
+              <button type="button" onclick="scrollToGallery(0)" class="shrink-0 w-14 h-9 rounded overflow-hidden border-2 border-[#b70f28]">
+                <img src="./assets/cars/gv70-white-front.png" alt="전면" class="w-full h-full object-cover" />
+              </button>
+              <button type="button" onclick="scrollToGallery(1)" class="shrink-0 w-14 h-9 rounded overflow-hidden border border-[#d8dee8]">
+                <img src="./assets/cars/gv70-white-rear.png" alt="후면" class="w-full h-full object-cover" />
+              </button>
+              <button type="button" onclick="scrollToGallery(2)" class="shrink-0 w-14 h-9 rounded overflow-hidden border border-[#d8dee8]">
+                <img src="./assets/cars/gv70-grille-closeup.jpg" alt="그릴" class="w-full h-full object-cover" />
+              </button>
+              <button type="button" onclick="scrollToGallery(3)" class="shrink-0 w-14 h-9 rounded overflow-hidden border border-[#d8dee8]">
+                <img src="./assets/cars/gv70-cockpit-145.jpg" alt="실내" class="w-full h-full object-cover" />
+              </button>
+              <button type="button" onclick="scrollToGallery(4)" class="shrink-0 w-14 h-9 rounded overflow-hidden border border-[#d8dee8]">
+                <img src="./assets/cars/gv70-sport-wheel.png" alt="휠" class="w-full h-full object-cover" />
+              </button>
+              <button type="button" onclick="scrollToGallery(5)" class="shrink-0 w-14 h-9 rounded overflow-hidden border border-[#d8dee8]">
+                <img src="./assets/cars/gv70-engine-25t.png" alt="엔진" class="w-full h-full object-cover" />
+              </button>
             </div>
 
-            <p class="text-[12.5px] text-gray-200 leading-relaxed pt-1">
-              • <strong class="text-white">우유니 화이트 + 스포츠 패키지</strong> 조합으로 직영몰 최고 인기 사양입니다.<br />
-              • 리프트 진단 시 <strong class="text-[#ff858f]">트랜스퍼케이스 오일 실링 누유</strong>와 <strong class="text-amber-300">21인치 스퍼터링 휠 림 상처</strong>만 이상 없으면 적극 매입을 권장합니다.
-            </p>
-          </div>
-
-          <!-- 1. 이 차의 고질병 & 취약 부위 (실사 4컷 + 핵심 감가요인 요약) -->
-          <div class="bg-white px-5 py-6 space-y-4">
-            <div class="flex items-center justify-between">
-              <div>
-                <div class="flex items-center gap-1.5">
-                  <span class="w-2 h-4 bg-[#b70f28] rounded-sm inline-block"></span>
-                  <h3 class="text-[16px] font-bold text-[#16171d] tracking-tight">고질병 &amp; 취약 부위 집중 점검</h3>
-                </div>
-                <p class="text-[12px] text-[#82848b] mt-0.5">GV70 2.5T AWD 모델의 다빈도 클레임 및 감가 포인트</p>
+            <!-- 차량 타이틀 요약 -->
+            <div class="p-4 border-b border-[#e8e8ee]">
+              <div class="flex items-center gap-1.5 mb-1">
+                <div class="badge-cert"><span>STEP 1 · 사전진단</span></div>
+                <span class="label-gray label-tint-blue">완전무사고 · 1인신조</span>
+                <span class="label-gray label-tint-green">동력보증 유효</span>
               </div>
-              <span class="label-gray label-tint-red">중점 4항목</span>
-            </div>
-
-            <!-- 실사 + 텍스트 결합 2x2 고가시성 카드 그리드 -->
-            <div class="grid grid-cols-2 gap-3">
-              <!-- 고질병 1: 하부 트랜스퍼케이스 점검 -->
-              <div class="rounded-lg border border-[#e8e8ee] overflow-hidden bg-white flex flex-col">
-                <div class="relative h-28 bg-[#16171d]">
-                  <img src="./assets/cars/gv70-underbody-lift.jpg"
-                       onerror="this.src='https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=600&q=80'"
-                       alt="하부 트랜스퍼케이스 점검"
-                       class="w-full h-full object-cover" />
-                  <span class="absolute top-2 left-2 bg-[#b70f28] text-white text-[10px] font-bold px-2 py-0.5 rounded-[2px]">
-                    수리비 ~45만원
-                  </span>
-                </div>
-                <div class="p-3 space-y-1 flex-1">
-                  <div class="text-[13px] font-bold text-[#16171d] leading-snug">1. AWD 트랜스퍼케이스</div>
-                  <p class="text-[11.5px] text-[#54555a] leading-snug">
-                    저속 풀턴 시 '뚝뚝' 소음 및 디퍼런셜 오일 실링 미세 누유 확인
-                  </p>
-                </div>
-              </div>
-
-              <!-- 고질병 2: 21인치 스포츠 휠 (실제 GV70 21인치 스포츠 휠 실사!) -->
-              <div class="rounded-lg border border-[#e8e8ee] overflow-hidden bg-white flex flex-col">
-                <div class="relative h-28 bg-[#16171d]">
-                  <img src="./assets/cars/gv70-sport-wheel.png"
-                       alt="GV70 21인치 스포츠 휠 점검"
-                       class="w-full h-full object-cover" />
-                  <span class="absolute top-2 left-2 bg-[#b70f28] text-white text-[10px] font-bold px-2 py-0.5 rounded-[2px]">
-                    복원 개당 15만원
-                  </span>
-                </div>
-                <div class="p-3 space-y-1 flex-1">
-                  <div class="text-[13px] font-bold text-[#16171d] leading-snug">2. 21인치 스포츠 휠</div>
-                  <p class="text-[11.5px] text-[#54555a] leading-snug">
-                    255/40R21 저편평비로 연석 찍힘 빈번. 다크 스퍼터링 림 4짝 확인
-                  </p>
-                </div>
-              </div>
-
-              <!-- 고질병 3: 2.5T 엔진룸 인터쿨러 & AGM 배터리 (실제 GV70 2.5T 엔진룸 실사!) -->
-              <div class="rounded-lg border border-[#e8e8ee] overflow-hidden bg-white flex flex-col">
-                <div class="relative h-28 bg-[#16171d]">
-                  <img src="./assets/cars/gv70-engine-25t.png"
-                       alt="GV70 2.5T 엔진룸 점검"
-                       class="w-full h-full object-cover" />
-                  <span class="absolute top-2 left-2 bg-[#16171d] text-white text-[10px] font-bold px-2 py-0.5 rounded-[2px]">
-                    교체비 ~25만원
-                  </span>
-                </div>
-                <div class="p-3 space-y-1 flex-1">
-                  <div class="text-[13px] font-bold text-[#16171d] leading-snug">3. 인터쿨러 &amp; ISG 배터리</div>
-                  <p class="text-[11.5px] text-[#54555a] leading-snug">
-                    에어덕트 호스 클램프 유격 및 ISG 오토스톱 AGM 배터리 전압 체크
-                  </p>
-                </div>
-              </div>
-
-              <!-- 고질병 4: 파노라마 선루프 레일 (실제 GV70 파노라마 선루프 실사!) -->
-              <div class="rounded-lg border border-[#e8e8ee] overflow-hidden bg-white flex flex-col">
-                <div class="relative h-28 bg-[#16171d]">
-                  <img src="./assets/cars/gv70-sunroof-top.jpg"
-                       alt="GV70 파노라마 선루프 점검"
-                       class="w-full h-full object-cover" />
-                  <span class="absolute top-2 left-2 bg-[#54555a] text-white text-[10px] font-bold px-2 py-0.5 rounded-[2px]">
-                    구리스/정비
-                  </span>
-                </div>
-                <div class="p-3 space-y-1 flex-1">
-                  <div class="text-[13px] font-bold text-[#16171d] leading-snug">4. 파노라마 선루프</div>
-                  <p class="text-[11.5px] text-[#54555a] leading-snug">
-                    틸팅/슬라이딩 개폐 시 레일 마찰음 및 고무 몰딩 경화 테스트
-                  </p>
-                </div>
-              </div>
+              <h2 class="text-[18px] font-bold text-[#16171d] tracking-tight">
+                제네시스 GV70 가솔린 2.5 터보 AWD 스포츠
+              </h2>
+              <p class="text-[12.5px] text-[#82848b] mt-0.5">
+                2021년 06월 최초등록 (2021년형) · 42,300 km · 우유니 화이트 / 세비야 레드
+              </p>
             </div>
           </div>
 
-          <div class="gray-divider"></div>
-
-          <!-- 2. 매입사원 필수 확인 체크리스트 (현장 5분 진단법 - 실제 GV70 부위별 실사 4종) -->
-          <div class="bg-white px-5 py-6 space-y-4">
-            <div class="flex items-center justify-between">
-              <div>
-                <div class="flex items-center gap-1.5">
-                  <span class="w-2 h-4 bg-[#0073fd] rounded-sm inline-block"></span>
-                  <h3 class="text-[16px] font-bold text-[#16171d] tracking-tight">매입사원 필수 확인 체크리스트</h3>
-                </div>
-                <p class="text-[12px] text-[#82848b] mt-0.5">실제 GV70 부위별 현장 5분 진단 가이드</p>
-              </div>
-              <span class="label-gray label-tint-blue">현장 5분 진단법</span>
-            </div>
-
-            <div class="grid grid-cols-2 gap-3">
-              <!-- 점검 1: 전면 범퍼 & 크레스트 그릴 (실제 GV70 전면 그릴 실사) -->
-              <div class="rounded-lg border border-[#e8e8ee] overflow-hidden bg-[#f6f8fa]">
-                <div class="h-28 relative bg-[#16171d]">
-                  <img src="./assets/cars/gv70-grille-closeup.jpg" alt="전면 그릴" class="w-full h-full object-cover" />
-                  <span class="absolute bottom-1.5 left-1.5 text-[10px] bg-black/80 text-white px-2 py-0.5 rounded font-bold">
-                    1. 전면 그릴 · 범퍼
-                  </span>
-                </div>
-                <div class="p-2.5">
-                  <p class="text-[11.5px] text-[#16171d] font-medium leading-snug">
-                    다크 크롬 메쉬 그릴 스톤칩, 전방 레이더 센서 및 하단 립 파손
-                  </p>
-                </div>
-              </div>
-
-              <!-- 점검 2: 전자제어 서스펜션 & 타이어 -->
-              <div class="rounded-lg border border-[#e8e8ee] overflow-hidden bg-[#f6f8fa]">
-                <div class="h-28 relative bg-[#16171d]">
-                  <img src="./assets/cars/gv70-wheel-tire.jpg" alt="전자제어 서스펜션" class="w-full h-full object-cover" />
-                  <span class="absolute bottom-1.5 left-1.5 text-[10px] bg-black/80 text-white px-2 py-0.5 rounded font-bold">
-                    2. 전자제어 댐퍼 · 타이어
-                  </span>
-                </div>
-                <div class="p-2.5">
-                  <p class="text-[11.5px] text-[#16171d] font-medium leading-snug">
-                    프리뷰 전자제어 댐퍼 오일 비침 및 미쉐린 타이어 트레드 잔량
-                  </p>
-                </div>
-              </div>
-
-              <!-- 점검 3: 3D 클러스터 & 14.5인치 디스플레이 (실제 GV70 계기판 실사) -->
-              <div class="rounded-lg border border-[#e8e8ee] overflow-hidden bg-[#f6f8fa]">
-                <div class="h-28 relative bg-[#16171d]">
-                  <img src="./assets/cars/gv70-cluster-3d.jpg" alt="3D 계기판 및 인포테인먼트" class="w-full h-full object-cover" />
-                  <span class="absolute bottom-1.5 left-1.5 text-[10px] bg-black/80 text-white px-2 py-0.5 rounded font-bold">
-                    3. 3D 계기판 · 14.5인치
-                  </span>
-                </div>
-                <div class="p-2.5">
-                  <p class="text-[11.5px] text-[#16171d] font-medium leading-snug">
-                    3D 입체 클러스터 경고등 및 서라운드뷰(SVM) 4채널 카메라 왜곡
-                  </p>
-                </div>
-              </div>
-
-              <!-- 점검 4: 나파가죽 퀼팅 시트 & 전자식 변속 다이얼 (실제 GV70 실내 실사) -->
-              <div class="rounded-lg border border-[#e8e8ee] overflow-hidden bg-[#f6f8fa]">
-                <div class="h-28 relative bg-[#16171d]">
-                  <img src="./assets/cars/gv70-seat-quilted.jpg" alt="스포츠 나파가죽 시트" class="w-full h-full object-cover" />
-                  <span class="absolute bottom-1.5 left-1.5 text-[10px] bg-black/80 text-white px-2 py-0.5 rounded font-bold">
-                    4. 나파가죽 · SBW 다이얼
-                  </span>
-                </div>
-                <div class="p-2.5">
-                  <p class="text-[11.5px] text-[#16171d] font-medium leading-snug">
-                    운전석 사이드 볼스터 가죽 주름 및 크리스탈 변속 다이얼 회전감
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="gray-divider"></div>
-
-          <!-- 3. 이 차의 장점 & 셀링 포인트 + K Car 기본정보 테이블 -->
-          <div class="bg-white px-5 py-6 space-y-5">
+          <!-- ========================================================== -->
+          <!-- [1-1] 차량 기본 제원 정보 확인 (원부 데이터 + 보증 데이터) -->
+          <!-- ========================================================== -->
+          <div class="bg-white px-5 py-5 space-y-4">
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-1.5">
-                <span class="w-2 h-4 bg-[#0cb211] rounded-sm inline-block"></span>
-                <h3 class="text-[16px] font-bold text-[#16171d] tracking-tight">장점 &amp; 프리미엄 셀링 포인트</h3>
+                <span class="w-5 h-5 rounded-full bg-[#16171d] text-white text-[11px] font-bold inline-flex items-center justify-center">1</span>
+                <h3 class="text-[16px] font-bold text-[#16171d] tracking-tight">차량 기본 제원 및 보증 정보</h3>
               </div>
-              <span class="label-gray label-tint-green">감가 방어율 1위</span>
+              <span class="label-gray">원부·보증 연동</span>
             </div>
 
-            <!-- 인기 컬러/옵션 비주얼 배너 (실제 GV70 화이트 실사) -->
-            <div class="relative h-28 rounded-xl overflow-hidden border border-[#d8dee8] bg-[#16171d]">
-              <img src="./assets/cars/gv70-white-front.png" alt="GV70 스포츠 화이트" class="w-full h-full object-cover" />
-              <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent flex items-center p-4">
-                <div class="space-y-1">
-                  <span class="text-[10px] text-emerald-300 font-bold bg-emerald-950/90 px-2 py-0.5 rounded border border-emerald-500/40 inline-block">
-                    직영몰 선호도 1위 조합
-                  </span>
-                  <div class="text-[14px] font-bold text-white">우유니 화이트 + 스포츠 패키지 + 파퓰러 II</div>
-                  <p class="text-[11px] text-gray-200">전시 후 평균 10~14일 이내 계약 완료되는 최상위 인기 스펙</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- K Car 공식 옵션 칩 리스트 (.kcar-opt-list) -->
-            <div>
-              <p class="text-[13px] font-bold text-[#16171d] mb-2">장착 주요 옵션 (원부 연동)</p>
-              <div class="kcar-opt-list">
-                <span class="label-gray label-tint-red">스포츠 패키지 (400만)</span>
-                <span class="label-gray label-tint-red">파퓰러 패키지 II (720만)</span>
-                <span class="label-gray">파노라마 선루프</span>
-                <span class="label-gray">렉시콘 15스피커</span>
-                <span class="label-gray">헤드업 디스플레이(HUD)</span>
-                <span class="label-gray">서라운드뷰 모니터(SVM)</span>
-                <span class="label-gray">프리뷰 전자제어 서스펜션</span>
-                <span class="label-gray">통풍/나파가죽 시트</span>
-              </div>
-            </div>
-
-            <!-- K Car 표준 2열 기본정보 테이블 (.list-base-split) -->
-            <div class="pt-2">
-              <p class="text-[13px] font-bold text-[#16171d] mb-2.5">차량 원부 기본 정보</p>
+            <!-- 원부 기본 제원 2열 테이블 (.list-base-split) -->
+            <div class="p-3.5 rounded-xl bg-[#f6f8fa] border border-[#e8e8ee]">
               <ul class="list-base-split">
-                <li><span class="lbl">차량번호</span><div class="aside"><span id="specPlateTxt">11가1111</span></div></li>
-                <li><span class="lbl">연식 · 최초등록</span><div class="aside"><span>2021년 06월식 (2021년형)</span></div></li>
-                <li><span class="lbl">주행거리</span><div class="aside"><span>42,300 km</span></div></li>
-                <li><span class="lbl">엔진 · 구동방식</span><div class="aside"><span>가솔린 2.5 터보 (304마력) · AWD</span></div></li>
+                <li><span class="lbl">등록번호 / 차대번호</span><div class="aside"><strong id="specPlateTxt">11가1111</strong> <span>(KMH***2106)</span></div></li>
+                <li><span class="lbl">차종 / 모델연도</span><div class="aside"><span>중형 SUV · 2021년 06월식 (21년형)</span></div></li>
+                <li><span class="lbl">엔진 / 배기량</span><div class="aside"><span>가솔린 2.5 T-GDI (2,497cc · 304마력)</span></div></li>
+                <li><span class="lbl">구동방식 / 변속기</span><div class="aside"><span>전자식 AWD (4륜) + e-LSD · 자동 8단</span></div></li>
+                <li><span class="lbl">현재 주행거리</span><div class="aside"><strong class="text-[#16171d]">42,300 km</strong></div></li>
                 <li>
-                  <span class="lbl">외장색상</span>
-                  <div class="aside"><span class="color-chip" style="background:#f7f8fa;"></span><span>우유니 화이트 (UYH)</span></div>
+                  <span class="lbl">외장 / 내장 컬러</span>
+                  <div class="aside">
+                    <span class="color-chip" style="background:#f7f8fa;"></span><span>우유니 화이트</span>
+                    <span>/</span>
+                    <span class="color-chip" style="background:#9d0a22;"></span><span>세비야 레드</span>
+                  </div>
                 </li>
-                <li>
-                  <span class="lbl">내장시트</span>
-                  <div class="aside"><span class="color-chip" style="background:#9d0a22;"></span><span>세비야 레드 / 스포츠 나파가죽</span></div>
-                </li>
-                <li><span class="lbl">제조사 보증</span><div class="aside"><span class="text-[#0cb211] font-bold">동력계통 잔존 (5년/10만km)</span></div></li>
+                <li><span class="lbl">신차 출고가 (옵션포함)</span><div class="aside"><strong class="text-[#b70f28]">6,240 만원</strong> <span>(옵션 +1,340만)</span></div></li>
+                <li><span class="lbl">소유자 변경 / 용도이력</span><div class="aside"><span class="text-[#0cb211] font-bold">1인 신조 (변경 0회) · 렌트이력 없음</span></div></li>
+                <li><span class="lbl">압류 / 저당권 설정</span><div class="aside"><span>압류 0건 · 저당 0건 (즉시 이전 가능)</span></div></li>
               </ul>
             </div>
-          </div>
 
-        </div>
-
-        <!-- ============================================================== -->
-        <!-- TAB 2: 시세 & 동향 (케이카 · 엔카 · 당근 실시간 비교 + 동급 실매물 판매가) -->
-        <!-- ============================================================== -->
-        <div id="tabContent2" class="space-y-2 bg-[#f6f8fa]" style="display: none;">
-
-          <!-- 1. 플랫폼별 실시간 시세 요약 카드 -->
-          <div class="bg-white px-5 py-6 space-y-4">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-1.5">
-                <span class="w-2 h-4 bg-[#b70f28] rounded-sm inline-block"></span>
-                <h3 class="text-[16px] font-bold text-[#16171d] tracking-tight">플랫폼별 실시간 판매시세 비교</h3>
-              </div>
-              <span class="text-[11px] text-[#82848b]">동급 28대 기준</span>
-            </div>
-
-            <div class="grid grid-cols-2 gap-3">
-              <!-- 케이카 직영몰 시세 -->
-              <div class="p-4 rounded-xl bg-[#fff9f9] border border-[#ffd7da] space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="badge-plat badge-plat--kcar">K Car 직영몰</span>
-                  <span class="text-[11px] text-[#b70f28] font-bold">직영 진단</span>
-                </div>
-                <div>
-                  <span class="text-[11px] text-[#54555a] block">직영 평균 판매시세</span>
-                  <div class="text-[22px] font-bold text-[#b70f28] leading-tight">4,390<span class="text-[13px] text-[#16171d] font-medium ml-0.5">만원</span></div>
-                </div>
-                <div class="text-[11px] text-[#54555a] pt-1.5 border-t border-[#ffd7da] flex justify-between">
-                  <span>시세 범위</span>
-                  <strong class="text-[#16171d]">4,320 ~ 4,450만</strong>
-                </div>
-              </div>
-
-              <!-- 엔카닷컴 시세 -->
-              <div class="p-4 rounded-xl bg-[#f6f8fa] border border-[#d8dee8] space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="badge-plat badge-plat--encar">엔카닷컴</span>
-                  <span class="text-[11px] text-[#54555a] font-medium">28대 등록</span>
-                </div>
-                <div>
-                  <span class="text-[11px] text-[#54555a] block">유사 스펙 평균 판매가</span>
-                  <div class="text-[22px] font-bold text-[#16171d] leading-tight">4,380<span class="text-[13px] text-[#54555a] font-medium ml-0.5">만원</span></div>
-                </div>
-                <div class="text-[11px] text-[#54555a] pt-1.5 border-t border-[#e8e8ee] flex justify-between">
-                  <span>시세 범위</span>
-                  <strong class="text-[#16171d]">4,350 ~ 4,490만</strong>
-                </div>
-              </div>
-            </div>
-
-            <!-- 판매 회전율 & 수요 분석 (K Car Dark Report Style) -->
-            <div class="dtl-dark-report rounded-xl space-y-3">
+            <!-- 제조사 보증(Warranty) 잔여 현황 카드 -->
+            <div class="p-4 rounded-xl border border-[#d8dee8] bg-white space-y-3">
               <div class="flex items-center justify-between">
-                <span class="text-[13px] font-bold text-white flex items-center gap-1.5">
-                  <i data-lucide="trending-up" class="w-4 h-4 text-[#f01d29]"></i>
-                  최근 30일 매물 회전 및 시장 수요
+                <span class="text-[13px] font-bold text-[#16171d] flex items-center gap-1.5">
+                  <i data-lucide="shield-check" class="w-4 h-4 text-[#0073fd]"></i>
+                  제네시스 제조사 보증(Warranty) 잔여 현황
                 </span>
-                <span class="badge-cert"><span>인기도 S+ 등급</span></span>
+                <span class="label-gray label-tint-green">동력보증 생존</span>
               </div>
 
-              <div class="grid grid-cols-3 gap-2 text-center">
-                <div class="p-2.5 bg-white/10 rounded-lg border border-white/10">
-                  <span class="text-[10.5px] text-gray-300 block">평균 판매소요</span>
-                  <strong class="text-[15px] text-white font-bold">14.2일</strong>
-                  <span class="text-[10px] text-emerald-300 block mt-0.5">시장평균 32일</span>
+              <div class="space-y-2.5 text-[12px]">
+                <!-- 일반보증 -->
+                <div class="p-2.5 rounded-lg bg-[#f6f8fa] flex items-center justify-between">
+                  <div>
+                    <div class="font-bold text-[#54555a]">차체 및 일반부품 (3년 / 6만km)</div>
+                    <p class="text-[11px] text-[#82848b]">기간 만료 (2024.06 종료 · 주행거리 42,300km)</p>
+                  </div>
+                  <span class="px-2 py-0.5 rounded bg-[#e8e8ee] text-[#54555a] text-[11px] font-bold">보증만료</span>
                 </div>
-                <div class="p-2.5 bg-white/10 rounded-lg border border-white/10">
-                  <span class="text-[10.5px] text-gray-300 block">최근 1개월 계약</span>
-                  <strong class="text-[15px] text-white font-bold">41대</strong>
-                  <span class="text-[10px] text-[#ff858f] block mt-0.5">전월대비 +12%</span>
-                </div>
-                <div class="p-2.5 bg-white/10 rounded-lg border border-white/10">
-                  <span class="text-[10.5px] text-gray-300 block">KW 워런티 가입</span>
-                  <strong class="text-[15px] text-amber-300 font-bold">84.5%</strong>
-                  <span class="text-[10px] text-gray-300 block mt-0.5">보증 선호 높음</span>
+
+                <!-- 동력계통 보증 -->
+                <div class="p-3 rounded-lg bg-[#f4f8ff] border border-[#b8d4ff] space-y-1.5">
+                  <div class="flex items-center justify-between">
+                    <div class="font-bold text-[#0052cc]">엔진 및 동력전달계통 (5년 / 10만km)</div>
+                    <span class="px-2 py-0.5 rounded bg-[#0073fd] text-white text-[11px] font-bold">보증유효</span>
+                  </div>
+                  <p class="text-[11.5px] text-[#16171d]">
+                    잔여기간 <strong>약 7개월 (2026.06.13까지)</strong> · 잔여거리 <strong>57,700 km</strong> 남음
+                  </p>
+                  <div class="w-full h-2 bg-white rounded-full overflow-hidden border border-[#b8d4ff]">
+                    <div class="h-full bg-[#0073fd]" style="width: 42.3%;"></div>
+                  </div>
+                  <p class="text-[11px] text-[#0052cc] font-medium">
+                    ※ 엔진, 변속기, AWD 트랜스퍼케이스·디퍼런셜 누유 발생 시 제조사 무상보증 수리 가능!
+                  </p>
                 </div>
               </div>
             </div>
@@ -1712,220 +913,313 @@
 
           <div class="gray-divider"></div>
 
-          <!-- 2. 동급 매물 현재 판매가 리스트 ("직거래크롤링" .vert-grid-2col & .car-item-vert 1:1 반영!) -->
-          <div class="bg-white px-5 py-6 space-y-4">
+          <!-- ========================================================== -->
+          <!-- [1-2] 이 차량의 주요 특징 (옵션 구성 & 셀링 포인트) -->
+          <!-- ========================================================== -->
+          <div class="bg-white px-5 py-5 space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1.5">
+                <span class="w-5 h-5 rounded-full bg-[#16171d] text-white text-[11px] font-bold inline-flex items-center justify-center">2</span>
+                <h3 class="text-[16px] font-bold text-[#16171d] tracking-tight">이 차량의 주요 특징</h3>
+              </div>
+              <span class="label-gray label-tint-red">회전속도 S급 (14.2일)</span>
+            </div>
+
+            <!-- 실사 비주얼 특징 카드 2열 -->
+            <div class="grid grid-cols-2 gap-2.5">
+              <div class="rounded-lg overflow-hidden border border-[#e8e8ee] bg-[#f6f8fa]">
+                <div class="h-24 relative bg-[#16171d]">
+                  <img src="./assets/cars/gv70-white-rear.png" alt="스포츠 패키지 외관" class="w-full h-full object-cover" />
+                  <span class="absolute bottom-1.5 left-1.5 bg-[#b70f28] text-white text-[10px] font-bold px-2 py-0.5 rounded-[2px]">
+                    스포츠 패키지 (+400만)
+                  </span>
+                </div>
+                <div class="p-2.5 text-[11.5px] text-[#16171d] leading-snug">
+                  <strong>21인치 스퍼터링 휠</strong> · 대구경 듀얼 머플러 · 전자식 차동제한장치(e-LSD) 탑재
+                </div>
+              </div>
+
+              <div class="rounded-lg overflow-hidden border border-[#e8e8ee] bg-[#f6f8fa]">
+                <div class="h-24 relative bg-[#16171d]">
+                  <img src="./assets/cars/gv70-cockpit-145.jpg" alt="파퓰러 패키지 II 실내" class="w-full h-full object-cover" />
+                  <span class="absolute bottom-1.5 left-1.5 bg-[#16171d] text-white text-[10px] font-bold px-2 py-0.5 rounded-[2px]">
+                    파퓰러 패키지 II (+720만)
+                  </span>
+                </div>
+                <div class="p-2.5 text-[11.5px] text-[#16171d] leading-snug">
+                  <strong>헤드업 디스플레이(HUD)</strong> · 3D 클러스터 · 드라이빙 어시스턴스 I/II · 서라운드뷰
+                </div>
+              </div>
+            </div>
+
+            <!-- 핵심 특징 요약 박스 -->
+            <div class="ownersMsg">
+              <strong class="titleTxt">매입 가치 핵심 요약 (차량평가사 참고)</strong>
+              <p>
+                • 중고차 시장에서 가장 수요가 높은 <strong>2.5T 가솔린 AWD + 스포츠 패키지 + 우유니 화이트</strong> 조합입니다.<br />
+                • <strong>파노라마 선루프(140만)</strong>와 <strong>렉시콘 15스피커(130만)</strong>까지 포함된 풀옵션급 차량으로 직영몰 입고 시 <strong>2주 이내 빠른 판매</strong>가 예상됩니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="gray-divider"></div>
+
+          <!-- ========================================================== -->
+          <!-- [1-3] 진단 시 확인사항 : 이 차의 고질병 주요 진단포인트 및 예상수리비 -->
+          <!-- ========================================================== -->
+          <div class="bg-white px-5 py-5 space-y-4">
             <div class="flex items-center justify-between">
               <div>
                 <div class="flex items-center gap-1.5">
-                  <span class="w-2 h-4 bg-[#b70f28] rounded-sm inline-block"></span>
-                  <h3 class="text-[16px] font-bold text-[#16171d] tracking-tight">동급 매물 현재 판매가 (실매물)</h3>
+                  <span class="w-5 h-5 rounded-full bg-[#b70f28] text-white text-[11px] font-bold inline-flex items-center justify-center">3</span>
+                  <h3 class="text-[16px] font-bold text-[#16171d] tracking-tight">진단 시 확인사항 (고질병 &amp; 예상수리비)</h3>
                 </div>
-                <p class="text-[12px] text-[#82848b] mt-0.5">케이카 · 엔카 · 당근마켓에 현재 등록된 유사 스펙 실매물</p>
+                <p class="text-[12px] text-[#82848b] mt-0.5">GV70 2.5T AWD 현장 진단 시 반드시 체크해야 할 4대 고질병 포인트</p>
               </div>
-              <span class="label-gray label-tint-red">실시간 크롤링</span>
+              <span class="label-gray label-tint-red">필수 점검</span>
             </div>
 
-            <!-- 2-Column K Car Vertical Card Grid (.vert-grid-2col) -->
-            <div class="vert-grid-2col">
-              <!-- 실매물 1: K Car 직영/진단 -->
-              <article class="car-item-vert">
-                <div class="thumb">
-                  <img src="./assets/cars/gv70-kcar-parking.jpg" alt="제네시스 GV70 2.5T AWD" loading="lazy" />
-                  <div class="badge-area">
-                    <div class="badge-cert"><span>K Car 진단</span></div>
-                  </div>
-                </div>
-                <div class="info">
-                  <h4 class="car-name">제네시스 GV70 가솔린 2.5T AWD 스포츠</h4>
-                  <div class="sub-info">
-                    <span>21년 7월</span><span>4.1만km</span><span>가솔린</span><span>서울 강남</span>
-                  </div>
-                  <div class="badge-nego mb-0.5">직영보증가능</div>
-                  <p class="price">4,390만원</p>
-                  <div class="kcar-opt-list mt-1.5">
-                    <span class="label-gray">파퓰러II</span>
-                    <span class="label-gray">무사고</span>
-                  </div>
-                </div>
-              </article>
+            <!-- 고질병 진단 카드 리스트 (실사 이미지 + 진단 포인트 + 예상수리비) -->
+            <div class="space-y-3">
 
-              <!-- 실매물 2: K Car 안심직거래 -->
-              <article class="car-item-vert">
-                <div class="thumb">
-                  <img src="./assets/cars/gv70-outdoor-front.jpg" alt="제네시스 GV70 2.5T 화이트" loading="lazy" />
-                  <div class="badge-area">
-                    <div class="badge-plat badge-plat--kcar">K Car 직거래</div>
+              <!-- 진단 1: 하부 트랜스퍼케이스 / 디퍼런셜 누유 -->
+              <div class="rounded-xl border border-[#e8e8ee] overflow-hidden bg-white shadow-2xs">
+                <div class="flex gap-3 p-3">
+                  <div class="w-28 h-24 rounded-lg overflow-hidden shrink-0 bg-[#16171d] relative border border-[#e8e8ee]">
+                    <img src="./assets/cars/gv70-underbody-lift.jpg"
+                         onerror="this.src='https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=600&q=80'"
+                         alt="하부 트랜스퍼케이스 점검"
+                         class="w-full h-full object-cover" />
+                    <span class="absolute bottom-1 left-1 bg-black/80 text-white text-[9.5px] font-bold px-1.5 py-0.5 rounded">하부 리프트</span>
+                  </div>
+                  <div class="flex-1 min-w-0 space-y-1">
+                    <div class="flex items-center justify-between gap-1">
+                      <span class="text-[13.5px] font-bold text-[#16171d] truncate">① AWD 트랜스퍼케이스 · 디퍼런셜 누유</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 flex-wrap">
+                      <span class="px-2 py-0.5 rounded bg-[#fdeeef] text-[#b70f28] text-[11px] font-bold">예상수리비 : 약 45만원</span>
+                      <span class="px-2 py-0.5 rounded bg-[#e5eefc] text-[#0073fd] text-[10.5px] font-bold">동력보증 수리가능</span>
+                    </div>
+                    <p class="text-[11.5px] text-[#54555a] leading-snug pt-0.5">
+                      • <strong>진단포인트</strong> : 핸들을 끝까지 꺾고 저속 선회 시 하부 '뚝뚝' 이음 및 디퍼런셜 오일 실링 미세 누유 흔적 확인
+                    </p>
                   </div>
                 </div>
-                <div class="info">
-                  <h4 class="car-name">제네시스 GV70 가솔린 터보 2.5 AWD</h4>
-                  <div class="sub-info">
-                    <span>21년 9월</span><span>3.8만km</span><span>가솔린</span><span>경기 화성</span>
-                  </div>
-                  <div class="badge-nego mb-0.5">가격제안가능</div>
-                  <p class="price">4,450만원</p>
-                  <div class="kcar-opt-list mt-1.5">
-                    <span class="label-gray">1인신조</span>
-                    <span class="label-gray">선루프</span>
-                  </div>
-                </div>
-              </article>
+              </div>
 
-              <!-- 실매물 3: 엔카닷컴 -->
-              <article class="car-item-vert">
-                <div class="thumb">
-                  <img src="./assets/cars/gv70-encar-white.jpg" alt="엔카 제네시스 GV70 2.5T AWD" loading="lazy" />
-                  <div class="badge-area">
-                    <div class="badge-plat badge-plat--encar">엔카 직거래</div>
+              <!-- 진단 2: 21인치 스포츠 휠 스크래치 & 편마모 -->
+              <div class="rounded-xl border border-[#e8e8ee] overflow-hidden bg-white shadow-2xs">
+                <div class="flex gap-3 p-3">
+                  <div class="w-28 h-24 rounded-lg overflow-hidden shrink-0 bg-[#16171d] relative border border-[#e8e8ee]">
+                    <img src="./assets/cars/gv70-sport-wheel.png"
+                         alt="21인치 스포츠 휠 점검"
+                         class="w-full h-full object-cover" />
+                    <span class="absolute bottom-1 left-1 bg-black/80 text-white text-[9.5px] font-bold px-1.5 py-0.5 rounded">21인치 휠</span>
+                  </div>
+                  <div class="flex-1 min-w-0 space-y-1">
+                    <div class="text-[13.5px] font-bold text-[#16171d] truncate">② 21인치 다크 스퍼터링 휠 &amp; 타이어</div>
+                    <div class="flex items-center gap-1.5 flex-wrap">
+                      <span class="px-2 py-0.5 rounded bg-[#fdeeef] text-[#b70f28] text-[11px] font-bold">휠 복원 개당 15만 / 타이어 짝당 18만</span>
+                    </div>
+                    <p class="text-[11.5px] text-[#54555a] leading-snug pt-0.5">
+                      • <strong>진단포인트</strong> : 255/40R21 저편평비로 연석 찍힘·백화 빈번. 4짝 림 테두리 상처 및 타이어 트레드 잔량 확인
+                    </p>
                   </div>
                 </div>
-                <div class="info">
-                  <h4 class="car-name">제네시스 GV70 2.5T 가솔린 AWD</h4>
-                  <div class="sub-info">
-                    <span>21년 5월</span><span>3.9만km</span><span>가솔린</span><span>서울 서초</span>
-                  </div>
-                  <div class="text-[11px] text-[#82848b] font-medium mb-0.5">엔카 진단매물</div>
-                  <p class="price">4,360만원</p>
-                  <div class="kcar-opt-list mt-1.5">
-                    <span class="label-gray">우유니화이트</span>
-                    <span class="label-gray">HUD</span>
-                  </div>
-                </div>
-              </article>
+              </div>
 
-              <!-- 실매물 4: 당근마켓 -->
-              <article class="car-item-vert">
-                <div class="thumb">
-                  <img src="./assets/cars/gv70-blue-sport.jpg" alt="당근 GV70 스포츠" loading="lazy" />
-                  <div class="badge-area">
-                    <div class="badge-plat badge-plat--daangn">당근마켓</div>
+              <!-- 진단 3: 2.5T 인터쿨러 호스 & AGM 배터리 -->
+              <div class="rounded-xl border border-[#e8e8ee] overflow-hidden bg-white shadow-2xs">
+                <div class="flex gap-3 p-3">
+                  <div class="w-28 h-24 rounded-lg overflow-hidden shrink-0 bg-[#16171d] relative border border-[#e8e8ee]">
+                    <img src="./assets/cars/gv70-engine-25t.png"
+                         alt="2.5T 엔진룸 점검"
+                         class="w-full h-full object-cover" />
+                    <span class="absolute bottom-1 left-1 bg-black/80 text-white text-[9.5px] font-bold px-1.5 py-0.5 rounded">2.5T 엔진룸</span>
+                  </div>
+                  <div class="flex-1 min-w-0 space-y-1">
+                    <div class="text-[13.5px] font-bold text-[#16171d] truncate">③ 인터쿨러 에어덕트 &amp; ISG 배터리</div>
+                    <div class="flex items-center gap-1.5 flex-wrap">
+                      <span class="px-2 py-0.5 rounded bg-[#fdeeef] text-[#b70f28] text-[11px] font-bold">예상수리비 : AGM 배터리 25만원</span>
+                    </div>
+                    <p class="text-[11.5px] text-[#54555a] leading-snug pt-0.5">
+                      • <strong>진단포인트</strong> : 터보 인터쿨러 호스 체결부 오일 비침 및 계기판 ISG(오토스톱) 경고등·배터리 전압 체크
+                    </p>
                   </div>
                 </div>
-                <div class="info">
-                  <h4 class="car-name">제네시스 GV70 AWD 스포츠 패키지</h4>
-                  <div class="sub-info">
-                    <span>21년 8월</span><span>4.4만km</span><span>가솔린</span><span>경기 안양</span>
+              </div>
+
+              <!-- 진단 4: 파노라마 선루프 레일 & 3D 클러스터/어라운드뷰 -->
+              <div class="rounded-xl border border-[#e8e8ee] overflow-hidden bg-white shadow-2xs">
+                <div class="flex gap-3 p-3">
+                  <div class="w-28 h-24 rounded-lg overflow-hidden shrink-0 bg-[#16171d] relative border border-[#e8e8ee]">
+                    <img src="./assets/cars/gv70-sunroof-top.jpg"
+                         alt="파노라마 선루프 점검"
+                         class="w-full h-full object-cover" />
+                    <span class="absolute bottom-1 left-1 bg-black/80 text-white text-[9.5px] font-bold px-1.5 py-0.5 rounded">선루프/전장</span>
                   </div>
-                  <div class="badge-nego mb-0.5">개인직거래</div>
-                  <p class="price">4,350만원</p>
-                  <div class="kcar-opt-list mt-1.5">
-                    <span class="label-gray">스포츠21인치</span>
-                    <span class="label-gray">렉시콘</span>
+                  <div class="flex-1 min-w-0 space-y-1">
+                    <div class="text-[13.5px] font-bold text-[#16171d] truncate">④ 파노라마 선루프 소음 &amp; 어라운드뷰</div>
+                    <div class="flex items-center gap-1.5 flex-wrap">
+                      <span class="px-2 py-0.5 rounded bg-[#fdeeef] text-[#b70f28] text-[11px] font-bold">예상수리비 : 레일정비 10만 / 카메라 22만</span>
+                    </div>
+                    <p class="text-[11.5px] text-[#54555a] leading-snug pt-0.5">
+                      • <strong>진단포인트</strong> : 선루프 틸팅 개폐 시 레일 마찰음 여부 및 14.5인치 서라운드뷰(SVM) 4채널 카메라 백화 확인
+                    </p>
                   </div>
                 </div>
-              </article>
+              </div>
+
             </div>
           </div>
 
-          <div class="gray-divider"></div>
-
-          <!-- 3. 최근 6개월 시세 변동 추이 차트 -->
-          <div class="bg-white px-5 py-6 space-y-3">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-1.5">
-                <span class="w-2 h-4 bg-[#b70f28] rounded-sm inline-block"></span>
-                <h3 class="text-[16px] font-bold text-[#16171d] tracking-tight">최근 6개월 시세 변동 추이</h3>
-              </div>
-              <span class="text-[11px] text-[#82848b]">단위: 만원</span>
-            </div>
-
-            <div class="p-3 rounded-xl bg-[#f6f8fa] border border-[#e8e8ee]">
-              <div class="h-44 w-full">
-                <canvas id="priceTrendChart"></canvas>
-              </div>
-            </div>
-            <p class="text-[11.5px] text-[#82848b]">
-              ※ 가솔린 2.5T 스포츠 트림은 수요가 견고하여 월평균 15~20만원 수준의 완만한 자연 감가만 발생하고 있습니다.
-            </p>
+          <!-- 1단계 하단 고정 액션 바: 2단계로 이동 -->
+          <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[450px] bg-white border-t border-[#e8e8ee] px-5 py-3 z-40 shadow-lg">
+            <button type="button" onclick="switchStep(2)" class="w-full h-[48px] btn-kcar text-[15px] flex items-center justify-center gap-2 cursor-pointer">
+              <span>1단계 확인 완료 · 2단계(감가/시세/매입가 산정) 이동</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
           </div>
 
         </div>
 
-        <!-- ============================================================== -->
-        <!-- TAB 3: 실시간 인터랙티브 매입가격 산정기 -->
-        <!-- ============================================================== -->
-        <div id="tabContent3" class="space-y-2 bg-[#f6f8fa]" style="display: none;">
+        <!-- ============================================================ -->
+        <!-- [두번째 단계 - STEP 2]
+             1. 사고부위 입력
+             2. 감가요소 (외판/타이어/휠/고질병 수리) 입력
+             3. 증액요소 (옵션/인기컬러/1인신조) 입력
+             4. 예상시세 확인 (시세 그래프 + 동급 실매물)
+             5. 최종 매입가 제시 및 고객 견적서 발송 -->
+        <!-- ============================================================ -->
+        <div id="step2Container" class="space-y-2 pb-28" style="display: none;">
 
-          <!-- 기준 판매가 조절 -->
-          <div class="bg-white px-5 py-5 space-y-3">
-            <div class="flex items-center justify-between">
-              <label class="text-[14px] font-bold text-[#16171d] flex items-center gap-1.5">
-                <span class="w-2 h-4 bg-[#b70f28] rounded-sm inline-block"></span>
-                기준 예상 판매가 (시세 연동)
-              </label>
-              <div class="text-[18px] font-bold text-[#b70f28]">
-                <span id="basePriceDisplay">4,380</span> <span class="text-[13px] text-[#16171d]">만원</span>
-              </div>
+          <!-- 상단 실시간 매입가 요약 스티키 배너 -->
+          <div class="dtl-dark-report flex items-center justify-between">
+            <div>
+              <span class="text-[11px] text-[#ffd7da] font-bold block">11가1111 · 제네시스 GV70 2.5T 스포츠</span>
+              <span class="text-[13px] text-gray-200">실시간 산정 매입가</span>
             </div>
-            <input type="range" id="basePriceSlider" min="4100" max="4600" step="10" value="4380" oninput="calculatePrice()" />
-            <div class="flex justify-between text-[11px] text-[#82848b]">
-              <span>하한 4,100만</span>
-              <span class="text-[#b70f28] font-bold">동급 평균 4,380만</span>
-              <span>상한 4,600만</span>
+            <div class="text-right">
+              <strong class="text-[24px] font-bold text-[#ff4d5e]" id="topStickyFinalPrice">4,354</strong>
+              <span class="text-[14px] text-white font-bold">만원</span>
+            </div>
+          </div>
+
+          <!-- ========================================================== -->
+          <!-- [2-1] 사고부위 및 외판 교환/판금 입력 -->
+          <!-- ========================================================== -->
+          <div class="bg-white px-5 py-5 space-y-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span class="w-5 h-5 rounded-full bg-[#b70f28] text-white text-[11px] font-bold inline-flex items-center justify-center">1</span>
+                  <h3 class="text-[16px] font-bold text-[#16171d] tracking-tight">사고부위 및 외판 상태 입력</h3>
+                </div>
+                <p class="text-[12px] text-[#82848b] mt-0.5">교환·판금·도색이 필요한 부위를 터치하면 감가액이 자동 반영됩니다.</p>
+              </div>
+              <span id="accidentBadgeStatus" class="label-gray label-tint-green">완전무사고</span>
+            </div>
+
+            <!-- 부위별 터치 그리드 -->
+            <div class="grid grid-cols-2 gap-2 text-[12px]">
+              <button type="button" onclick="toggleAccidentPart(this, '프론트 범퍼 도색', 12)" class="accident-part-btn is-selected" data-part-name="프론트 범퍼 도색" data-part-cost="12">
+                <div class="flex items-center justify-between w-full">
+                  <span class="font-bold text-[#16171d]">프론트 범퍼 (도색)</span>
+                  <span class="text-[11px] font-bold text-[#b70f28]">-12만</span>
+                </div>
+                <span class="text-[10.5px] text-[#82848b]">하단 립 스크래치/스톤칩</span>
+              </button>
+
+              <button type="button" onclick="toggleAccidentPart(this, '후드(본넷) 교환', 35)" class="accident-part-btn" data-part-name="후드(본넷) 교환" data-part-cost="35">
+                <div class="flex items-center justify-between w-full">
+                  <span class="font-bold text-[#16171d]">후드/본넷 (교환)</span>
+                  <span class="text-[11px] font-bold text-[#b70f28]">-35만</span>
+                </div>
+                <span class="text-[10.5px] text-[#82848b]">단순교환 감가</span>
+              </button>
+
+              <button type="button" onclick="toggleAccidentPart(this, '앞휀더(좌/우) 교환', 25)" class="accident-part-btn" data-part-name="앞휀더(좌/우) 교환" data-part-cost="25">
+                <div class="flex items-center justify-between w-full">
+                  <span class="font-bold text-[#16171d]">앞휀더 좌/우 (교환)</span>
+                  <span class="text-[11px] font-bold text-[#b70f28]">-25만</span>
+                </div>
+                <span class="text-[10.5px] text-[#82848b]">볼트체결부 풀림/교환</span>
+              </button>
+
+              <button type="button" onclick="toggleAccidentPart(this, '도어(판금/도색)', 15)" class="accident-part-btn" data-part-name="도어(판금/도색)" data-part-cost="15">
+                <div class="flex items-center justify-between w-full">
+                  <span class="font-bold text-[#16171d]">도어 1판 (판금/도색)</span>
+                  <span class="text-[11px] font-bold text-[#b70f28]">-15만</span>
+                </div>
+                <span class="text-[10.5px] text-[#82848b]">문콕/스크래치 도장</span>
+              </button>
+
+              <button type="button" onclick="toggleAccidentPart(this, '리어 범퍼 도색', 12)" class="accident-part-btn" data-part-name="리어 범퍼 도색" data-part-cost="12">
+                <div class="flex items-center justify-between w-full">
+                  <span class="font-bold text-[#16171d]">리어 범퍼 (도색)</span>
+                  <span class="text-[11px] font-bold text-[#b70f28]">-12만</span>
+                </div>
+                <span class="text-[10.5px] text-[#82848b]">뒷범퍼 스크래치 도장</span>
+              </button>
+
+              <button type="button" onclick="toggleAccidentPart(this, '리어 쿼터패널 판금(유사고)', 120)" class="accident-part-btn" data-part-name="리어 쿼터패널 판금(유사고)" data-part-cost="120">
+                <div class="flex items-center justify-between w-full">
+                  <span class="font-bold text-[#16171d]">쿼터패널/골격 (유사고)</span>
+                  <span class="text-[11px] font-bold text-[#b70f28]">-120만</span>
+                </div>
+                <span class="text-[10.5px] text-[#82848b]">주요골격 용접/교환</span>
+              </button>
             </div>
           </div>
 
           <div class="gray-divider"></div>
 
-          <!-- 1. 감가 요소 (마이너스 수리비) -->
+          <!-- ========================================================== -->
+          <!-- [2-2] 감가요소 상세 입력 (타이어 · 휠 · 고질병 정비) -->
+          <!-- ========================================================== -->
           <div class="bg-white px-5 py-5 space-y-4">
             <div class="flex items-center justify-between pb-2 border-b border-[#e8e8ee]">
-              <span class="text-[14px] font-bold text-[#16171d] flex items-center gap-1.5">
-                <i data-lucide="minus-circle" class="w-4 h-4 text-[#b70f28]"></i>
-                현장 진단 감가 및 상품화 비용
-              </span>
+              <div class="flex items-center gap-1.5">
+                <span class="w-5 h-5 rounded-full bg-[#b70f28] text-white text-[11px] font-bold inline-flex items-center justify-center">2</span>
+                <h3 class="text-[16px] font-bold text-[#16171d] tracking-tight">소모품 및 고질병 감가요소 입력</h3>
+              </div>
               <span id="totalMinusDisplay" class="text-[14px] font-bold text-[#b70f28]">- 36 만원</span>
-            </div>
-
-            <!-- 외관 판수 -->
-            <div class="space-y-1.5">
-              <div class="flex justify-between text-[13px]">
-                <span class="text-[#54555a] font-medium">외관 판금/도색 판수 (<span class="text-[#b70f28]">판당 12만원</span>)</span>
-                <span class="font-bold text-[#16171d]"><span id="panelsCount">1</span> 판 (<span id="panelsCost" class="text-[#b70f28]">-12만</span>)</span>
-              </div>
-              <input type="range" id="panelsSlider" min="0" max="6" step="1" value="1" oninput="calculatePrice()" />
-              <div class="flex justify-between text-[10.5px] text-[#82848b]">
-                <span>0판(무칠)</span>
-                <span>1판</span>
-                <span>2판</span>
-                <span>3판</span>
-                <span>4판+</span>
-              </div>
             </div>
 
             <!-- 타이어 교체 -->
             <div class="space-y-1.5">
               <div class="flex justify-between text-[13px]">
-                <span class="text-[#54555a] font-medium">21인치 타이어 교체 (<span class="text-[#b70f28]">짝당 18만원</span>)</span>
+                <span class="text-[#54555a] font-medium">21인치 타이어 마모 교체 (<span class="text-[#b70f28]">짝당 18만원</span>)</span>
                 <span class="font-bold text-[#16171d]"><span id="tireCount">1</span> 짝 (<span id="tireCost" class="text-[#b70f28]">-18만</span>)</span>
               </div>
               <input type="range" id="tireSlider" min="0" max="4" step="1" value="1" oninput="calculatePrice()" />
               <div class="flex justify-between text-[10.5px] text-[#82848b]">
-                <span>교체없음</span>
+                <span>0짝(양호)</span>
                 <span>1짝</span>
                 <span>2짝(앞/뒤)</span>
+                <span>3짝</span>
                 <span>4짝 전체</span>
               </div>
             </div>
 
-            <!-- 휠 복원 및 경정비 -->
+            <!-- 휠 복원 및 고질병 수리비 선택 -->
             <div class="grid grid-cols-2 gap-2.5 pt-1">
               <div>
-                <label class="block text-[11px] font-medium text-[#54555a] mb-1">21인치 휠 복원 (개당 6만원)</label>
-                <select id="wheelSelect" onchange="calculatePrice()" class="w-full h-[38px] bg-[#f6f8fa] border border-[#d8dee8] rounded-[6px] px-2.5 text-[12.5px] font-medium text-[#16171d] outline-none">
-                  <option value="0">0개 (양호)</option>
-                  <option value="1" selected>1개 (-6만원)</option>
-                  <option value="2">2개 (-12만원)</option>
-                  <option value="4">4개 (-24만원)</option>
+                <label class="block text-[11.5px] font-bold text-[#54555a] mb-1">21인치 스포츠 휠 복원</label>
+                <select id="wheelSelect" onchange="calculatePrice()" class="w-full h-[40px] bg-[#f6f8fa] border border-[#d8dee8] rounded-[6px] px-2.5 text-[12.5px] font-medium text-[#16171d] outline-none">
+                  <option value="0">0개 (흠집없음)</option>
+                  <option value="6" selected>1개 복원 (-6만원)</option>
+                  <option value="12">2개 복원 (-12만원)</option>
+                  <option value="24">4개 전체 (-24만원)</option>
                 </select>
               </div>
               <div>
-                <label class="block text-[11px] font-medium text-[#54555a] mb-1">기타 정비/상품화비</label>
-                <select id="otherCostSelect" onchange="calculatePrice()" class="w-full h-[38px] bg-[#f6f8fa] border border-[#d8dee8] rounded-[6px] px-2.5 text-[12.5px] font-medium text-[#16171d] outline-none">
-                  <option value="0" selected>0만원 (양호)</option>
-                  <option value="10">10만원 (오일/패드)</option>
-                  <option value="20">20만원 (정밀광택)</option>
-                  <option value="35">35만원 (하부실링)</option>
+                <label class="block text-[11.5px] font-bold text-[#54555a] mb-1">고질병/하부 정비 감가</label>
+                <select id="otherCostSelect" onchange="calculatePrice()" class="w-full h-[40px] bg-[#f6f8fa] border border-[#d8dee8] rounded-[6px] px-2.5 text-[12.5px] font-medium text-[#16171d] outline-none">
+                  <option value="0" selected>이상없음 / 보증수리 (0원)</option>
+                  <option value="15">선루프/실내 상품화 (-15만원)</option>
+                  <option value="25">AGM 배터리 교체 (-25만원)</option>
+                  <option value="45">하부 디퍼런셜 누유 (-45만원)</option>
                 </select>
               </div>
             </div>
@@ -1933,13 +1227,15 @@
 
           <div class="gray-divider"></div>
 
-          <!-- 2. 가산 요소 (플러스 옵션/인기스펙) -->
-          <div class="bg-white px-5 py-5 space-y-3">
+          <!-- ========================================================== -->
+          <!-- [2-3] 증액요소 입력 (인기 컬러 · 핵심 옵션 · 무사고 이력) -->
+          <!-- ========================================================== -->
+          <div class="bg-white px-5 py-5 space-y-3.5">
             <div class="flex items-center justify-between pb-2 border-b border-[#e8e8ee]">
-              <span class="text-[14px] font-bold text-[#16171d] flex items-center gap-1.5">
-                <i data-lucide="plus-circle" class="w-4 h-4 text-[#0cb211]"></i>
-                인기 스펙 &amp; 특이 옵션 가산
-              </span>
+              <div class="flex items-center gap-1.5">
+                <span class="w-5 h-5 rounded-full bg-[#0cb211] text-white text-[11px] font-bold inline-flex items-center justify-center">3</span>
+                <h3 class="text-[16px] font-bold text-[#16171d] tracking-tight">인기 옵션 &amp; 스펙 증액요소 입력</h3>
+              </div>
               <span id="totalPlusDisplay" class="text-[14px] font-bold text-[#0cb211]">+ 130 만원</span>
             </div>
 
@@ -1947,7 +1243,7 @@
               <label class="flex items-center justify-between p-3 rounded-lg bg-[#f6f8fa] border border-[#e8e8ee] cursor-pointer">
                 <div class="flex items-center gap-2.5">
                   <input type="checkbox" id="optColor" checked onchange="calculatePrice()" class="w-4 h-4 accent-[#b70f28] rounded" />
-                  <span class="text-[#16171d] font-medium">인기 색상 (우유니 화이트 / 비크 블랙)</span>
+                  <span class="text-[#16171d] font-medium">인기 컬러 (우유니 화이트 + 세비야 레드 시트)</span>
                 </div>
                 <span class="font-bold text-[#0cb211]">+50만원</span>
               </label>
@@ -1955,7 +1251,7 @@
               <label class="flex items-center justify-between p-3 rounded-lg bg-[#f6f8fa] border border-[#e8e8ee] cursor-pointer">
                 <div class="flex items-center gap-2.5">
                   <input type="checkbox" id="optPackage" checked onchange="calculatePrice()" class="w-4 h-4 accent-[#b70f28] rounded" />
-                  <span class="text-[#16171d] font-medium">핵심 옵션 (파퓰러 패키지 II + 스포츠)</span>
+                  <span class="text-[#16171d] font-medium">핵심 옵션 (스포츠 패키지 + 파퓰러 패키지 II)</span>
                 </div>
                 <span class="font-bold text-[#0cb211]">+50만원</span>
               </label>
@@ -1963,73 +1259,197 @@
               <label class="flex items-center justify-between p-3 rounded-lg bg-[#f6f8fa] border border-[#e8e8ee] cursor-pointer">
                 <div class="flex items-center gap-2.5">
                   <input type="checkbox" id="optOwner" checked onchange="calculatePrice()" class="w-4 h-4 accent-[#b70f28] rounded" />
-                  <span class="text-[#16171d] font-medium">1인 신조 · 완전 무사고 · 비흡연</span>
+                  <span class="text-[#16171d] font-medium">1인 신조 · 완전무사고 · 제조사 동력보증 잔존</span>
                 </div>
                 <span class="font-bold text-[#0cb211]">+30만원</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3 rounded-lg bg-[#f6f8fa] border border-[#e8e8ee] cursor-pointer">
+                <div class="flex items-center gap-2.5">
+                  <input type="checkbox" id="optSunroof" onchange="calculatePrice()" class="w-4 h-4 accent-[#b70f28] rounded" />
+                  <span class="text-[#16171d] font-medium">파노라마 선루프 + 렉시콘 사운드 추가 가산</span>
+                </div>
+                <span class="font-bold text-[#0cb211]">+20만원</span>
               </label>
             </div>
           </div>
 
           <div class="gray-divider"></div>
 
-          <!-- 3. 내부 직영 마진 설정 (평가사 내부용) -->
-          <div class="bg-white px-5 py-5 space-y-2.5">
+          <!-- ========================================================== -->
+          <!-- [2-4] 예상시세 및 동급 실매물 판매가 확인 -->
+          <!-- ========================================================== -->
+          <div class="bg-white px-5 py-5 space-y-4">
             <div class="flex items-center justify-between">
-              <span class="text-[13px] font-bold text-[#54555a] flex items-center gap-1.5">
-                <i data-lucide="sliders" class="w-4 h-4 text-[#82848b]"></i>
-                직영 운영비용 조정 (내부 산정용)
-              </span>
-              <span class="text-[13px] font-bold text-[#54555a]">- <span id="marginDisplay">120</span> 만원</span>
+              <div class="flex items-center gap-1.5">
+                <span class="w-5 h-5 rounded-full bg-[#16171d] text-white text-[11px] font-bold inline-flex items-center justify-center">4</span>
+                <h3 class="text-[16px] font-bold text-[#16171d] tracking-tight">예상시세 및 동급 실매물 비교</h3>
+              </div>
+              <span class="label-gray label-tint-red">동급 28대 연동</span>
             </div>
-            <input type="range" id="marginSlider" min="90" max="180" step="10" value="120" oninput="calculatePrice()" />
-            <div class="flex justify-between text-[11px] text-[#82848b]">
-              <span>최소 90만</span>
-              <span class="font-bold text-[#16171d]">표준 120만원</span>
-              <span>수익중시 180만</span>
+
+            <!-- 케이카 직영 vs 엔카 평균 시세 요약 -->
+            <div class="grid grid-cols-2 gap-2.5">
+              <div class="p-3.5 rounded-xl bg-[#fff9f9] border border-[#ffd7da]">
+                <span class="badge-plat badge-plat--kcar mb-1">K Car 직영몰</span>
+                <span class="text-[11px] text-[#54555a] block">직영 평균 예상판매가</span>
+                <strong class="text-[20px] font-bold text-[#b70f28]">4,390<span class="text-[12px] text-[#16171d] ml-0.5">만원</span></strong>
+                <span class="text-[10.5px] text-[#82848b] block mt-0.5">범위: 4,320 ~ 4,450만</span>
+              </div>
+              <div class="p-3.5 rounded-xl bg-[#f6f8fa] border border-[#d8dee8]">
+                <span class="badge-plat badge-plat--encar mb-1">엔카닷컴</span>
+                <span class="text-[11px] text-[#54555a] block">동급 평균 판매시세</span>
+                <strong class="text-[20px] font-bold text-[#16171d]">4,380<span class="text-[12px] text-[#54555a] ml-0.5">만원</span></strong>
+                <span class="text-[10.5px] text-[#82848b] block mt-0.5">범위: 4,350 ~ 4,490만</span>
+              </div>
+            </div>
+
+            <!-- 기준 예상 판매가 조절 슬라이더 -->
+            <div class="p-3.5 rounded-xl bg-[#f6f8fa] border border-[#e8e8ee] space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[12.5px] font-bold text-[#16171d]">산정 기준 예상 판매가 설정</span>
+                <div class="text-[16px] font-bold text-[#b70f28]">
+                  <span id="basePriceDisplay">4,380</span> <span class="text-[12px] text-[#16171d]">만원</span>
+                </div>
+              </div>
+              <input type="range" id="basePriceSlider" min="4100" max="4600" step="10" value="4380" oninput="calculatePrice()" />
+              <div class="flex justify-between text-[10.5px] text-[#82848b]">
+                <span>하한 4,100만</span>
+                <span class="text-[#b70f28] font-bold">권장 기준가 4,380만</span>
+                <span>상한 4,600만</span>
+              </div>
+            </div>
+
+            <!-- 최근 6개월 시세 추이 차트 -->
+            <div class="p-3 rounded-xl bg-[#f6f8fa] border border-[#e8e8ee]">
+              <div class="text-[12px] font-bold text-[#16171d] mb-2">최근 6개월 시세 추이 (GV70 2.5T AWD 스포츠)</div>
+              <div class="h-40 w-full">
+                <canvas id="priceTrendChart"></canvas>
+              </div>
+            </div>
+
+            <!-- 현재 판매중인 동급 GV70 실매물 4대 -->
+            <div class="space-y-2.5 pt-1">
+              <div class="flex items-center justify-between">
+                <span class="text-[13px] font-bold text-[#16171d]">현재 판매중인 동급 GV70 실매물</span>
+                <span class="text-[11px] text-[#82848b]">실시간 크롤링 데이터</span>
+              </div>
+
+              <div class="vert-grid-2col">
+                <article class="car-item-vert">
+                  <div class="thumb">
+                    <img src="./assets/cars/gv70-kcar-parking.jpg" alt="GV70 직영" loading="lazy" />
+                    <div class="badge-area"><div class="badge-cert"><span>K Car 직영</span></div></div>
+                  </div>
+                  <div class="p-2.5">
+                    <div class="text-[12px] font-bold text-[#16171d] truncate">GV70 2.5T AWD 스포츠</div>
+                    <div class="text-[10.5px] text-[#82848b]">21년 7월 · 4.1만km · 무사고</div>
+                    <div class="text-[15px] font-bold text-[#b70f28] mt-1">4,390만원</div>
+                  </div>
+                </article>
+
+                <article class="car-item-vert">
+                  <div class="thumb">
+                    <img src="./assets/cars/gv70-outdoor-front.jpg" alt="GV70 안심직거래" loading="lazy" />
+                    <div class="badge-area"><span class="badge-plat badge-plat--kcar">K Car 직거래</span></div>
+                  </div>
+                  <div class="p-2.5">
+                    <div class="text-[12px] font-bold text-[#16171d] truncate">GV70 가솔린 2.5T AWD</div>
+                    <div class="text-[10.5px] text-[#82848b]">21년 9월 · 3.8만km · 1인신조</div>
+                    <div class="text-[15px] font-bold text-[#16171d] mt-1">4,450만원</div>
+                  </div>
+                </article>
+
+                <article class="car-item-vert">
+                  <div class="thumb">
+                    <img src="./assets/cars/gv70-encar-white.jpg" alt="엔카 GV70" loading="lazy" />
+                    <div class="badge-area"><span class="badge-plat badge-plat--encar">엔카닷컴</span></div>
+                  </div>
+                  <div class="p-2.5">
+                    <div class="text-[12px] font-bold text-[#16171d] truncate">GV70 2.5T 가솔린 AWD</div>
+                    <div class="text-[10.5px] text-[#82848b]">21년 5월 · 3.9만km · 화이트</div>
+                    <div class="text-[15px] font-bold text-[#16171d] mt-1">4,360만원</div>
+                  </div>
+                </article>
+
+                <article class="car-item-vert">
+                  <div class="thumb">
+                    <img src="./assets/cars/gv70-blue-sport.jpg" alt="당근 GV70" loading="lazy" />
+                    <div class="badge-area"><span class="badge-plat badge-plat--daangn">당근마켓</span></div>
+                  </div>
+                  <div class="p-2.5">
+                    <div class="text-[12px] font-bold text-[#16171d] truncate">GV70 AWD 스포츠 패키지</div>
+                    <div class="text-[10.5px] text-[#82848b]">21년 8월 · 4.4만km · 스포츠휠</div>
+                    <div class="text-[15px] font-bold text-[#16171d] mt-1">4,350만원</div>
+                  </div>
+                </article>
+              </div>
             </div>
           </div>
 
-          <!-- 4. 최종 실시간 매입가 산정 결과 카드 (K Car Dark Report + Primary CTA) -->
-          <div class="px-5 py-4 bg-white">
+          <div class="gray-divider"></div>
+
+          <!-- ========================================================== -->
+          <!-- [2-5] 최종 매입가 산정 결과 및 고객 견적서 발송 -->
+          <!-- ========================================================== -->
+          <div class="bg-white px-5 py-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1.5">
+                <span class="w-5 h-5 rounded-full bg-[#b70f28] text-white text-[11px] font-bold inline-flex items-center justify-center">5</span>
+                <h3 class="text-[16px] font-bold text-[#16171d] tracking-tight">최종 매입가 제시 및 견적 발송</h3>
+              </div>
+              <span class="badge-cert"><span>산정 완료</span></span>
+            </div>
+
+            <!-- 내부 운영 마진 슬라이더 (접이식/간소화) -->
+            <div class="p-3 rounded-lg bg-[#f6f8fa] border border-[#e8e8ee] space-y-1.5">
+              <div class="flex items-center justify-between text-[12px]">
+                <span class="text-[#54555a] font-medium">직영 기본 운영비용/마진 (평가사 설정)</span>
+                <strong class="text-[#16171d]">- <span id="marginDisplay">120</span> 만원</strong>
+              </div>
+              <input type="range" id="marginSlider" min="90" max="180" step="10" value="120" oninput="calculatePrice()" />
+            </div>
+
+            <!-- 최종 매입가 다크 리포트 카드 -->
             <div class="dtl-dark-report rounded-xl space-y-4">
               <div class="text-center space-y-1">
-                <span class="badge-cert"><span>AI 산정 최종 추천 매입가</span></span>
-                <div class="text-[32px] font-bold text-white tracking-tight pt-1">
+                <span class="text-[11.5px] text-[#ffd7da] font-bold">케이카 AI 산정 최종 제시 매입가</span>
+                <div class="text-[34px] font-bold text-white tracking-tight">
                   <span id="finalOfferPrice" class="text-[#ff4d5e]">4,354</span> <span class="text-[18px] text-white">만원</span>
                 </div>
                 <p class="text-[12px] text-gray-300">
-                  추천 매입 협상 범위 : <strong class="text-amber-300" id="priceRangeDisplay">4,294 ~ 4,404 만원</strong>
+                  매입 협상 권장 범위 : <strong class="text-amber-300" id="priceRangeDisplay">4,294 ~ 4,404 만원</strong>
                 </p>
               </div>
 
-              <!-- 계산 내역 요약표 -->
+              <!-- 산출 내역 요약표 -->
               <div class="bg-black/35 rounded-lg p-3.5 text-[12px] space-y-1.5 border border-white/10">
                 <div class="flex justify-between text-gray-300">
-                  <span>기준 예상판매가</span>
-                  <span id="calcBase" class="text-white font-medium">+ 4,380 만원</span>
+                  <span>기준 예상시세 (동급 평균)</span>
+                  <span id="calcBase" class="text-white font-medium">4,380 만원</span>
                 </div>
                 <div class="flex justify-between text-[#ff858f]">
-                  <span>현장 진단 감가/수리비</span>
+                  <span>사고/외판 및 소모품 감가요소</span>
                   <span id="calcMinus">- 36 만원</span>
                 </div>
                 <div class="flex justify-between text-emerald-300">
-                  <span>인기스펙/옵션 가산</span>
+                  <span>인기옵션/컬러/무사고 증액요소</span>
                   <span id="calcPlus">+ 130 만원</span>
                 </div>
                 <div class="flex justify-between text-gray-400 border-b border-white/10 pb-1.5">
-                  <span>직영 운영비용(내부)</span>
+                  <span>직영 상품화/기본 운영비용</span>
                   <span id="calcMargin">- 120 만원</span>
                 </div>
                 <div class="flex justify-between font-bold text-[14px] text-white pt-1">
-                  <span>최종 매입 제시액</span>
+                  <span>최종 매입 제시가</span>
                   <span id="calcTotal" class="text-[#ff4d5e]">4,354 만원</span>
                 </div>
               </div>
 
-              <!-- 매입 견적서 발행 CTA -->
-              <button type="button" onclick="openQuoteModal()" class="w-full h-[48px] btn-kcar text-[15px] flex items-center justify-center gap-2 shadow-lg cursor-pointer">
-                <i data-lucide="file-check-2" class="w-4 h-4"></i>
-                <span>고객 제안용 AI 매입견적서 발행</span>
+              <!-- 고객 견적서 발송 버튼 -->
+              <button type="button" onclick="openQuoteModal()" class="w-full h-[50px] btn-kcar text-[15px] flex items-center justify-center gap-2 shadow-lg cursor-pointer">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>최종 매입견적서 발행 및 고객 전송</span>
               </button>
             </div>
           </div>
@@ -2041,54 +1461,16 @@
     </main>
 
     <!-- ============================================================== -->
-    <!-- Exact K Car Bottom 5-Tab Bar (.tabbar) -->
+    <!-- [모달] 고객 발송용 공식 매입 견적서 & 알림톡/SMS 발송 모달 -->
     <!-- ============================================================== -->
-    <nav class="tabbar" aria-label="하단 메뉴">
-      <ul>
-        <li>
-          <button type="button" class="tabbar-link is-active" id="bnavHome" onclick="resetToHome()">
-            <span class="ico-gnb home"></span>
-            <span>홈</span>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="tabbar-link" id="bnavDiag" onclick="goDashboardTab(1)">
-            <span class="ico-gnb wish"></span>
-            <span>AI진단</span>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="tabbar-link" id="bnavSearch" onclick="showScreen('searchScreen')">
-            <span class="ico-gnb search"></span>
-            <span>원부조회</span>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="tabbar-link" id="bnavMarket" onclick="goDashboardTab(2)">
-            <span class="ico-gnb chat"></span>
-            <span>통합시세</span>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="tabbar-link" id="bnavCalc" onclick="goDashboardTab(3)">
-            <span class="ico-gnb mypage"></span>
-            <span>견적산정</span>
-          </button>
-        </li>
-      </ul>
-    </nav>
+    <div id="quoteModal" style="display: none;" class="fixed inset-0 z-50 bg-black/65 backdrop-blur-xs items-end sm:items-center justify-center p-0 sm:p-4">
+      <div class="w-full max-w-[450px] bg-white rounded-t-2xl sm:rounded-2xl overflow-hidden shadow-2xl max-h-[92vh] overflow-y-auto no-scrollbar">
 
-    <!-- ============================================================== -->
-    <!-- [모달] 고객 제안용 최종 매입 견적서 모달 (K Car Official Light Sheet) -->
-    <!-- ============================================================== -->
-    <div id="quoteModal" style="display: none;" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs items-end sm:items-center justify-center p-0 sm:p-4">
-      <div class="w-full max-w-[440px] bg-white rounded-t-2xl sm:rounded-2xl overflow-hidden shadow-2xl max-h-[92vh] overflow-y-auto no-scrollbar">
-
-        <!-- 모달 상단 K Car 헤더 -->
+        <!-- 모달 상단 바 -->
         <div class="px-5 py-4 bg-white border-b border-[#e8e8ee] flex items-center justify-between">
           <div class="flex items-center gap-2">
             <span class="kcar-logo"></span>
-            <h4 class="font-bold text-[15px] text-[#16171d] tracking-tight">내차팔기 공식 AI 매입 견적서</h4>
+            <h4 class="font-bold text-[15px] text-[#16171d] tracking-tight">고객 발송용 최종 매입 견적서</h4>
           </div>
           <button type="button" onclick="closeQuoteModal()" class="text-[#82848b] hover:text-[#16171d] p-1">
             <i data-lucide="x" class="w-5 h-5"></i>
@@ -2096,7 +1478,7 @@
         </div>
 
         <div class="p-5 space-y-4">
-          <!-- 차량 실사 & 스펙 요약 카드 -->
+          <!-- 차량 요약 -->
           <div class="flex items-center gap-3 p-3 rounded-xl bg-[#f6f8fa] border border-[#e8e8ee]">
             <img src="./assets/cars/gv70-white-front.png" alt="GV70" class="w-20 h-16 rounded-lg object-cover shrink-0 border border-[#d8dee8]" />
             <div class="min-w-0 flex-1">
@@ -2105,59 +1487,69 @@
                 <span class="text-[11px] text-[#54555a]">2021년 06월식 · 42,300km</span>
               </div>
               <div class="text-[14px] font-bold text-[#16171d] truncate">제네시스 GV70 가솔린 2.5T AWD 스포츠</div>
-              <div class="text-[11.5px] text-[#0073fd] font-medium truncate">우유니 화이트 · 파퓰러 패키지 II · 완전무사고</div>
+              <div class="text-[11.5px] text-[#0073fd] font-medium truncate">우유니 화이트 · 파퓰러II · 동력보증 유효</div>
             </div>
           </div>
 
           <!-- 최종 매입 제시가 배너 -->
           <div class="p-4 rounded-xl bg-[#fff9f9] border-2 border-[#b70f28] text-center space-y-1">
-            <span class="badge-cert"><span>K Car 최종 제안 매입가</span></span>
-            <div class="text-[30px] font-bold text-[#b70f28] pt-1">
+            <span class="badge-cert"><span>K Car 내차팔기 최종 매입 제시가</span></span>
+            <div class="text-[32px] font-bold text-[#b70f28] pt-1">
               <span id="modalFinalPrice">4,354</span> <span class="text-[16px] text-[#16171d]">만원</span>
             </div>
             <p class="text-[11.5px] text-[#54555a]">
-              당일 계약 시 차량대금 <strong>100% 즉시 송금</strong> 및 <strong>온라인 명의이전 무료 대행</strong>
+              견적 유효기간 : 발행일로부터 3일 (당일 계약 시 <strong>100% 즉시 송금</strong>)
             </p>
           </div>
 
-          <!-- 세부 산정 내역 (고객 제시용 깔끔한 구성) -->
+          <!-- 산정 상세 내역 (고객 공개용) -->
           <div class="p-3.5 rounded-xl bg-[#f6f8fa] border border-[#e8e8ee] space-y-2 text-[12.5px]">
             <div class="flex justify-between text-[#54555a]">
-              <span>동급 직영/엔카 실시간 기준시세</span>
+              <span>동급 차량 기준 시세</span>
               <span id="modalBasePrice" class="font-bold text-[#16171d]">4,380 만원</span>
             </div>
             <div class="flex justify-between text-[#0cb211]">
-              <span>인기 컬러 &amp; 파퓰러II/무사고 가산</span>
+              <span>증액요소 (인기컬러·파퓰러II·무사고/보증)</span>
               <span id="modalPlusPrice" class="font-bold">+ 130 만원</span>
             </div>
             <div class="flex justify-between text-[#b70f28]">
-              <span>현장 진단 감가 (외관/타이어/휠)</span>
+              <span>감가요소 (<span id="modalMinusDetailTxt">프론트 범퍼 도색 외</span>)</span>
               <span id="modalMinusPrice" class="font-bold">- 36 만원</span>
             </div>
-            <!-- 내부 마진은 고객 견적서에서 숨김 처리하되 JS 호환을 위해 DOM 유지 -->
-            <div style="display: none;">
-              <span id="modalMarginPrice">- 120 만원</span>
+          </div>
+
+          <!-- 고객 정보 입력 (알림톡/SMS 발송 대상) -->
+          <div class="p-3.5 rounded-xl border border-[#d8dee8] bg-white space-y-2.5">
+            <div class="text-[12.5px] font-bold text-[#16171d] flex items-center gap-1.5">
+              <i data-lucide="smartphone" class="w-4 h-4 text-[#b70f28]"></i>
+              <span>견적서 수신 고객 정보</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <input type="text" id="custNameInput" value="홍길동 고객님" placeholder="고객명"
+                class="h-[38px] px-3 rounded border border-[#d8dee8] text-[12.5px] font-medium text-[#16171d] outline-none focus:border-[#16171d]" />
+              <input type="tel" id="custPhoneInput" value="010-2488-7070" placeholder="연락처"
+                class="h-[38px] px-3 rounded border border-[#d8dee8] text-[12.5px] font-medium text-[#16171d] outline-none focus:border-[#16171d]" />
             </div>
           </div>
 
-          <!-- 케이카 안심 매입 보장 안내 (.ownersMsg) -->
-          <div class="ownersMsg">
-            <strong class="titleTxt">케이카 내차팔기 고객 안심 혜택</strong>
-            <p>
-              1. 계약 즉시 <strong>100% 당일 현금 입금</strong> (에스크로 안전송금)<br />
-              2. 수수료 0원 · 부대비용 및 <strong>부당 감가 없는 정찰 매입</strong><br />
-              3. 매입 후 <strong>24시간 이내 명의이전 완료</strong> 증명서 알림톡 발송
-            </p>
+          <!-- 전송 완료 피드백 박스 (발송 시 표시) -->
+          <div id="sendSuccessBox" style="display: none;" class="p-3.5 rounded-xl bg-[#ddf2e5] border border-[#0cb211] text-[#086f4f] text-[12px] font-medium space-y-1">
+            <div class="font-bold flex items-center gap-1.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+              <span id="sendSuccessTitle">고객님께 견적서 발송이 완료되었습니다!</span>
+            </div>
+            <p id="sendSuccessDesc" class="text-[11.5px]"></p>
           </div>
 
-          <div class="flex gap-2 pt-1">
-            <button type="button" onclick="shareQuote()" class="flex-1 h-[46px] rounded-[6px] border border-[#d8dee8] bg-white hover:bg-[#f6f8fa] text-[#16171d] font-bold text-[13.5px] flex items-center justify-center gap-1.5 cursor-pointer">
-              <i data-lucide="send" class="w-4 h-4 text-[#b70f28]"></i>
-              <span>고객 알림톡 전송</span>
+          <!-- 발송 버튼 그룹 -->
+          <div class="grid grid-cols-2 gap-2 pt-1">
+            <button type="button" onclick="sendQuoteToCustomer('kakao')" class="h-[46px] rounded-[6px] bg-[#FEE500] hover:bg-[#f5dc00] text-[#191919] font-bold text-[13px] flex items-center justify-center gap-1.5 cursor-pointer">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>카카오 알림톡 발송</span>
             </button>
-            <button type="button" onclick="closeQuoteModal()" class="flex-1 h-[46px] btn-kcar text-[13.5px] flex items-center justify-center gap-1.5 cursor-pointer">
-              <i data-lucide="check" class="w-4 h-4"></i>
-              <span>견적 확인 완료</span>
+            <button type="button" onclick="sendQuoteToCustomer('sms')" class="h-[46px] btn-kcar text-[13px] flex items-center justify-center gap-1.5 cursor-pointer">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>SMS 문자 견적 발송</span>
             </button>
           </div>
         </div>
@@ -2167,169 +1559,169 @@
 
   </div>
 
-  <!-- 통합 인터랙티브 스크립트 -->
+  <!-- 통합 스크립트 -->
   <script>
     let trendChartInstance = null;
-    let currentScreenId = 'loginScreen';
+    let currentScreen = 'screenLogin';
+    let currentStep = 1;
 
     function safeCreateIcons() {
       if (typeof lucide !== 'undefined' && lucide.createIcons) {
-        try {
-          lucide.createIcons();
-        } catch (e) {
-          console.warn('Icon rendering skipped:', e);
-        }
+        try { lucide.createIcons(); } catch (e) {}
       }
     }
 
-    function showScreen(targetId) {
-      currentScreenId = targetId;
-      const screens = {
-        loginScreen: 'active-flex',
-        searchScreen: 'active-block',
-        scanningScreen: 'active-flex',
-        dashboardScreen: 'active-block'
+    function showScreen(screenId) {
+      currentScreen = screenId;
+      const map = {
+        screenLogin: 'active-flex',
+        screenPlate: 'active-flex',
+        screenLoading: 'active-flex',
+        screenWorkspace: 'active-flex'
       };
 
-      for (const [id, displayClass] of Object.entries(screens)) {
+      Object.keys(map).forEach(id => {
         const el = document.getElementById(id);
         if (el) {
           el.classList.remove('active-flex', 'active-block');
-          if (id === targetId) {
-            el.classList.add(displayClass);
-          }
+          if (id === screenId) el.classList.add(map[id]);
         }
-      }
+      });
 
-      const userBadge = document.getElementById('userBadge');
-      const resetBtn = document.getElementById('resetAppBtn');
-      const backBtn = document.getElementById('hdrBackBtn');
-
-      if (targetId === 'loginScreen') {
-        if (userBadge) userBadge.style.display = 'none';
-        if (resetBtn) resetBtn.style.display = 'none';
-        if (backBtn) backBtn.style.display = 'none';
-      } else {
-        if (userBadge) userBadge.style.display = 'flex';
-        if (resetBtn) resetBtn.style.display = 'block';
-        if (backBtn) backBtn.style.display = 'inline-block';
-      }
-
-      // 하단 탭바 활성화 동기화
-      document.querySelectorAll('.tabbar .tabbar-link').forEach(btn => btn.classList.remove('is-active'));
-      if (targetId === 'loginScreen') {
-        document.getElementById('bnavHome')?.classList.add('is-active');
-      } else if (targetId === 'searchScreen' || targetId === 'scanningScreen') {
-        document.getElementById('bnavSearch')?.classList.add('is-active');
-      } else if (targetId === 'dashboardScreen') {
-        document.getElementById('bnavDiag')?.classList.add('is-active');
+      // 로그인 화면에서는 상단 헤더를 숨겨 오직 ID/PW 로그인 화면만 깔끔하게 노출
+      const hdr = document.getElementById('appHeader');
+      if (hdr) {
+        hdr.style.display = (screenId === 'screenLogin') ? 'none' : 'flex';
       }
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
       safeCreateIcons();
     }
 
-    function handleHeaderBack() {
-      if (currentScreenId === 'dashboardScreen') {
-        showScreen('searchScreen');
+    function handleBack() {
+      if (currentScreen === 'screenWorkspace') {
+        if (currentStep === 2) {
+          switchStep(1);
+        } else {
+          showScreen('screenPlate');
+        }
+      } else if (currentScreen === 'screenLoading') {
+        showScreen('screenPlate');
       } else {
-        showScreen('loginScreen');
+        showScreen('screenLogin');
       }
     }
 
-    function goDashboardTab(tabIdx) {
-      if (currentScreenId !== 'dashboardScreen') {
-        showScreen('dashboardScreen');
-        initPriceTrendChart();
-        calculatePrice();
-      }
-      switchTab(tabIdx);
+    function resetToLogin() {
+      showScreen('screenLogin');
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      showScreen('loginScreen');
-      safeCreateIcons();
-    });
+    function goPlateScreen() {
+      showScreen('screenPlate');
+    }
 
     function fillDemoLogin() {
-      const idInput = document.getElementById('loginId');
-      const pwInput = document.getElementById('loginPw');
-      if (idInput) idInput.value = '1111';
-      if (pwInput) pwInput.value = '1111';
+      document.getElementById('loginId').value = '1111';
+      document.getElementById('loginPw').value = '1111';
     }
 
     function handleLogin() {
-      const idInput = document.getElementById('loginId');
-      const pwInput = document.getElementById('loginPw');
-      const id = idInput ? idInput.value.trim() : '1111';
-      const pw = pwInput ? pwInput.value.trim() : '1111';
-
-      if (idInput) idInput.value = id || '1111';
-      if (pwInput) pwInput.value = pw || '1111';
-
-      showScreen('searchScreen');
+      const idEl = document.getElementById('loginId');
+      const pwEl = document.getElementById('loginPw');
+      if (idEl && !idEl.value.trim()) idEl.value = '1111';
+      if (pwEl && !pwEl.value.trim()) pwEl.value = '1111';
+      showScreen('screenPlate');
     }
 
-    function resetToHome() {
-      showScreen('loginScreen');
+    function setPlate(plateNo) {
+      const el = document.getElementById('plateInput');
+      if (el) el.value = plateNo;
     }
 
-    function setPlate(plateNumber) {
-      const input = document.getElementById('plateInput');
-      if (input) input.value = plateNumber;
+    // 3) 원부데이터 로딩 + 보증데이터 로딩 시퀀스
+    function startDataLoading() {
+      const plateEl = document.getElementById('plateInput');
+      const plate = (plateEl && plateEl.value.trim()) ? plateEl.value.trim() : '11가1111';
+      if (plateEl) plateEl.value = plate;
+
+      // 차량번호 동기화
+      ['loadingPlateTxt', 'heroPlateBadge', 'specPlateTxt', 'modalPlateBadge'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.innerText = plate;
+      });
+
+      showScreen('screenLoading');
+
+      const bar = document.getElementById('loadingBarFill');
+      const pct = document.getElementById('loadingPercentTxt');
+      const tit = document.getElementById('loadingStepTitle');
+      const item1 = document.getElementById('loadItem1');
+      const item2 = document.getElementById('loadItem2');
+      const item3 = document.getElementById('loadItem3');
+
+      if (bar) bar.style.width = '25%';
+      if (pct) pct.innerText = '25%';
+      if (tit) tit.innerText = `[${plate}] 국토교통부 등록원부 데이터 로딩 중...`;
+
+      setTimeout(() => {
+        if (bar) bar.style.width = '65%';
+        if (pct) pct.innerText = '65%';
+        if (tit) tit.innerText = `[${plate}] 제조사 보증(Warranty) 및 신차옵션 로딩 중...`;
+        if (item1) {
+          item1.querySelector('i')?.setAttribute('data-lucide', 'check-circle-2');
+          item1.querySelector('i')?.classList.remove('animate-spin');
+        }
+        if (item2) {
+          item2.classList.remove('opacity-50');
+          item2.querySelector('i')?.setAttribute('data-lucide', 'check-circle-2');
+          item2.querySelector('i')?.classList.replace('text-[#82848b]', 'text-[#0073fd]');
+        }
+        safeCreateIcons();
+      }, 650);
+
+      setTimeout(() => {
+        if (bar) bar.style.width = '100%';
+        if (pct) pct.innerText = '100%';
+        if (tit) tit.innerText = `[${plate}] 원부·보증·고질병 데이터 로딩 완료!`;
+        if (item3) {
+          item3.classList.remove('opacity-50');
+          item3.querySelector('i')?.setAttribute('data-lucide', 'check-circle-2');
+          item3.querySelector('i')?.classList.replace('text-[#82848b]', 'text-[#0cb211]');
+        }
+        safeCreateIcons();
+      }, 1300);
+
+      setTimeout(() => {
+        showScreen('screenWorkspace');
+        switchStep(1);
+        calculatePrice();
+      }, 1750);
     }
 
-    function startAiScan() {
-      const plateInput = document.getElementById('plateInput');
-      const plate = (plateInput && plateInput.value.trim()) ? plateInput.value.trim() : '11가1111';
-      if (plateInput) plateInput.value = plate;
+    // 4) 1단계 / 2단계 전환
+    function switchStep(stepNum) {
+      currentStep = stepNum;
+      const btn1 = document.getElementById('stepBtn1');
+      const btn2 = document.getElementById('stepBtn2');
+      const cont1 = document.getElementById('step1Container');
+      const cont2 = document.getElementById('step2Container');
 
-      // 번호판 텍스트 동기화
-      const heroBadge = document.getElementById('heroPlateBadge');
-      const specPlate = document.getElementById('specPlateTxt');
-      const modalPlate = document.getElementById('modalPlateBadge');
-      if (heroBadge) heroBadge.innerText = plate;
-      if (specPlate) specPlate.innerText = plate;
-      if (modalPlate) modalPlate.innerText = plate;
-
-      showScreen('scanningScreen');
-
-      const statusText = document.getElementById('scanStatusText');
-      const log1 = document.getElementById('log1');
-      const log2 = document.getElementById('log2');
-      const log3 = document.getElementById('log3');
-
-      setTimeout(() => {
-        if (statusText) statusText.innerText = `[1/4] 국토교통부 자동차등록원부 [${plate}] 원부 조회 중...`;
-        if (log1) {
-          log1.innerHTML = `<i data-lucide="check-circle-2" class="w-4 h-4 text-[#f01d29] shrink-0"></i><span class="text-white font-medium">등록원부 조회: ${plate} (2021년식 최초등록 · 완전무사고)</span>`;
-        }
-        safeCreateIcons();
-      }, 450);
-
-      setTimeout(() => {
-        if (statusText) statusText.innerText = `[2/4] 케이카 직영 · 엔카 · 당근 동급 매물 28대 실시간 시세 수집`;
-        if (log2) {
-          log2.innerHTML = `<i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 shrink-0"></i><span class="text-white font-medium">통합 시세 연동: 케이카 4,390만 / 엔카 4,380만 확인</span>`;
-        }
-        safeCreateIcons();
-      }, 1050);
-
-      setTimeout(() => {
-        if (statusText) statusText.innerText = `[3/4] GV70 2.5T 특화 고질병/취약부위 사전 진단 DB 로드 완료`;
-        if (log3) {
-          log3.innerHTML = `<i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i><span class="text-white font-medium">AI 부위별 실사 진단 가이드 및 매입가 산정 모델 가동</span>`;
-        }
-        safeCreateIcons();
-      }, 1650);
-
-      setTimeout(() => {
-        if (statusText) statusText.innerText = '[4/4] 케이카 AI 정밀 매입 대시보드 로드 완료!';
-        showScreen('dashboardScreen');
-        switchTab(1);
+      if (stepNum === 1) {
+        btn1?.classList.add('is-active');
+        btn2?.classList.remove('is-active');
+        if (cont1) cont1.style.display = 'block';
+        if (cont2) cont2.style.display = 'none';
+      } else {
+        btn1?.classList.remove('is-active');
+        btn2?.classList.add('is-active');
+        if (cont1) cont1.style.display = 'none';
+        if (cont2) cont2.style.display = 'block';
         initPriceTrendChart();
         calculatePrice();
-      }, 2150);
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      safeCreateIcons();
     }
 
     function updateGalleryCounter(trackEl) {
@@ -2342,39 +1734,104 @@
     function scrollToGallery(slideIdx) {
       const track = document.getElementById('gv70GalleryTrack');
       if (!track) return;
-      track.scrollTo({
-        left: track.clientWidth * slideIdx,
-        behavior: 'smooth'
-      });
+      track.scrollTo({ left: track.clientWidth * slideIdx, behavior: 'smooth' });
       const counter = document.getElementById('galleryCounterTxt');
       if (counter) counter.textContent = `${slideIdx + 1} / 6`;
     }
 
-    function switchTab(tabIndex) {
-      const tabs = [1, 2, 3];
-      tabs.forEach(num => {
-        const btn = document.getElementById(`tabBtn${num}`);
-        const content = document.getElementById(`tabContent${num}`);
+    // 사고부위 토글
+    function toggleAccidentPart(btnEl) {
+      if (!btnEl) return;
+      btnEl.classList.toggle('is-selected');
+      calculatePrice();
+    }
 
-        if (num === tabIndex) {
-          if (btn) btn.classList.add('is-active');
-          if (content) content.style.display = 'block';
-        } else {
-          if (btn) btn.classList.remove('is-active');
-          if (content) content.style.display = 'none';
-        }
+    // 실시간 매입가 산정
+    function calculatePrice() {
+      const baseSlider = document.getElementById('basePriceSlider');
+      if (!baseSlider) return;
+      const basePrice = parseInt(baseSlider.value, 10);
+      document.getElementById('basePriceDisplay').innerText = basePrice.toLocaleString();
+
+      // 1) 사고/외판 선택 부위 합산
+      let accidentCost = 0;
+      const selectedParts = [];
+      let hasFrameAccident = false;
+      let hasExchange = false;
+
+      document.querySelectorAll('.accident-part-btn.is-selected').forEach(btn => {
+        const c = parseInt(btn.getAttribute('data-part-cost') || '0', 10);
+        const name = btn.getAttribute('data-part-name') || '';
+        accidentCost += c;
+        selectedParts.push(name);
+        if (name.includes('유사고')) hasFrameAccident = true;
+        if (name.includes('교환')) hasExchange = true;
       });
 
-      // 하단 탭바 연동
-      document.querySelectorAll('.tabbar .tabbar-link').forEach(b => b.classList.remove('is-active'));
-      if (tabIndex === 1) document.getElementById('bnavDiag')?.classList.add('is-active');
-      if (tabIndex === 2) document.getElementById('bnavMarket')?.classList.add('is-active');
-      if (tabIndex === 3) document.getElementById('bnavCalc')?.classList.add('is-active');
-
-      if (tabIndex === 2 && trendChartInstance) {
-        setTimeout(() => trendChartInstance.resize(), 50);
+      const badgeEl = document.getElementById('accidentBadgeStatus');
+      if (badgeEl) {
+        if (hasFrameAccident) {
+          badgeEl.className = 'label-gray label-tint-red';
+          badgeEl.innerText = '유사고 (골격감가)';
+        } else if (hasExchange) {
+          badgeEl.className = 'label-gray label-tint-blue';
+          badgeEl.innerText = '무사고 (단순교환)';
+        } else {
+          badgeEl.className = 'label-gray label-tint-green';
+          badgeEl.innerText = '완전무사고';
+        }
       }
-      safeCreateIcons();
+
+      // 2) 소모품 및 고질병 감가 합산
+      const tires = parseInt(document.getElementById('tireSlider')?.value || 1, 10);
+      const tireCost = tires * 18;
+      document.getElementById('tireCount').innerText = tires;
+      document.getElementById('tireCost').innerText = `-${tireCost}만`;
+
+      const wheelCost = parseInt(document.getElementById('wheelSelect')?.value || 0, 10);
+      const otherCost = parseInt(document.getElementById('otherCostSelect')?.value || 0, 10);
+
+      const totalMinus = accidentCost + tireCost + wheelCost + otherCost;
+      document.getElementById('totalMinusDisplay').innerText = `- ${totalMinus.toLocaleString()} 만원`;
+
+      // 3) 증액요소 합산
+      let totalPlus = 0;
+      if (document.getElementById('optColor')?.checked) totalPlus += 50;
+      if (document.getElementById('optPackage')?.checked) totalPlus += 50;
+      if (document.getElementById('optOwner')?.checked) totalPlus += 30;
+      if (document.getElementById('optSunroof')?.checked) totalPlus += 20;
+      document.getElementById('totalPlusDisplay').innerText = `+ ${totalPlus.toLocaleString()} 만원`;
+
+      // 4) 직영 운영비용
+      const margin = parseInt(document.getElementById('marginSlider')?.value || 120, 10);
+      document.getElementById('marginDisplay').innerText = margin;
+
+      const finalPrice = basePrice - totalMinus + totalPlus - margin;
+      const minRange = finalPrice - 60;
+      const maxRange = finalPrice + 50;
+
+      document.getElementById('finalOfferPrice').innerText = finalPrice.toLocaleString();
+      const topSticky = document.getElementById('topStickyFinalPrice');
+      if (topSticky) topSticky.innerText = finalPrice.toLocaleString();
+      document.getElementById('priceRangeDisplay').innerText = `${minRange.toLocaleString()} ~ ${maxRange.toLocaleString()} 만원`;
+
+      document.getElementById('calcBase').innerText = `${basePrice.toLocaleString()} 만원`;
+      document.getElementById('calcMinus').innerText = `- ${totalMinus.toLocaleString()} 만원`;
+      document.getElementById('calcPlus').innerText = `+ ${totalPlus.toLocaleString()} 만원`;
+      document.getElementById('calcMargin').innerText = `- ${margin.toLocaleString()} 만원`;
+      document.getElementById('calcTotal').innerText = `${finalPrice.toLocaleString()} 만원`;
+
+      // 모달 동기화
+      document.getElementById('modalFinalPrice').innerText = finalPrice.toLocaleString();
+      document.getElementById('modalBasePrice').innerText = `${basePrice.toLocaleString()} 만원`;
+      document.getElementById('modalMinusPrice').innerText = `- ${totalMinus.toLocaleString()} 만원`;
+      document.getElementById('modalPlusPrice').innerText = `+ ${totalPlus.toLocaleString()} 만원`;
+
+      const detailTxt = document.getElementById('modalMinusDetailTxt');
+      if (detailTxt) {
+        const summary = selectedParts.length > 0 ? selectedParts[0] : '타이어/소모품';
+        detailTxt.innerText = selectedParts.length > 1 ? `${summary} 외 ${selectedParts.length}건` : summary;
+      }
     }
 
     function initPriceTrendChart() {
@@ -2391,7 +1848,7 @@
           labels: ['6월', '7월', '8월', '9월', '10월', '11월(현재)'],
           datasets: [
             {
-              label: 'K Car 직영판매가',
+              label: 'K Car 직영시세',
               data: [4490, 4460, 4440, 4420, 4400, 4390],
               borderColor: '#b70f28',
               backgroundColor: 'rgba(183, 15, 40, 0.08)',
@@ -2402,7 +1859,7 @@
               fill: true
             },
             {
-              label: '엔카닷컴 평균시세',
+              label: '엔카 평균시세',
               data: [4470, 4440, 4420, 4400, 4390, 4380],
               borderColor: '#22252e',
               backgroundColor: 'transparent',
@@ -2421,97 +1878,26 @@
             legend: {
               display: true,
               position: 'top',
-              labels: {
-                boxWidth: 10,
-                boxHeight: 10,
-                color: '#16171d',
-                font: { size: 11, family: 'Spoqa Han Sans Neo' }
-              }
-            },
-            tooltip: {
-              callbacks: {
-                label: function(context) {
-                  return `${context.dataset.label}: ${context.parsed.y.toLocaleString()}만원`;
-                }
-              }
+              labels: { boxWidth: 10, boxHeight: 10, color: '#16171d', font: { size: 11 } }
             }
           },
           scales: {
-            x: {
-              grid: { color: '#e8e8ee' },
-              ticks: { color: '#54555a', font: { size: 10.5 } }
-            },
+            x: { grid: { color: '#e8e8ee' }, ticks: { color: '#54555a', font: { size: 10 } } },
             y: {
               min: 4250,
               max: 4550,
               grid: { color: '#e8e8ee' },
-              ticks: {
-                color: '#54555a',
-                font: { size: 10.5 },
-                stepSize: 100,
-                callback: function(val) { return val + '만'; }
-              }
+              ticks: { color: '#54555a', font: { size: 10 }, stepSize: 100, callback: v => v + '만' }
             }
           }
         }
       });
     }
 
-    function calculatePrice() {
-      const baseSlider = document.getElementById('basePriceSlider');
-      if (!baseSlider) return;
-      const basePrice = parseInt(baseSlider.value, 10);
-      document.getElementById('basePriceDisplay').innerText = basePrice.toLocaleString();
-
-      const panels = parseInt(document.getElementById('panelsSlider')?.value || 1, 10);
-      const panelCost = panels * 12;
-      document.getElementById('panelsCount').innerText = panels;
-      document.getElementById('panelsCost').innerText = `-${panelCost}만`;
-
-      const tires = parseInt(document.getElementById('tireSlider')?.value || 1, 10);
-      const tireCost = tires * 18;
-      document.getElementById('tireCount').innerText = tires;
-      document.getElementById('tireCost').innerText = `-${tireCost}만`;
-
-      const wheelCost = parseInt(document.getElementById('wheelSelect')?.value || 0, 10) * 6;
-      const otherCost = parseInt(document.getElementById('otherCostSelect')?.value || 0, 10);
-
-      const totalMinus = panelCost + tireCost + wheelCost + otherCost;
-      document.getElementById('totalMinusDisplay').innerText = `- ${totalMinus} 만원`;
-
-      let totalPlus = 0;
-      if (document.getElementById('optColor')?.checked) totalPlus += 50;
-      if (document.getElementById('optPackage')?.checked) totalPlus += 50;
-      if (document.getElementById('optOwner')?.checked) totalPlus += 30;
-      document.getElementById('totalPlusDisplay').innerText = `+ ${totalPlus} 만원`;
-
-      const margin = parseInt(document.getElementById('marginSlider')?.value || 120, 10);
-      document.getElementById('marginDisplay').innerText = margin;
-
-      const finalPrice = basePrice - totalMinus + totalPlus - margin;
-      const minRange = finalPrice - 60;
-      const maxRange = finalPrice + 50;
-
-      document.getElementById('finalOfferPrice').innerText = finalPrice.toLocaleString();
-      const quickPrice = document.getElementById('headerQuickPrice');
-      if (quickPrice) quickPrice.innerText = finalPrice.toLocaleString();
-      document.getElementById('priceRangeDisplay').innerText = `${minRange.toLocaleString()} ~ ${maxRange.toLocaleString()} 만원`;
-
-      document.getElementById('calcBase').innerText = `+ ${basePrice.toLocaleString()} 만원`;
-      document.getElementById('calcMinus').innerText = `- ${totalMinus.toLocaleString()} 만원`;
-      document.getElementById('calcPlus').innerText = `+ ${totalPlus.toLocaleString()} 만원`;
-      document.getElementById('calcMargin').innerText = `- ${margin.toLocaleString()} 만원`;
-      document.getElementById('calcTotal').innerText = `${finalPrice.toLocaleString()} 만원`;
-
-      document.getElementById('modalFinalPrice').innerText = finalPrice.toLocaleString();
-      document.getElementById('modalBasePrice').innerText = `${basePrice.toLocaleString()} 만원`;
-      document.getElementById('modalMinusPrice').innerText = `- ${totalMinus.toLocaleString()} 만원`;
-      document.getElementById('modalPlusPrice').innerText = `+ ${totalPlus.toLocaleString()} 만원`;
-      document.getElementById('modalMarginPrice').innerText = `- ${margin.toLocaleString()} 만원`;
-    }
-
     function openQuoteModal() {
       const modal = document.getElementById('quoteModal');
+      const box = document.getElementById('sendSuccessBox');
+      if (box) box.style.display = 'none';
       if (modal) modal.style.display = 'flex';
       safeCreateIcons();
     }
@@ -2521,10 +1907,29 @@
       if (modal) modal.style.display = 'none';
     }
 
-    function shareQuote() {
-      alert('✨ 케이카(K Car) 공식 알림톡으로 최종 매입 견적서가 고객님께 전송되었습니다.');
-      closeQuoteModal();
+    function sendQuoteToCustomer(channel) {
+      const name = document.getElementById('custNameInput')?.value || '고객님';
+      const phone = document.getElementById('custPhoneInput')?.value || '010-0000-0000';
+      const price = document.getElementById('modalFinalPrice')?.innerText || '4,354';
+      const plate = document.getElementById('modalPlateBadge')?.innerText || '11가1111';
+
+      const box = document.getElementById('sendSuccessBox');
+      const title = document.getElementById('sendSuccessTitle');
+      const desc = document.getElementById('sendSuccessDesc');
+
+      if (box && title && desc) {
+        const chName = channel === 'kakao' ? '카카오 알림톡' : 'SMS 문자메시지';
+        title.innerText = `${chName} 발송 완료!`;
+        desc.innerText = `${name}(${phone})께 [${plate} 제네시스 GV70] 최종 매입견적서(${price}만원)가 정상 발송되었습니다.`;
+        box.style.display = 'block';
+        safeCreateIcons();
+      }
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      showScreen('screenLogin');
+      safeCreateIcons();
+    });
   </script>
 </body>
 </html>
